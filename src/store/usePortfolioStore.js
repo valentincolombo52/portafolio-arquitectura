@@ -81,20 +81,47 @@ export const usePortfolioStore = create((set, get) => ({
 
   // Load database items
   loadElements: (data) => {
-    const initialized = data.map((item) => {
-      const scaledInitialPosition = [
-        item.initialPosition[0] * 1.25,
-        item.initialPosition[1] * 1.25,
-        item.initialPosition[2]
-      ];
+    // Cluster layout geometry (manzanas and lotes layout)
+    const itemsPerCluster = 6;
+    const colsMacro = 5;
+    const gapXMacro = 18;
+    const gapYMacro = 15;
+    
+    const colsMicro = 3;
+    const gapXMicro = 4.2;
+    const gapYMicro = 3.6;
+
+    const initialized = data.map((item, index) => {
+      const clusterIdx = Math.floor(index / itemsPerCluster);
+      const localIdx = index % itemsPerCluster;
+      
+      const colMacro = clusterIdx % colsMacro;
+      const rowMacro = Math.floor(clusterIdx / colsMacro);
+      const macroX = (colMacro - 2) * gapXMacro;
+      const macroY = (1.5 - rowMacro) * gapYMacro;
+      
+      const colMicro = localIdx % colsMicro;
+      const rowMicro = Math.floor(localIdx / colsMicro);
+      const microX = (colMicro - 1) * gapXMicro;
+      const microY = (0.5 - rowMicro) * gapYMicro;
+      
+      // Introduce slight organic noise to position and rotation within the cluster for collage feel
+      const noiseX = (Math.random() - 0.5) * 0.4;
+      const noiseY = (Math.random() - 0.5) * 0.4;
+      const clusterX = macroX + microX + noiseX;
+      const clusterY = macroY + microY + noiseY;
+      const clusterRot = (Math.random() - 0.5) * 0.2;
+
+      const calculatedPosition = [clusterX, clusterY, 0];
+      
       return {
         ...item,
-        initialPosition: scaledInitialPosition,
-        currentPosition: [...scaledInitialPosition],
-        targetPosition: [...scaledInitialPosition],
-        currentRotation: item.initialRotation,
-        targetRotation: item.initialRotation,
-        zIndex: Math.random() * 10,
+        initialPosition: calculatedPosition,
+        currentPosition: [...calculatedPosition],
+        targetPosition: [...calculatedPosition],
+        currentRotation: clusterRot,
+        targetRotation: clusterRot,
+        zIndex: index * 0.05,
         isActive: true,
       };
     });
