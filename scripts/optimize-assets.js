@@ -7,13 +7,13 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // Paths
-const projectsSrcDir = path.resolve(__dirname, '../../proyectos'); // g:\2026\Portafolio\proyectos
-const appDir = path.resolve(__dirname, '../'); // g:\2026\Portafolio\app
+const sourceFolder = path.join(process.cwd(), 'proyectos');
+const appDir = process.cwd();
 const publicDir = path.join(appDir, 'public');
 const thumbsDir = path.join(publicDir, 'thumbnails');
 const projectsDestDir = path.join(publicDir, 'projects');
 const dataDir = path.join(appDir, 'src/data');
-const jsonDbPath = path.join(dataDir, 'projects.json');
+const targetDatabase = path.join(process.cwd(), 'src/data/projects.json');
 
 // Supported extensions
 const imageExtensions = ['.jpg', '.jpeg', '.png'];
@@ -40,18 +40,18 @@ function toKebabCase(str) {
 
 async function optimizeImages() {
   console.log('--- STARTING MULTI-PROJECT ASSET OPTIMIZATION PIPELINE ---');
-  console.log(`Source Folder: ${projectsSrcDir}`);
-  console.log(`Target database: ${jsonDbPath}`);
+  console.log(`Source Folder: ${sourceFolder}`);
+  console.log(`Target database: ${targetDatabase}`);
 
-  if (!fs.existsSync(projectsSrcDir)) {
-    console.error(`[ERROR] Projects source folder does not exist at: ${projectsSrcDir}`);
+  if (!fs.existsSync(sourceFolder)) {
+    console.error(`[ERROR] Projects source folder does not exist at: ${sourceFolder}`);
     return;
   }
 
-  // Read subfolders in projectsSrcDir
-  const items = fs.readdirSync(projectsSrcDir);
+  // Read subfolders in sourceFolder
+  const items = fs.readdirSync(sourceFolder);
   const subfolders = items.filter((item) => {
-    return fs.statSync(path.join(projectsSrcDir, item)).isDirectory();
+    return fs.statSync(path.join(sourceFolder, item)).isDirectory();
   });
 
   console.log(`Found ${subfolders.length} project groups.`);
@@ -60,7 +60,7 @@ async function optimizeImages() {
   let colorIndex = 0;
 
   for (const folder of subfolders) {
-    const folderPath = path.join(projectsSrcDir, folder);
+    const folderPath = path.join(sourceFolder, folder);
     const projectId = toKebabCase(folder);
     const projectTitle = folder;
     const projectColor = GLOW_COLORS[colorIndex % GLOW_COLORS.length];
@@ -168,8 +168,8 @@ async function optimizeImages() {
   }
 
   // Write database
-  fs.writeFileSync(jsonDbPath, JSON.stringify(database, null, 2), 'utf-8');
-  console.log(`\nDatabase generated successfully at: ${jsonDbPath}`);
+  fs.writeFileSync(targetDatabase, JSON.stringify(database, null, 2), 'utf-8');
+  console.log(`\nDatabase generated successfully at: ${targetDatabase}`);
   console.log(`Optimized database contains ${database.length} entries.`);
   console.log('--- MULTI-PROJECT PIPELINE COMPLETED ---');
 }

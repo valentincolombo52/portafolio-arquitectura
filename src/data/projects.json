@@ -14,11 +14,11 @@
     "thumbnail": "/thumbnails/bicho/p1-1.webp",
     "fullImage": "/projects/bicho/p1-1.webp",
     "initialPosition": [
-      7.378989555193255,
-      -13.031187711252977,
+      -13.720466236528273,
+      -10.972903476332252,
       0
     ],
-    "initialRotation": -0.09948859742528995,
+    "initialRotation": -0.07249468148892393,
     "scale": [
       5.658064516129032,
       4,
@@ -40,11 +40,11 @@
     "thumbnail": "/thumbnails/bicho/p2.webp",
     "fullImage": "/projects/bicho/p2.webp",
     "initialPosition": [
-      -24.123905627102438,
-      3.5171137539899315,
+      14.03008023442484,
+      -10.716255100614918,
       0
     ],
-    "initialRotation": -0.09448055893618579,
+    "initialRotation": 0.10607704832581732,
     "scale": [
       5.658064516129032,
       4,
@@ -66,11 +66,11 @@
     "thumbnail": "/thumbnails/bicho/p3.webp",
     "fullImage": "/projects/bicho/p3.webp",
     "initialPosition": [
-      -12.902553495062103,
-      6.8943899638252795,
+      -16.400379291105725,
+      15.00224663870563,
       0
     ],
-    "initialRotation": 0.08465550388178936,
+    "initialRotation": -0.044039977323367785,
     "scale": [
       5.658064516129032,
       4,
@@ -92,11 +92,11 @@
     "thumbnail": "/thumbnails/campo-y-ciudad/1-abertura.webp",
     "fullImage": "/projects/campo-y-ciudad/1-abertura.webp",
     "initialPosition": [
-      -23.22566849552135,
-      7.560622018644513,
+      -13.761958320760293,
+      14.496887647070265,
       0
     ],
-    "initialRotation": -0.021776025193271237,
+    "initialRotation": 0.12178078843377388,
     "scale": [
       5.655644241733182,
       4,
@@ -118,11 +118,11 @@
     "thumbnail": "/thumbnails/campo-y-ciudad/10.webp",
     "fullImage": "/projects/campo-y-ciudad/10.webp",
     "initialPosition": [
-      22.6543138969995,
-      -10.319584143417451,
+      2.5153911290676345,
+      -1.770980899215369,
       0
     ],
-    "initialRotation": 0.10128417993069219,
+    "initialRotation": -0.02113170669002795,
     "scale": [
       5.655644241733182,
       4,
@@ -144,11 +144,11 @@
     "thumbnail": "/thumbnails/campo-y-ciudad/11.webp",
     "fullImage": "/projects/campo-y-ciudad/11.webp",
     "initialPosition": [
-      -21.512962810003977,
-      10.119925529851267,
+      -12.789480951048017,
+      -16.997183328011772,
       0
     ],
-    "initialRotation": -0.09821770332059354,
+    "initialRotation": 0.019569118638573607,
     "scale": [
       5.655644241733182,
       4,
@@ -170,11 +170,11 @@
     "thumbnail": "/thumbnails/campo-y-ciudad/12b.webp",
     "fullImage": "/projects/campo-y-ciudad/12b.webp",
     "initialPosition": [
-      2.958955576448102,
-      0.4458633838725329,
+      -1.688040024661397,
+      12.247402433825101,
       0
     ],
-    "initialRotation": 0.1213260274782424,
+    "initialRotation": 0.10594154180780957,
     "scale": [
       5.655644241733182,
       4,
@@ -196,11 +196,11 @@
     "thumbnail": "/thumbnails/campo-y-ciudad/13a.webp",
     "fullImage": "/projects/campo-y-ciudad/13a.webp",
     "initialPosition": [
-      1.789241804289654,
-      10.501282263976563,
+      -15.488350266578903,
+      6.9976127503790595,
       0
     ],
-    "initialRotation": 0.0007857611835146161,
+    "initialRotation": -0.03606772882044049,
     "scale": [
       5.655644241733182,
       4,
@@ -222,11 +222,11 @@
     "thumbnail": "/thumbnails/campo-y-ciudad/13b.webp",
     "fullImage": "/projects/campo-y-ciudad/13b.webp",
     "initialPosition": [
-      2.5479540470120354,
-      -6.112525710252073,
+      -24.622601787140503,
+      15.432582290043227,
       0
     ],
-    "initialRotation": 0.0710364606914278,
+    "initialRotation": 0.016244512246172932,
     "scale": [
       5.655644241733182,
       4,
@@ -248,11 +248,11 @@
     "thumbnail": "/thumbnails/campo-y-ciudad/14b.webp",
     "fullImage": "/projects/campo-y-ciudad/14b.webp",
     "initialPosition": [
-      10.37044038382256,
-      7.392441374278521,
+      18.596731113719372,
+      10.38919605045752,
       0
     ],
-    "initialRotation": -0.11670073733460659,
+    "initialRotation": 0.08829780838323084,
     "scale": [
       5.655644241733182,
       4,
@@ -274,11 +274,11 @@
     "thumbnail": "/thumbnails/campo-y-ciudad/15.webp",
     "fullImage": "/projects/campo-y-ciudad/15.webp",
     "initialPosition": [
-      -6.855434865092236,
-      -16.114127284102565,
+      4.958239406299281,
+      8.451641183197072,
       0
     ],
-    "initialRotation": 0.03566339451951703,
+    "initialRotation": 0.06155862236966611,
     "scale": [
       5.655644241733182,
       4,
@@ -300,11 +300,11 @@
     "thumbnail": "/thumbnails/campo-y-ciudad/16.webp",
     "fullImage": "/projects/campo-y-ciudad/16.webp",
     "initialPosition": [
-      11.517447707454675,
-      -1.5081769748766682,
+      14.880846787941266,
+      -1.0868821701584808,
       0
     ],
-    "initialRotation": -0.08678105739699726,
+    "initialRotation": -0.056743355252805106,
     "scale": [
       5.655644241733182,
       4,
@@ -326,11 +326,11 @@
     "thumbnail": "/thumbnails/campo-y-ciudad/17.webp",
     "fullImage": "/projects/campo-y-ciudad/17.webp",
     "initialPosition": [
-      5.722676557175349,
-      -3.234975488023765,
+      -18.853574186330018,
+      6.327839907818852,
       0
     ],
-    "initialRotation": 0.1127076454521021,
+    "initialRotation": -0.05752805013270121,
     "scale": [
       5.655644241733182,
       4,
@@ -352,11 +352,11 @@
     "thumbnail": "/thumbnails/campo-y-ciudad/18.webp",
     "fullImage": "/projects/campo-y-ciudad/18.webp",
     "initialPosition": [
-      21.84745345481889,
-      10.665709830005166,
+      24.57222395032572,
+      13.805453490788018,
       0
     ],
-    "initialRotation": -0.06933182188642628,
+    "initialRotation": -0.022091882264300672,
     "scale": [
       5.655644241733182,
       4,
@@ -378,11 +378,11 @@
     "thumbnail": "/thumbnails/campo-y-ciudad/19.webp",
     "fullImage": "/projects/campo-y-ciudad/19.webp",
     "initialPosition": [
-      2.4348943367886458,
-      7.846224504960512,
+      -18.57633186798188,
+      -13.686180559940311,
       0
     ],
-    "initialRotation": 0.025937994896439914,
+    "initialRotation": -0.09586727167222939,
     "scale": [
       5.655644241733182,
       4,
@@ -404,11 +404,11 @@
     "thumbnail": "/thumbnails/campo-y-ciudad/2-3-4.webp",
     "fullImage": "/projects/campo-y-ciudad/2-3-4.webp",
     "initialPosition": [
-      21.501516131196414,
-      -12.611452109589694,
+      -8.109806098617394,
+      3.6981563000815436,
       0
     ],
-    "initialRotation": 0.10418898325908826,
+    "initialRotation": -0.03272120432995834,
     "scale": [
       5.655644241733182,
       4,
@@ -430,11 +430,11 @@
     "thumbnail": "/thumbnails/campo-y-ciudad/20.webp",
     "fullImage": "/projects/campo-y-ciudad/20.webp",
     "initialPosition": [
-      -14.909869552486448,
-      -1.5005822739056418,
+      8.137878329665305,
+      3.9103591049186672,
       0
     ],
-    "initialRotation": -0.07040177457027316,
+    "initialRotation": 0.11344542367104393,
     "scale": [
       5.655644241733182,
       4,
@@ -456,11 +456,11 @@
     "thumbnail": "/thumbnails/campo-y-ciudad/20b.webp",
     "fullImage": "/projects/campo-y-ciudad/20b.webp",
     "initialPosition": [
-      -18.976829289004915,
-      7.637819257131962,
+      5.824160328762973,
+      13.681619692050319,
       0
     ],
-    "initialRotation": 0.0295412008761482,
+    "initialRotation": -0.09942202596594832,
     "scale": [
       5.655644241733182,
       4,
@@ -482,11 +482,11 @@
     "thumbnail": "/thumbnails/campo-y-ciudad/21.webp",
     "fullImage": "/projects/campo-y-ciudad/21.webp",
     "initialPosition": [
-      -18.28070255046595,
-      -6.461242157421622,
+      4.401066356130945,
+      -10.5466877187577,
       0
     ],
-    "initialRotation": -0.05293919948556303,
+    "initialRotation": 0.007332299348994903,
     "scale": [
       5.655644241733182,
       4,
@@ -508,11 +508,11 @@
     "thumbnail": "/thumbnails/campo-y-ciudad/22.webp",
     "fullImage": "/projects/campo-y-ciudad/22.webp",
     "initialPosition": [
-      -21.624976205891826,
-      -4.501191849515781,
+      -16.219725606972972,
+      -8.105830815031409,
       0
     ],
-    "initialRotation": -0.015530251164390024,
+    "initialRotation": 0.01182636296941389,
     "scale": [
       5.655644241733182,
       4,
@@ -534,11 +534,11 @@
     "thumbnail": "/thumbnails/campo-y-ciudad/23.webp",
     "fullImage": "/projects/campo-y-ciudad/23.webp",
     "initialPosition": [
-      -11.676010973728795,
-      -2.3154720702896454,
+      0.6881016117023908,
+      -1.6492847184918003,
       0
     ],
-    "initialRotation": 0.05480142161362661,
+    "initialRotation": 0.1077955698181911,
     "scale": [
       5.655644241733182,
       4,
@@ -560,11 +560,11 @@
     "thumbnail": "/thumbnails/campo-y-ciudad/24.webp",
     "fullImage": "/projects/campo-y-ciudad/24.webp",
     "initialPosition": [
-      -3.1447188714134877,
-      -2.6779339617048215,
+      22.212019102134974,
+      6.162356781293437,
       0
     ],
-    "initialRotation": -0.06500305103016357,
+    "initialRotation": 0.055777262976851316,
     "scale": [
       5.655644241733182,
       4,
@@ -586,11 +586,11 @@
     "thumbnail": "/thumbnails/campo-y-ciudad/25.webp",
     "fullImage": "/projects/campo-y-ciudad/25.webp",
     "initialPosition": [
-      14.206585887090156,
-      17.141810201279046,
+      7.835315076499033,
+      10.065600230245778,
       0
     ],
-    "initialRotation": -0.11920868789290828,
+    "initialRotation": -0.12089239366902238,
     "scale": [
       5.655644241733182,
       4,
@@ -612,11 +612,11 @@
     "thumbnail": "/thumbnails/campo-y-ciudad/26b.webp",
     "fullImage": "/projects/campo-y-ciudad/26b.webp",
     "initialPosition": [
-      -17.640072919144405,
-      -2.7489935944473936,
+      -4.56474039136236,
+      11.163488729859758,
       0
     ],
-    "initialRotation": -0.030928248758722715,
+    "initialRotation": -0.04642567301092035,
     "scale": [
       5.655644241733182,
       4,
@@ -638,11 +638,11 @@
     "thumbnail": "/thumbnails/campo-y-ciudad/5c.webp",
     "fullImage": "/projects/campo-y-ciudad/5c.webp",
     "initialPosition": [
-      24.478304174118254,
-      5.313465378819241,
+      -3.115147681248337,
+      17.415743530121464,
       0
     ],
-    "initialRotation": 0.002000088980561837,
+    "initialRotation": -0.013799011859990606,
     "scale": [
       5.655644241733182,
       4,
@@ -664,11 +664,11 @@
     "thumbnail": "/thumbnails/campo-y-ciudad/6b.webp",
     "fullImage": "/projects/campo-y-ciudad/6b.webp",
     "initialPosition": [
-      17.07496614518448,
-      -13.019350637837535,
+      -7.176805520623242,
+      -3.3592503479905726,
       0
     ],
-    "initialRotation": 0.004472954575860305,
+    "initialRotation": 0.09381845177138806,
     "scale": [
       5.655644241733182,
       4,
@@ -690,11 +690,11 @@
     "thumbnail": "/thumbnails/campo-y-ciudad/6b-jusitificacion-al-problema.webp",
     "fullImage": "/projects/campo-y-ciudad/6b-jusitificacion-al-problema.webp",
     "initialPosition": [
-      17.99397152935887,
-      0.5388885710325503,
+      22.00548331814157,
+      -6.039393637597222,
       0
     ],
-    "initialRotation": 0.10857605014400548,
+    "initialRotation": -0.02606699543385052,
     "scale": [
       5.655644241733182,
       4,
@@ -716,11 +716,11 @@
     "thumbnail": "/thumbnails/campo-y-ciudad/7b.webp",
     "fullImage": "/projects/campo-y-ciudad/7b.webp",
     "initialPosition": [
-      7.6107072214835645,
-      -12.543142439856881,
+      -6.445465041715953,
+      5.96475001538294,
       0
     ],
-    "initialRotation": 0.08376858656319308,
+    "initialRotation": 0.05075270760042366,
     "scale": [
       5.655644241733182,
       4,
@@ -742,11 +742,11 @@
     "thumbnail": "/thumbnails/campo-y-ciudad/8b.webp",
     "fullImage": "/projects/campo-y-ciudad/8b.webp",
     "initialPosition": [
-      -22.718906538349355,
-      -6.066842152400079,
+      -21.31148551755696,
+      -0.49655315263309796,
       0
     ],
-    "initialRotation": -0.11318170045344841,
+    "initialRotation": -0.031474256716299914,
     "scale": [
       5.655644241733182,
       4,
@@ -768,11 +768,11 @@
     "thumbnail": "/thumbnails/campo-y-ciudad/9b.webp",
     "fullImage": "/projects/campo-y-ciudad/9b.webp",
     "initialPosition": [
-      13.912973378881105,
-      -13.808494394068193,
+      4.630414866387655,
+      1.3598619647338612,
       0
     ],
-    "initialRotation": -0.07298717164730678,
+    "initialRotation": 0.07624098103654703,
     "scale": [
       5.655644241733182,
       4,
@@ -794,11 +794,11 @@
     "thumbnail": "/thumbnails/campo-y-ciudad/abertura-b.webp",
     "fullImage": "/projects/campo-y-ciudad/abertura-b.webp",
     "initialPosition": [
-      9.074136619826717,
-      1.4055105906172383,
+      0.18142925234607143,
+      -14.959957881479637,
       0
     ],
-    "initialRotation": -0.0923748308150446,
+    "initialRotation": 0.11903489888837776,
     "scale": [
       5.655644241733182,
       4,
@@ -820,11 +820,11 @@
     "thumbnail": "/thumbnails/campo-trabajo-y-educacion/1.webp",
     "fullImage": "/projects/campo-trabajo-y-educacion/1.webp",
     "initialPosition": [
-      -11.147726006711018,
-      7.437360727188298,
+      -16.73647311408487,
+      -9.031532098278586,
       0
     ],
-    "initialRotation": -0.06485200520670359,
+    "initialRotation": 0.11923068548295448,
     "scale": [
       5.655644241733182,
       4,
@@ -846,11 +846,11 @@
     "thumbnail": "/thumbnails/campo-trabajo-y-educacion/2.webp",
     "fullImage": "/projects/campo-trabajo-y-educacion/2.webp",
     "initialPosition": [
-      -11.816556552478957,
-      -15.850168976872585,
+      -12.407210291831644,
+      2.2887254780906647,
       0
     ],
-    "initialRotation": -0.09772436827145298,
+    "initialRotation": 0.08901465077489418,
     "scale": [
       5.655644241733182,
       4,
@@ -872,11 +872,11 @@
     "thumbnail": "/thumbnails/campo-trabajo-y-educacion/3.webp",
     "fullImage": "/projects/campo-trabajo-y-educacion/3.webp",
     "initialPosition": [
-      13.73551380060934,
-      -12.980938011712455,
+      -5.14585268135836,
+      4.786504392023335,
       0
     ],
-    "initialRotation": -0.05649740604204337,
+    "initialRotation": 0.10128495482189478,
     "scale": [
       5.655644241733182,
       4,
@@ -898,11 +898,11 @@
     "thumbnail": "/thumbnails/campo-trabajo-y-educacion/4.webp",
     "fullImage": "/projects/campo-trabajo-y-educacion/4.webp",
     "initialPosition": [
-      18.416629577682038,
-      -5.715610597749869,
+      16.94703443074958,
+      7.521260783737923,
       0
     ],
-    "initialRotation": 0.11423598189175663,
+    "initialRotation": 0.1054010850101007,
     "scale": [
       5.655644241733182,
       4,
@@ -924,11 +924,11 @@
     "thumbnail": "/thumbnails/campo-trabajo-y-educacion/5-variables-minimas.webp",
     "fullImage": "/projects/campo-trabajo-y-educacion/5-variables-minimas.webp",
     "initialPosition": [
-      10.823315885637214,
-      -4.617198818230814,
+      -8.993839912110852,
+      -1.410096478949373,
       0
     ],
-    "initialRotation": -0.08723846636955346,
+    "initialRotation": 0.03180261012173122,
     "scale": [
       5.655644241733182,
       4,
@@ -950,11 +950,11 @@
     "thumbnail": "/thumbnails/campo-trabajo-y-educacion/6-partes.webp",
     "fullImage": "/projects/campo-trabajo-y-educacion/6-partes.webp",
     "initialPosition": [
-      -4.763060085291981,
-      5.152917056541083,
+      7.271441445278537,
+      -12.373380125882345,
       0
     ],
-    "initialRotation": 0.10715514975441667,
+    "initialRotation": -0.05156869307921655,
     "scale": [
       5.655644241733182,
       4,
@@ -976,11 +976,11 @@
     "thumbnail": "/thumbnails/campo-trabajo-y-educacion/7-partes.webp",
     "fullImage": "/projects/campo-trabajo-y-educacion/7-partes.webp",
     "initialPosition": [
-      19.621006690343613,
-      4.599507215778535,
+      -6.329338582256661,
+      14.578608838437786,
       0
     ],
-    "initialRotation": -0.09527866964406953,
+    "initialRotation": -0.021783087806297452,
     "scale": [
       5.655644241733182,
       4,
@@ -1002,11 +1002,11 @@
     "thumbnail": "/thumbnails/campo-trabajo-y-educacion/8-partes.webp",
     "fullImage": "/projects/campo-trabajo-y-educacion/8-partes.webp",
     "initialPosition": [
-      -13.089641854424272,
-      -10.181365829107495,
+      23.813298227895928,
+      -3.7080164598696923,
       0
     ],
-    "initialRotation": -0.12377425932315672,
+    "initialRotation": 0.05989256877740301,
     "scale": [
       5.655644241733182,
       4,
@@ -1028,11 +1028,11 @@
     "thumbnail": "/thumbnails/diagramas-y-ensayos/28-8-collagge-2.webp",
     "fullImage": "/projects/diagramas-y-ensayos/28-8-collagge-2.webp",
     "initialPosition": [
-      -13.35267388740311,
-      -0.24906165514246292,
+      22.665710321651396,
+      -6.546340172814275,
       0
     ],
-    "initialRotation": -0.10659043964275683,
+    "initialRotation": 0.11971492675592327,
     "scale": [
       5.655644241733182,
       4,
@@ -1054,11 +1054,11 @@
     "thumbnail": "/thumbnails/diagramas-y-ensayos/28-8-collagge-3.webp",
     "fullImage": "/projects/diagramas-y-ensayos/28-8-collagge-3.webp",
     "initialPosition": [
-      9.497713212176206,
-      1.1583883455327348,
+      -22.161128278783078,
+      -1.7234225842116517,
       0
     ],
-    "initialRotation": 0.1247196429682201,
+    "initialRotation": 0.11758734350084346,
     "scale": [
       5.656784492588369,
       4,
@@ -1080,11 +1080,11 @@
     "thumbnail": "/thumbnails/diagramas-y-ensayos/cbc.webp",
     "fullImage": "/projects/diagramas-y-ensayos/cbc.webp",
     "initialPosition": [
-      -22.653880813171785,
-      -1.280396795740032,
+      -7.887030472723206,
+      8.476604516036389,
       0
     ],
-    "initialRotation": 0.03538921086724586,
+    "initialRotation": 0.09434798464777822,
     "scale": [
       5.333333333333333,
       4,
@@ -1106,11 +1106,11 @@
     "thumbnail": "/thumbnails/diagramas-y-ensayos/clase-17-modelo-de-espacio-publico.webp",
     "fullImage": "/projects/diagramas-y-ensayos/clase-17-modelo-de-espacio-publico.webp",
     "initialPosition": [
-      -9.637280641640123,
-      15.212151503009991,
+      -18.439289949699244,
+      5.211882483147317,
       0
     ],
-    "initialRotation": 0.058712518613778825,
+    "initialRotation": 0.055450472775965265,
     "scale": [
       5.656784492588369,
       4,
@@ -1132,11 +1132,11 @@
     "thumbnail": "/thumbnails/diagramas-y-ensayos/clase-5-final-e3-espacio-b.webp",
     "fullImage": "/projects/diagramas-y-ensayos/clase-5-final-e3-espacio-b.webp",
     "initialPosition": [
-      23.200728357260893,
-      8.309418993263547,
+      -16.68088567071317,
+      -7.725728256048735,
       0
     ],
-    "initialRotation": -0.06666810976920928,
+    "initialRotation": -0.04806023426653905,
     "scale": [
       5.655644241733182,
       4,
@@ -1158,11 +1158,11 @@
     "thumbnail": "/thumbnails/diagramas-y-ensayos/diagrama-a.webp",
     "fullImage": "/projects/diagramas-y-ensayos/diagrama-a.webp",
     "initialPosition": [
-      24.1850941602011,
-      1.8776393699732707,
+      -12.86793221578887,
+      9.910585313678363,
       0
     ],
-    "initialRotation": 0.07843627480613019,
+    "initialRotation": -0.10051539732984738,
     "scale": [
       5.658064516129032,
       4,
@@ -1184,11 +1184,11 @@
     "thumbnail": "/thumbnails/diagramas-y-ensayos/e-collagge-y-perspectivas.webp",
     "fullImage": "/projects/diagramas-y-ensayos/e-collagge-y-perspectivas.webp",
     "initialPosition": [
-      13.423601382321998,
-      -13.701264611482209,
+      9.64530333999209,
+      -4.701810047345343,
       0
     ],
-    "initialRotation": -0.010235170488649165,
+    "initialRotation": 0.08942968298528195,
     "scale": [
       5.656784492588369,
       4,
@@ -1210,11 +1210,11 @@
     "thumbnail": "/thumbnails/m1/1.webp",
     "fullImage": "/projects/m1/1.webp",
     "initialPosition": [
-      -16.970865257478003,
-      15.955946206116195,
+      22.572186347579887,
+      9.9647385769788,
       0
     ],
-    "initialRotation": 0.09822527240357684,
+    "initialRotation": -0.02297620998630731,
     "scale": [
       5.655644241733182,
       4,
@@ -1236,11 +1236,11 @@
     "thumbnail": "/thumbnails/m1/2.webp",
     "fullImage": "/projects/m1/2.webp",
     "initialPosition": [
-      1.8120443774834238,
-      -9.697400142322014,
+      -7.8680278925273015,
+      -9.750077008171058,
       0
     ],
-    "initialRotation": 0.029074882804955654,
+    "initialRotation": -0.03537868837982566,
     "scale": [
       5.655644241733182,
       4,
@@ -1262,11 +1262,11 @@
     "thumbnail": "/thumbnails/m1/3.webp",
     "fullImage": "/projects/m1/3.webp",
     "initialPosition": [
-      12.180162094169777,
-      -1.5093914326941205,
+      -11.062370887639068,
+      -9.408037611325948,
       0
     ],
-    "initialRotation": -0.10725442034756871,
+    "initialRotation": -0.09634487690143179,
     "scale": [
       5.655644241733182,
       4,
@@ -1288,11 +1288,11 @@
     "thumbnail": "/thumbnails/m1/4.webp",
     "fullImage": "/projects/m1/4.webp",
     "initialPosition": [
-      -16.46207986843858,
-      -5.932431232208855,
+      -18.85806189290457,
+      -12.407430369146676,
       0
     ],
-    "initialRotation": -0.012432335362128122,
+    "initialRotation": -0.07716658586701716,
     "scale": [
       5.655644241733182,
       4,
@@ -1314,11 +1314,11 @@
     "thumbnail": "/thumbnails/m1/5.webp",
     "fullImage": "/projects/m1/5.webp",
     "initialPosition": [
-      23.861127299132267,
-      14.008950613625247,
+      -0.28474677106502533,
+      15.917561107309835,
       0
     ],
-    "initialRotation": 0.08729230673600513,
+    "initialRotation": -0.0910259885511562,
     "scale": [
       5.655644241733182,
       4,
@@ -1340,11 +1340,11 @@
     "thumbnail": "/thumbnails/megacamalote/10-3-humedal-cibernetico-1.webp",
     "fullImage": "/projects/megacamalote/10-3-humedal-cibernetico-1.webp",
     "initialPosition": [
-      10.636386493685269,
-      0.03946575246630335,
+      -7.7019896774500385,
+      -6.200395750540722,
       0
     ],
-    "initialRotation": -0.03825460573016462,
+    "initialRotation": 0.037631651007450084,
     "scale": [
       5.655644241733182,
       4,
@@ -1366,11 +1366,11 @@
     "thumbnail": "/thumbnails/megacamalote/10-3-humedal-cibernetico-2.webp",
     "fullImage": "/projects/megacamalote/10-3-humedal-cibernetico-2.webp",
     "initialPosition": [
-      -21.793801874430308,
-      -1.5741338362291675,
+      -16.805643638319427,
+      -13.028441186778032,
       0
     ],
-    "initialRotation": 0.013359514265520595,
+    "initialRotation": -0.0651656924721988,
     "scale": [
       5.655644241733182,
       4,
@@ -1392,11 +1392,11 @@
     "thumbnail": "/thumbnails/megacamalote/10-3-humedal-cibernetico-3.webp",
     "fullImage": "/projects/megacamalote/10-3-humedal-cibernetico-3.webp",
     "initialPosition": [
-      -17.088718308914697,
-      6.984656219293841,
+      8.558080860601319,
+      0.7980367699772639,
       0
     ],
-    "initialRotation": -0.09921337641548539,
+    "initialRotation": 0.07763081433634805,
     "scale": [
       5.655644241733182,
       4,
@@ -1418,11 +1418,11 @@
     "thumbnail": "/thumbnails/megacamalote/10-3-humedal-cibernetico-4.webp",
     "fullImage": "/projects/megacamalote/10-3-humedal-cibernetico-4.webp",
     "initialPosition": [
-      -0.8039842690947541,
-      2.595937047875099,
+      10.911303699477582,
+      -11.007914899107393,
       0
     ],
-    "initialRotation": -0.07592115232581634,
+    "initialRotation": -0.014325353088930265,
     "scale": [
       5.655644241733182,
       4,
@@ -1444,11 +1444,11 @@
     "thumbnail": "/thumbnails/megacamalote/10-3-humedal-cibernetico-5.webp",
     "fullImage": "/projects/megacamalote/10-3-humedal-cibernetico-5.webp",
     "initialPosition": [
-      -21.327652352895615,
-      11.35111073216614,
+      20.635418397430204,
+      16.759597474690704,
       0
     ],
-    "initialRotation": 0.07731852108914392,
+    "initialRotation": -0.11591538478407021,
     "scale": [
       6.019417475728155,
       4,
@@ -1470,11 +1470,11 @@
     "thumbnail": "/thumbnails/megacamalote/10-3-humedal-cibernetico-6.webp",
     "fullImage": "/projects/megacamalote/10-3-humedal-cibernetico-6.webp",
     "initialPosition": [
-      0.6634391683728591,
-      -9.616343842003992,
+      -20.300657026459568,
+      -14.803605627179595,
       0
     ],
-    "initialRotation": -0.06715773023141527,
+    "initialRotation": -0.05285336795001333,
     "scale": [
       5.655644241733182,
       4,
@@ -1496,11 +1496,11 @@
     "thumbnail": "/thumbnails/megacamalote/10-3-humedal-cibernetico-e.webp",
     "fullImage": "/projects/megacamalote/10-3-humedal-cibernetico-e.webp",
     "initialPosition": [
-      2.4714741438997434,
-      2.0800260004453186,
+      -3.5558270389345337,
+      8.046982494574127,
       0
     ],
-    "initialRotation": 0.05796345239443204,
+    "initialRotation": -0.06548521156857645,
     "scale": [
       5.655644241733182,
       4,
@@ -1522,11 +1522,11 @@
     "thumbnail": "/thumbnails/morfologia-1/1.webp",
     "fullImage": "/projects/morfologia-1/1.webp",
     "initialPosition": [
-      16.834157015250945,
-      1.2287827002076983,
+      -21.062257466489303,
+      7.6285066305472595,
       0
     ],
-    "initialRotation": -0.02977054574151125,
+    "initialRotation": 0.0008490126617948235,
     "scale": [
       5.655644241733182,
       4,
@@ -1548,11 +1548,11 @@
     "thumbnail": "/thumbnails/morfologia-1/2.webp",
     "fullImage": "/projects/morfologia-1/2.webp",
     "initialPosition": [
-      -22.0090812494878,
-      15.775451250031733,
+      -3.6193707395332844,
+      -14.03041559871814,
       0
     ],
-    "initialRotation": 0.10430628328941968,
+    "initialRotation": 0.05063199342124286,
     "scale": [
       5.655644241733182,
       4,
@@ -1574,11 +1574,11 @@
     "thumbnail": "/thumbnails/morfologia-1/3.webp",
     "fullImage": "/projects/morfologia-1/3.webp",
     "initialPosition": [
-      -2.327260800661035,
-      5.44280324038431,
+      0.2740452967477047,
+      -0.6319850564308843,
       0
     ],
-    "initialRotation": -0.1052089399170113,
+    "initialRotation": 0.03207881316423564,
     "scale": [
       5.655644241733182,
       4,
@@ -1600,11 +1600,11 @@
     "thumbnail": "/thumbnails/morfologia-1/4.webp",
     "fullImage": "/projects/morfologia-1/4.webp",
     "initialPosition": [
-      -16.2428938000442,
-      -14.536872364804815,
+      2.30324455655031,
+      8.730642836265334,
       0
     ],
-    "initialRotation": 0.08500224147452329,
+    "initialRotation": 0.06286424262283721,
     "scale": [
       5.655644241733182,
       4,
@@ -1626,11 +1626,11 @@
     "thumbnail": "/thumbnails/morfologia-1/5.webp",
     "fullImage": "/projects/morfologia-1/5.webp",
     "initialPosition": [
-      18.388975330178013,
-      1.1635759747013403,
+      -7.185869554648338,
+      -12.997590823482804,
       0
     ],
-    "initialRotation": 0.006353670748374729,
+    "initialRotation": -0.012251912536259402,
     "scale": [
       5.655644241733182,
       4,
@@ -1652,11 +1652,11 @@
     "thumbnail": "/thumbnails/reconstruccion-civica/30-11-constructivo-1.webp",
     "fullImage": "/projects/reconstruccion-civica/30-11-constructivo-1.webp",
     "initialPosition": [
-      -11.053208787462744,
-      10.431038363442603,
+      21.814612954982877,
+      -16.4079038832817,
       0
     ],
-    "initialRotation": 0.08822996372841546,
+    "initialRotation": -0.01099256834182094,
     "scale": [
       3,
       3,
@@ -1678,11 +1678,11 @@
     "thumbnail": "/thumbnails/reconstruccion-civica/30-11-constructivo-2.webp",
     "fullImage": "/projects/reconstruccion-civica/30-11-constructivo-2.webp",
     "initialPosition": [
-      -22.900014687924987,
-      -7.108888572678575,
+      -1.551694989619934,
+      -13.328807306510274,
       0
     ],
-    "initialRotation": -0.021952295760509832,
+    "initialRotation": 0.11275060730650707,
     "scale": [
       3,
       3,
@@ -1704,11 +1704,11 @@
     "thumbnail": "/thumbnails/reconstruccion-civica/30-11-constructivo-3.webp",
     "fullImage": "/projects/reconstruccion-civica/30-11-constructivo-3.webp",
     "initialPosition": [
-      -21.18610017902478,
-      4.760705786135148,
+      21.40743733451514,
+      -4.886505113083284,
       0
     ],
-    "initialRotation": -0.08011729681987775,
+    "initialRotation": 0.11147380666783663,
     "scale": [
       3,
       3,
@@ -1730,11 +1730,11 @@
     "thumbnail": "/thumbnails/reconstruccion-civica/30-11-diagrama-inicial.webp",
     "fullImage": "/projects/reconstruccion-civica/30-11-diagrama-inicial.webp",
     "initialPosition": [
-      14.793922114175329,
-      5.2690719191172155,
+      8.939820612593163,
+      14.494118078443183,
       0
     ],
-    "initialRotation": -0.05025231445406503,
+    "initialRotation": 0.11385115088490105,
     "scale": [
       3,
       3,
@@ -1756,11 +1756,11 @@
     "thumbnail": "/thumbnails/reconstruccion-civica/30-11-diagrama-programatico-1.webp",
     "fullImage": "/projects/reconstruccion-civica/30-11-diagrama-programatico-1.webp",
     "initialPosition": [
-      18.400354408865283,
-      2.6424920872565405,
+      -5.5977911280779225,
+      9.119089446233971,
       0
     ],
-    "initialRotation": 0.005171560703199102,
+    "initialRotation": 0.005006108988604374,
     "scale": [
       3,
       3,
@@ -1782,11 +1782,11 @@
     "thumbnail": "/thumbnails/reconstruccion-civica/30-11-diagrama-programatico-2.webp",
     "fullImage": "/projects/reconstruccion-civica/30-11-diagrama-programatico-2.webp",
     "initialPosition": [
-      4.88157605051911,
-      -0.5837483461603504,
+      5.867051184158612,
+      16.333692945201253,
       0
     ],
-    "initialRotation": 0.062268804354745605,
+    "initialRotation": -0.03139709789893086,
     "scale": [
       3,
       3,
@@ -1808,11 +1808,11 @@
     "thumbnail": "/thumbnails/reconstruccion-civica/30-11-diagrama-programatico-3.webp",
     "fullImage": "/projects/reconstruccion-civica/30-11-diagrama-programatico-3.webp",
     "initialPosition": [
-      -10.25472546397187,
-      -4.09566454821468,
+      2.8496214703443936,
+      -7.149831510986255,
       0
     ],
-    "initialRotation": -0.07906508370234169,
+    "initialRotation": 0.007575191893283567,
     "scale": [
       3,
       3,
@@ -1834,11 +1834,11 @@
     "thumbnail": "/thumbnails/reconstruccion-civica/30-11-implantacion.webp",
     "fullImage": "/projects/reconstruccion-civica/30-11-implantacion.webp",
     "initialPosition": [
-      16.537854673402773,
-      -2.384143424783731,
+      7.624580978530377,
+      16.81033490147064,
       0
     ],
-    "initialRotation": -0.03147960013295609,
+    "initialRotation": 0.03924435258640152,
     "scale": [
       3,
       3,
@@ -1860,11 +1860,11 @@
     "thumbnail": "/thumbnails/reconstruccion-civica/30-11-p1-p2.webp",
     "fullImage": "/projects/reconstruccion-civica/30-11-p1-p2.webp",
     "initialPosition": [
-      -0.43387830852922304,
-      -14.0218862142102,
+      4.934548111570986,
+      -8.465733434335682,
       0
     ],
-    "initialRotation": 0.10225488385294251,
+    "initialRotation": 0.06642926103901373,
     "scale": [
       3,
       3,
@@ -1886,11 +1886,11 @@
     "thumbnail": "/thumbnails/reconstruccion-civica/30-11-pb.webp",
     "fullImage": "/projects/reconstruccion-civica/30-11-pb.webp",
     "initialPosition": [
-      -13.1652128564894,
-      -6.6013292939622055,
+      0.05350723697003512,
+      6.8634496563101886,
       0
     ],
-    "initialRotation": 0.045778300358457646,
+    "initialRotation": 0.0442373937954304,
     "scale": [
       3,
       3,
@@ -1912,11 +1912,11 @@
     "thumbnail": "/thumbnails/reconstruccion-civica/30-11-pt.webp",
     "fullImage": "/projects/reconstruccion-civica/30-11-pt.webp",
     "initialPosition": [
-      23.919469749671485,
-      -7.8370365509817566,
+      -3.5289856938669484,
+      12.918549683229006,
       0
     ],
-    "initialRotation": -0.030660603631940425,
+    "initialRotation": -0.10913495304082521,
     "scale": [
       3,
       3,
@@ -1938,11 +1938,11 @@
     "thumbnail": "/thumbnails/reconstruccion-civica/30-11-render-1-1.webp",
     "fullImage": "/projects/reconstruccion-civica/30-11-render-1-1.webp",
     "initialPosition": [
-      3.902761400651383,
-      -1.836651233954432,
+      -15.613997022086457,
+      12.040783634667331,
       0
     ],
-    "initialRotation": -0.04988614685076059,
+    "initialRotation": 0.05125881316915323,
     "scale": [
       3,
       3,
@@ -1964,11 +1964,11 @@
     "thumbnail": "/thumbnails/reconstruccion-civica/30-11-render-1.webp",
     "fullImage": "/projects/reconstruccion-civica/30-11-render-1.webp",
     "initialPosition": [
-      18.761198931760525,
-      -10.781790426783749,
+      -7.433258238798423,
+      -16.804628157473235,
       0
     ],
-    "initialRotation": -0.0751369928320787,
+    "initialRotation": -0.11463617271697155,
     "scale": [
       3,
       3,
@@ -1990,11 +1990,11 @@
     "thumbnail": "/thumbnails/reconstruccion-civica/30-11-render-2.webp",
     "fullImage": "/projects/reconstruccion-civica/30-11-render-2.webp",
     "initialPosition": [
-      20.00581557538303,
-      1.1220690917696756,
+      -12.061623909876529,
+      -0.46221349932022926,
       0
     ],
-    "initialRotation": 0.0051123177868775405,
+    "initialRotation": -0.09421503157950897,
     "scale": [
       3,
       3,
@@ -2016,11 +2016,11 @@
     "thumbnail": "/thumbnails/reconstruccion-civica/30-11-render-3.webp",
     "fullImage": "/projects/reconstruccion-civica/30-11-render-3.webp",
     "initialPosition": [
-      1.7603964554193219,
-      4.348328736603916,
+      23.359081626549216,
+      6.278457589582967,
       0
     ],
-    "initialRotation": -0.11758631265817013,
+    "initialRotation": 0.0061385887948102735,
     "scale": [
       3,
       3,
@@ -2042,11 +2042,11 @@
     "thumbnail": "/thumbnails/reconstruccion-civica/30-11-render-4.webp",
     "fullImage": "/projects/reconstruccion-civica/30-11-render-4.webp",
     "initialPosition": [
-      -22.05409055346052,
-      13.986801820986157,
+      -16.173821534389248,
+      -1.3051038715462926,
       0
     ],
-    "initialRotation": 0.052809189922763344,
+    "initialRotation": -0.12423547036593388,
     "scale": [
       3,
       3,
@@ -2068,11 +2068,11 @@
     "thumbnail": "/thumbnails/reconstruccion-civica/30-11-render-7.webp",
     "fullImage": "/projects/reconstruccion-civica/30-11-render-7.webp",
     "initialPosition": [
-      -12.711021706722741,
-      8.299619215730065,
+      -20.479521863173545,
+      -3.7565218472461614,
       0
     ],
-    "initialRotation": 0.12492017421235832,
+    "initialRotation": 0.11813204122365478,
     "scale": [
       3,
       3,
@@ -2094,11 +2094,11 @@
     "thumbnail": "/thumbnails/reconstruccion-civica/30-11-render-8.webp",
     "fullImage": "/projects/reconstruccion-civica/30-11-render-8.webp",
     "initialPosition": [
-      -22.10048256602818,
-      13.809032173399832,
+      15.483315736451186,
+      -13.681896201935828,
       0
     ],
-    "initialRotation": -0.1022998396190811,
+    "initialRotation": -0.03681023245486925,
     "scale": [
       3,
       3,
@@ -2120,11 +2120,11 @@
     "thumbnail": "/thumbnails/reconstruccion-civica/30-11-render-9.webp",
     "fullImage": "/projects/reconstruccion-civica/30-11-render-9.webp",
     "initialPosition": [
-      0.7309463224424051,
-      -9.986420010269027,
+      6.964384812015206,
+      17.180291484486936,
       0
     ],
-    "initialRotation": -0.017234985358579424,
+    "initialRotation": 0.046481190435733066,
     "scale": [
       3,
       3,
@@ -2146,11 +2146,11 @@
     "thumbnail": "/thumbnails/reconstruccion-civica/30-11-render-axo-despiezada.webp",
     "fullImage": "/projects/reconstruccion-civica/30-11-render-axo-despiezada.webp",
     "initialPosition": [
-      0.915538429128665,
-      12.810019560874025,
+      6.0990440902590315,
+      11.676505972614718,
       0
     ],
-    "initialRotation": 0.011137778218502287,
+    "initialRotation": 0.11362650222475815,
     "scale": [
       3,
       3,
@@ -2172,11 +2172,11 @@
     "thumbnail": "/thumbnails/reconstruccion-civica/30-11-render-axos.webp",
     "fullImage": "/projects/reconstruccion-civica/30-11-render-axos.webp",
     "initialPosition": [
-      5.323891658150293,
-      4.092335627774071,
+      -11.974350280282376,
+      11.276169270132518,
       0
     ],
-    "initialRotation": -0.036458541170746483,
+    "initialRotation": -0.019390404581603987,
     "scale": [
       3,
       3,
@@ -2198,11 +2198,11 @@
     "thumbnail": "/thumbnails/reconstruccion-civica/30-11-vista-a.webp",
     "fullImage": "/projects/reconstruccion-civica/30-11-vista-a.webp",
     "initialPosition": [
-      14.410174230938122,
-      12.407849439678735,
+      -9.96611745434639,
+      -8.123198305303895,
       0
     ],
-    "initialRotation": 0.014857369962701483,
+    "initialRotation": 0.11270114721785693,
     "scale": [
       3,
       3,
@@ -2224,11 +2224,11 @@
     "thumbnail": "/thumbnails/reconstruccion-civica/30-11-vista-b.webp",
     "fullImage": "/projects/reconstruccion-civica/30-11-vista-b.webp",
     "initialPosition": [
-      -23.884509125321852,
-      6.83517865180148,
+      -8.287001345882588,
+      -13.65684360692325,
       0
     ],
-    "initialRotation": 0.08042687513807029,
+    "initialRotation": 0.09799179389003687,
     "scale": [
       3,
       3,
@@ -2250,11 +2250,11 @@
     "thumbnail": "/thumbnails/reconstruccion-civica/30-11-vista-c-d.webp",
     "fullImage": "/projects/reconstruccion-civica/30-11-vista-c-d.webp",
     "initialPosition": [
-      -23.459432174555715,
-      14.527073353088376,
+      -14.857060936162291,
+      -12.150879156393213,
       0
     ],
-    "initialRotation": 0.06463152723728172,
+    "initialRotation": 0.051170516828028784,
     "scale": [
       3,
       3,
