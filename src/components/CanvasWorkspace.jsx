@@ -109,6 +109,9 @@ export default function CanvasWorkspace() {
     }
 
     const activePointerIds = Object.keys(activePointersRef.current);
+    const isTouch = e.pointerType === 'touch';
+    const panSensitivity = isTouch ? 2.5 : 1.0;
+    const zoomSensitivity = isTouch ? 1.5 : 1.0;
 
     if (activePointerIds.length === 2 && lastTouchDistanceRef.current !== null) {
       e.preventDefault();
@@ -118,15 +121,15 @@ export default function CanvasWorkspace() {
       const currentDist = Math.hypot(p1.x - p2.x, p1.y - p2.y);
       const deltaDist = lastTouchDistanceRef.current - currentDist;
 
-      // Multi-touch Zoom
-      zoomCamera(deltaDist * 0.4);
+      // Multi-touch Zoom (zoomSpeed = 1.5 equivalent)
+      zoomCamera(deltaDist * 0.4 * zoomSensitivity);
 
-      // Multi-touch Pan
+      // Multi-touch Pan (panSpeed = 2.5 equivalent)
       const centerCurrent = { x: (p1.x + p2.x) / 2, y: (p1.y + p2.y) / 2 };
       const dx = centerCurrent.x - lastPointerRef.current.x;
       const dy = centerCurrent.y - lastPointerRef.current.y;
       
-      panCamera(dx, dy);
+      panCamera(dx * panSensitivity, dy * panSensitivity);
 
       lastPointerRef.current = centerCurrent;
       lastTouchDistanceRef.current = currentDist;
@@ -135,7 +138,7 @@ export default function CanvasWorkspace() {
       const dx = e.clientX - lastPointerRef.current.x;
       const dy = e.clientY - lastPointerRef.current.y;
       
-      panCamera(dx, dy);
+      panCamera(dx * panSensitivity, dy * panSensitivity);
       
       lastPointerRef.current = { x: e.clientX, y: e.clientY };
     }

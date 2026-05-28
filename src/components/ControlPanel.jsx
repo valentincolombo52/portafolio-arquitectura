@@ -40,17 +40,18 @@ export default function ControlPanel() {
       }}
     >
       <div 
-        className="brutalist-panel frame-pink scrollbar-hide"
+        className="brutalist-panel frame-pink"
         style={{
-          padding: '0.8rem 1.4rem',
+          padding: '0.6rem 1rem',
           display: 'flex',
-          gap: '1.2rem',
+          flexWrap: 'wrap',
+          gap: '0.6rem',
           alignItems: 'center',
+          justifyContent: 'center',
           backgroundColor: 'rgba(255, 255, 255, 0.95)',
           borderWidth: '2px',
           width: '100%',
-          overflowX: 'auto', // Sleek scroll on mobile
-          whiteSpace: 'nowrap',
+          maxWidth: '100vw',
         }}
       >
         {/* Reset / Canvas Initial Chaos Button */}
@@ -60,34 +61,30 @@ export default function ControlPanel() {
           style={{ 
             borderColor: 'var(--color-frame-pink)', 
             boxShadow: activeProjectId === null ? '3px 3px 0px var(--color-frame-pink)' : 'none',
-            flexShrink: 0,
           }}
         >
           [INICIAL]
         </button>
 
-        <div style={{ height: '24px', width: '1px', backgroundColor: 'var(--color-border)', flexShrink: 0 }} />
+        <div style={{ height: '24px', width: '1px', backgroundColor: 'var(--color-border)' }} />
 
-        {/* Dynamic Project Buttons block */}
-        <div style={{ display: 'flex', gap: '0.6rem', alignItems: 'center', flexShrink: 0 }}>
-          <span className="cad-label" style={{ fontSize: '0.55rem', color: '#000', marginRight: '0.4rem', flexShrink: 0 }}>
-            :: FILTRAR // PROYECTO
-          </span>
-          {projects.map((proj) => (
-            <button
-              key={proj.id}
-              onClick={() => setActiveProjectId(proj.id)}
-              className={`brutalist-btn ${activeProjectId === proj.id ? 'active' : ''}`}
-              style={{
-                borderColor: activeProjectId === proj.id ? 'var(--color-frame-pink)' : 'var(--color-border)',
-                boxShadow: activeProjectId === proj.id ? '3px 3px 0px var(--color-frame-pink)' : 'none',
-                flexShrink: 0,
-              }}
-            >
-              {proj.title.toUpperCase()}
-            </button>
-          ))}
-        </div>
+        <span className="cad-label" style={{ fontSize: '0.55rem', color: '#000', marginRight: '0.2rem' }}>
+          :: FILTRAR // PROYECTO
+        </span>
+
+        {projects.map((proj) => (
+          <button
+            key={proj.id}
+            onClick={() => setActiveProjectId(proj.id)}
+            className={`brutalist-btn ${activeProjectId === proj.id ? 'active' : ''}`}
+            style={{
+              borderColor: activeProjectId === proj.id ? 'var(--color-frame-pink)' : 'var(--color-border)',
+              boxShadow: activeProjectId === proj.id ? '3px 3px 0px var(--color-frame-pink)' : 'none',
+            }}
+          >
+            {proj.title.toUpperCase()}
+          </button>
+        ))}
       </div>
       
       {/* Console details tag */}
