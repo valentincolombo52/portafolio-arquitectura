@@ -81,47 +81,26 @@ export const usePortfolioStore = create((set, get) => ({
 
   // Load database items
   loadElements: (data) => {
-    // Cluster layout geometry (manzanas and lotes layout)
-    const itemsPerCluster = 6;
-    const colsMacro = 5;
-    const gapXMacro = 18;
-    const gapYMacro = 15;
-    
-    const colsMicro = 3;
-    const gapXMicro = 4.2;
-    const gapYMicro = 3.6;
+    // Messy Desk Layout (mesa de taller arquitectónico)
+    const spreadX = 58;
+    const spreadY = 40;
 
     const initialized = data.map((item, index) => {
-      const clusterIdx = Math.floor(index / itemsPerCluster);
-      const localIdx = index % itemsPerCluster;
-      
-      const colMacro = clusterIdx % colsMacro;
-      const rowMacro = Math.floor(clusterIdx / colsMacro);
-      const macroX = (colMacro - 2) * gapXMacro;
-      const macroY = (1.5 - rowMacro) * gapYMacro;
-      
-      const colMicro = localIdx % colsMicro;
-      const rowMicro = Math.floor(localIdx / colsMicro);
-      const microX = (colMicro - 1) * gapXMicro;
-      const microY = (0.5 - rowMicro) * gapYMicro;
-      
-      // Introduce slight organic noise to position and rotation within the cluster for collage feel
-      const noiseX = (Math.random() - 0.5) * 0.4;
-      const noiseY = (Math.random() - 0.5) * 0.4;
-      const clusterX = macroX + microX + noiseX;
-      const clusterY = macroY + microY + noiseY;
-      const clusterRot = (Math.random() - 0.5) * 0.2;
+      const x = (Math.random() - 0.5) * spreadX;
+      const y = (Math.random() - 0.5) * spreadY;
+      const z = index * 0.05; // Strict layer height depth based on array index to prevent Z-fighting!
+      const rotZ = (Math.random() - 0.5) * 0.45; // Organic rotation tilt
 
-      const calculatedPosition = [clusterX, clusterY, 0];
+      const calculatedPosition = [x, y, z];
       
       return {
         ...item,
         initialPosition: calculatedPosition,
         currentPosition: [...calculatedPosition],
         targetPosition: [...calculatedPosition],
-        currentRotation: clusterRot,
-        targetRotation: clusterRot,
-        zIndex: index * 0.05,
+        currentRotation: rotZ,
+        targetRotation: rotZ,
+        zIndex: z,
         isActive: true,
       };
     });

@@ -104,8 +104,6 @@ export default function CollageItem({ element, index }) {
   const meshRef = useRef();
   const materialRef = useRef();
   const pointerDownPosRef = useRef({ x: 0, y: 0 });
-  const [hovered, setHovered] = useState(false);
-  const [hoverValue, setHoverValue] = useState(0);
   const [dragValue, setDragValue] = useState(0);
   
   const startDragging = usePortfolioStore((state) => state.startDragging);
@@ -245,27 +243,16 @@ export default function CollageItem({ element, index }) {
     // Rotation spring
     mesh.rotation.z += (targetRot - mesh.rotation.z) * springStrength;
 
-    // 3D tilt effect on hover / drag
-    if (hovered && !isDragged && !activeProjectId) {
-      const mouse = state.pointer;
-      const tiltX = (mouse.y * 0.15) - mesh.rotation.x;
-      const tiltY = (mouse.x * 0.15) - mesh.rotation.y;
-      mesh.rotation.x += tiltX * 0.1;
-      mesh.rotation.y += tiltY * 0.1;
-    } else {
-      mesh.rotation.x += (0 - mesh.rotation.x) * 0.1;
-      mesh.rotation.y += (0 - mesh.rotation.y) * 0.1;
-    }
+    // Reset tilt coordinates to 0 to keep the scene estático and realistic
+    mesh.rotation.x = 0;
+    mesh.rotation.y = 0;
 
     // 2. Uniform interpolation
     if (materialRef.current) {
       const mat = materialRef.current;
       
-      // Interpolate hover uniform
-      const targetHover = hovered ? 1.0 : 0.0;
-      const nextHover = hoverValue + (targetHover - hoverValue) * 0.1;
-      setHoverValue(nextHover);
-      mat.uniforms.u_hover.value = nextHover;
+      // Keep hover uniform at 0.0 since hover is removed
+      mat.uniforms.u_hover.value = 0.0;
 
       // Interpolate drag uniform
       const targetDrag = isDragged ? 1.0 : 0.0;
@@ -293,8 +280,6 @@ export default function CollageItem({ element, index }) {
       onPointerDown={handlePointerDown}
       onPointerMove={handlePointerMove}
       onPointerUp={handlePointerUp}
-      onPointerOver={() => setHovered(true)}
-      onPointerOut={() => setHovered(false)}
       onClick={(e) => {
         e.stopPropagation();
         
