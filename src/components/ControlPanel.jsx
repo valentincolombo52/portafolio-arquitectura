@@ -40,7 +40,7 @@ export default function ControlPanel() {
       }}
     >
       <div 
-        className="brutalist-panel frame-pink"
+        className="brutalist-panel frame-pink scrollbar-hide"
         style={{
           padding: '0.8rem 1.4rem',
           display: 'flex',
@@ -51,7 +51,6 @@ export default function ControlPanel() {
           width: '100%',
           overflowX: 'auto', // Sleek scroll on mobile
           whiteSpace: 'nowrap',
-          scrollbarWidth: 'thin',
         }}
       >
         {/* Reset / Canvas Initial Chaos Button */}

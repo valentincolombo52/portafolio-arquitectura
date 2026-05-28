@@ -103,6 +103,7 @@ export default function CollageItem({ element, index }) {
 
   const meshRef = useRef();
   const materialRef = useRef();
+  const pointerDownPosRef = useRef({ x: 0, y: 0 });
   const [hovered, setHovered] = useState(false);
   const [hoverValue, setHoverValue] = useState(0);
   const [dragValue, setDragValue] = useState(0);
@@ -133,12 +134,21 @@ export default function CollageItem({ element, index }) {
 
   // Handle drag controls
   const handlePointerDown = (e) => {
+    pointerDownPosRef.current = { x: e.clientX, y: e.clientY };
+
+    if (e.pointerType === 'touch') {
+      // Do not stop propagation, capture pointer, or start dragging on mobile touch devices.
+      // This allows touch dragging to bubble up to the CanvasWorkspace for fluid camera panning.
+      return;
+    }
+
     e.stopPropagation();
     e.target.setPointerCapture(e.pointerId);
     startDragging(element.id);
   };
 
   const handlePointerMove = (e) => {
+    if (e.pointerType === 'touch') return;
     e.stopPropagation();
     if (draggingElementId === element.id) {
       const planeIntersection = new THREE.Vector3();
@@ -151,6 +161,7 @@ export default function CollageItem({ element, index }) {
   };
 
   const handlePointerUp = (e) => {
+    if (e.pointerType === 'touch') return;
     e.stopPropagation();
     e.target.releasePointerCapture(e.pointerId);
     stopDragging(element.id);
@@ -289,6 +300,17 @@ export default function CollageItem({ element, index }) {
       onPointerOut={() => setHovered(false)}
       onClick={(e) => {
         e.stopPropagation();
+        
+        // Calculate distance moved to prevent clicks during drag/pan
+        const dx = e.clientX - pointerDownPosRef.current.x;
+        const dy = e.clientY - pointerDownPosRef.current.y;
+        const distance = Math.hypot(dx, dy);
+        
+        if (distance > 6) {
+          // Dragged/Panned, ignore click!
+          return;
+        }
+
         if (activeProjectId === element.projectId) {
           setFullscreenImage(element.id);
         } else {

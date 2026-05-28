@@ -229,6 +229,7 @@ export default function CanvasWorkspace() {
       onWheel={handleWheel}
     >
       <Canvas
+        eventPrefix="client"
         orthographic={false}
         camera={{ fov: 60, position: [0, 0, 15], near: 0.1, far: 2000 }}
         gl={{ antialias: true, powerPreference: 'high-performance', logarithmicDepthBuffer: true }}
