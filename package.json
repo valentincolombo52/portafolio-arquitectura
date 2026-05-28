@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "node ../scripts/optimize-assets.js && vite build",
+    "build": "node ./scripts/optimize-assets.js && vite build",
     "preview": "vite preview",
     "optimize-assets": "node scripts/optimize-assets.js"
   },
