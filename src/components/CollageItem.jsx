@@ -199,8 +199,8 @@ export default function CollageItem({ element, index }) {
           
           // Spacing offsets (responsive grid gaps to fit screen)
           const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
-          const gapX = isMobile ? 2.8 : 6.0;
-          const gapY = isMobile ? 2.4 : 5.0;
+          const gapX = isMobile ? 3.5 : 7.5;
+          const gapY = isMobile ? 3.0 : 6.25;
           
           const gridWidth = (cols - 1) * gapX;
           const gridHeight = (Math.ceil(groupElements.length / cols) - 1) * gapY;

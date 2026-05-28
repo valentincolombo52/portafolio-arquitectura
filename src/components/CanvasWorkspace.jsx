@@ -3,6 +3,7 @@ import { Canvas, useFrame } from '@react-three/fiber';
 import { usePortfolioStore } from '../store/usePortfolioStore';
 import GridFloor from './GridFloor';
 import CollageItem from './CollageItem';
+import { Float } from '@react-three/drei';
 
 // Camera controller to interpolate between pan & zoom coordinates smoothly
 function CameraController() {
@@ -245,7 +246,9 @@ export default function CanvasWorkspace() {
         {/* Render elements under Suspense */}
         <Suspense fallback={null}>
           {elements.map((el, idx) => (
-            <CollageItem key={el.id} element={el} index={idx} />
+            <Float key={el.id} speed={1} rotationIntensity={0.05} floatIntensity={0.1}>
+              <CollageItem element={el} index={idx} />
+            </Float>
           ))}
         </Suspense>
         

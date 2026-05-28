@@ -24,8 +24,8 @@ function calculateGridPositions(elements, activeFilter) {
 
   // Setup Grid properties for active elements
   const cols = Math.min(4, Math.ceil(Math.sqrt(activeElements.length)));
-  const gapX = 6;
-  const gapY = 5;
+  const gapX = 7.5;
+  const gapY = 6.25;
   
   const rowCount = Math.ceil(activeElements.length / cols);
   const gridWidth = (cols - 1) * gapX;
@@ -81,15 +81,23 @@ export const usePortfolioStore = create((set, get) => ({
 
   // Load database items
   loadElements: (data) => {
-    const initialized = data.map((item) => ({
-      ...item,
-      currentPosition: [...item.initialPosition],
-      targetPosition: [...item.initialPosition],
-      currentRotation: item.initialRotation,
-      targetRotation: item.initialRotation,
-      zIndex: Math.random() * 10,
-      isActive: true,
-    }));
+    const initialized = data.map((item) => {
+      const scaledInitialPosition = [
+        item.initialPosition[0] * 1.25,
+        item.initialPosition[1] * 1.25,
+        item.initialPosition[2]
+      ];
+      return {
+        ...item,
+        initialPosition: scaledInitialPosition,
+        currentPosition: [...scaledInitialPosition],
+        targetPosition: [...scaledInitialPosition],
+        currentRotation: item.initialRotation,
+        targetRotation: item.initialRotation,
+        zIndex: Math.random() * 10,
+        isActive: true,
+      };
+    });
     set({ elements: initialized });
   },
 
