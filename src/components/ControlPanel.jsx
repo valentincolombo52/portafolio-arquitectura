@@ -51,10 +51,11 @@ export default function ControlPanel() {
           height: '56px',
           alignItems: 'center',
           gap: '12px',
-          padding: '0 16px',
+          padding: '12px 16px',
           fontSize: '11px',
           width: '100%',
           maxWidth: '100vw',
+          touchAction: 'pan-x',
           backgroundColor: 'rgba(255, 255, 255, 0.95)',
           borderWidth: '2px',
         }}

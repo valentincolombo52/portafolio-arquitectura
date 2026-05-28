@@ -120,6 +120,9 @@ export default function CollageItem({ element, index }) {
   const activeProjectId = usePortfolioStore((state) => state.activeProjectId);
   const elements = usePortfolioStore((state) => state.elements);
 
+  const subtableroFactor = (activeProjectId && viewportWidth < 18) ? 0.65 : 1.0;
+  const finalScaleMultiplier = scaleMultiplier * subtableroFactor;
+
   // Load thumbnail texture
   const texture = useLoader(THREE.TextureLoader, element.thumbnail || '');
   
@@ -292,7 +295,7 @@ export default function CollageItem({ element, index }) {
       ref={meshRef}
       position={[element.currentPosition[0], element.currentPosition[1], 0]}
       rotation={[0, 0, element.currentRotation]}
-      scale={[element.scale[0] * scaleMultiplier, element.scale[1] * scaleMultiplier, 1]}
+      scale={[element.scale[0] * finalScaleMultiplier, element.scale[1] * finalScaleMultiplier, 1]}
       onPointerDown={handlePointerDown}
       onPointerMove={handlePointerMove}
       onPointerUp={handlePointerUp}
