@@ -1,0 +1,2264 @@
+[
+  {
+    "id": "bicho-p1-1",
+    "title": "Bicho // P1 (1)",
+    "filename": "P1 (1).jpg",
+    "projectId": "bicho",
+    "projectTitle": "Bicho",
+    "glowColor": "#00ffff",
+    "year": 2024,
+    "type": "Blueprint",
+    "aspectRatio": 1.414516129032258,
+    "width": 1754,
+    "height": 1240,
+    "thumbnail": "/thumbnails/bicho/p1-1.webp",
+    "fullImage": "/projects/bicho/p1-1.webp",
+    "initialPosition": [
+      7.378989555193255,
+      -13.031187711252977,
+      0
+    ],
+    "initialRotation": -0.09948859742528995,
+    "scale": [
+      5.658064516129032,
+      4,
+      1
+    ]
+  },
+  {
+    "id": "bicho-p2",
+    "title": "Bicho // P2",
+    "filename": "P2.jpg",
+    "projectId": "bicho",
+    "projectTitle": "Bicho",
+    "glowColor": "#00ffff",
+    "year": 2024,
+    "type": "Blueprint",
+    "aspectRatio": 1.414516129032258,
+    "width": 1754,
+    "height": 1240,
+    "thumbnail": "/thumbnails/bicho/p2.webp",
+    "fullImage": "/projects/bicho/p2.webp",
+    "initialPosition": [
+      -24.123905627102438,
+      3.5171137539899315,
+      0
+    ],
+    "initialRotation": -0.09448055893618579,
+    "scale": [
+      5.658064516129032,
+      4,
+      1
+    ]
+  },
+  {
+    "id": "bicho-p3",
+    "title": "Bicho // P3",
+    "filename": "P3.jpg",
+    "projectId": "bicho",
+    "projectTitle": "Bicho",
+    "glowColor": "#00ffff",
+    "year": 2024,
+    "type": "Blueprint",
+    "aspectRatio": 1.414516129032258,
+    "width": 1754,
+    "height": 1240,
+    "thumbnail": "/thumbnails/bicho/p3.webp",
+    "fullImage": "/projects/bicho/p3.webp",
+    "initialPosition": [
+      -12.902553495062103,
+      6.8943899638252795,
+      0
+    ],
+    "initialRotation": 0.08465550388178936,
+    "scale": [
+      5.658064516129032,
+      4,
+      1
+    ]
+  },
+  {
+    "id": "campo-y-ciudad-1-abertura",
+    "title": "Campo y ciudad // Abertura",
+    "filename": "1-Abertura.jpg",
+    "projectId": "campo-y-ciudad",
+    "projectTitle": "Campo y ciudad",
+    "glowColor": "#ff007f",
+    "year": 2024,
+    "type": "Blueprint",
+    "aspectRatio": 1.4139110604332954,
+    "width": 2480,
+    "height": 1754,
+    "thumbnail": "/thumbnails/campo-y-ciudad/1-abertura.webp",
+    "fullImage": "/projects/campo-y-ciudad/1-abertura.webp",
+    "initialPosition": [
+      -23.22566849552135,
+      7.560622018644513,
+      0
+    ],
+    "initialRotation": -0.021776025193271237,
+    "scale": [
+      5.655644241733182,
+      4,
+      1
+    ]
+  },
+  {
+    "id": "campo-y-ciudad-10",
+    "title": "Campo y ciudad // 10",
+    "filename": "10.jpg",
+    "projectId": "campo-y-ciudad",
+    "projectTitle": "Campo y ciudad",
+    "glowColor": "#ff007f",
+    "year": 2024,
+    "type": "Blueprint",
+    "aspectRatio": 1.4139110604332954,
+    "width": 2480,
+    "height": 1754,
+    "thumbnail": "/thumbnails/campo-y-ciudad/10.webp",
+    "fullImage": "/projects/campo-y-ciudad/10.webp",
+    "initialPosition": [
+      22.6543138969995,
+      -10.319584143417451,
+      0
+    ],
+    "initialRotation": 0.10128417993069219,
+    "scale": [
+      5.655644241733182,
+      4,
+      1
+    ]
+  },
+  {
+    "id": "campo-y-ciudad-11",
+    "title": "Campo y ciudad // 11",
+    "filename": "11.jpg",
+    "projectId": "campo-y-ciudad",
+    "projectTitle": "Campo y ciudad",
+    "glowColor": "#ff007f",
+    "year": 2024,
+    "type": "Blueprint",
+    "aspectRatio": 1.4139110604332954,
+    "width": 2480,
+    "height": 1754,
+    "thumbnail": "/thumbnails/campo-y-ciudad/11.webp",
+    "fullImage": "/projects/campo-y-ciudad/11.webp",
+    "initialPosition": [
+      -21.512962810003977,
+      10.119925529851267,
+      0
+    ],
+    "initialRotation": -0.09821770332059354,
+    "scale": [
+      5.655644241733182,
+      4,
+      1
+    ]
+  },
+  {
+    "id": "campo-y-ciudad-12b",
+    "title": "Campo y ciudad // 12B",
+    "filename": "12B.jpg",
+    "projectId": "campo-y-ciudad",
+    "projectTitle": "Campo y ciudad",
+    "glowColor": "#ff007f",
+    "year": 2024,
+    "type": "Blueprint",
+    "aspectRatio": 1.4139110604332954,
+    "width": 2480,
+    "height": 1754,
+    "thumbnail": "/thumbnails/campo-y-ciudad/12b.webp",
+    "fullImage": "/projects/campo-y-ciudad/12b.webp",
+    "initialPosition": [
+      2.958955576448102,
+      0.4458633838725329,
+      0
+    ],
+    "initialRotation": 0.1213260274782424,
+    "scale": [
+      5.655644241733182,
+      4,
+      1
+    ]
+  },
+  {
+    "id": "campo-y-ciudad-13a",
+    "title": "Campo y ciudad // 13A",
+    "filename": "13A.jpg",
+    "projectId": "campo-y-ciudad",
+    "projectTitle": "Campo y ciudad",
+    "glowColor": "#ff007f",
+    "year": 2024,
+    "type": "Blueprint",
+    "aspectRatio": 1.4139110604332954,
+    "width": 2480,
+    "height": 1754,
+    "thumbnail": "/thumbnails/campo-y-ciudad/13a.webp",
+    "fullImage": "/projects/campo-y-ciudad/13a.webp",
+    "initialPosition": [
+      1.789241804289654,
+      10.501282263976563,
+      0
+    ],
+    "initialRotation": 0.0007857611835146161,
+    "scale": [
+      5.655644241733182,
+      4,
+      1
+    ]
+  },
+  {
+    "id": "campo-y-ciudad-13b",
+    "title": "Campo y ciudad // 13B",
+    "filename": "13B.jpg",
+    "projectId": "campo-y-ciudad",
+    "projectTitle": "Campo y ciudad",
+    "glowColor": "#ff007f",
+    "year": 2024,
+    "type": "Blueprint",
+    "aspectRatio": 1.4139110604332954,
+    "width": 2480,
+    "height": 1754,
+    "thumbnail": "/thumbnails/campo-y-ciudad/13b.webp",
+    "fullImage": "/projects/campo-y-ciudad/13b.webp",
+    "initialPosition": [
+      2.5479540470120354,
+      -6.112525710252073,
+      0
+    ],
+    "initialRotation": 0.0710364606914278,
+    "scale": [
+      5.655644241733182,
+      4,
+      1
+    ]
+  },
+  {
+    "id": "campo-y-ciudad-14b",
+    "title": "Campo y ciudad // 14B",
+    "filename": "14B.jpg",
+    "projectId": "campo-y-ciudad",
+    "projectTitle": "Campo y ciudad",
+    "glowColor": "#ff007f",
+    "year": 2024,
+    "type": "Blueprint",
+    "aspectRatio": 1.4139110604332954,
+    "width": 2480,
+    "height": 1754,
+    "thumbnail": "/thumbnails/campo-y-ciudad/14b.webp",
+    "fullImage": "/projects/campo-y-ciudad/14b.webp",
+    "initialPosition": [
+      10.37044038382256,
+      7.392441374278521,
+      0
+    ],
+    "initialRotation": -0.11670073733460659,
+    "scale": [
+      5.655644241733182,
+      4,
+      1
+    ]
+  },
+  {
+    "id": "campo-y-ciudad-15",
+    "title": "Campo y ciudad // 15",
+    "filename": "15.jpg",
+    "projectId": "campo-y-ciudad",
+    "projectTitle": "Campo y ciudad",
+    "glowColor": "#ff007f",
+    "year": 2024,
+    "type": "Blueprint",
+    "aspectRatio": 1.4139110604332954,
+    "width": 2480,
+    "height": 1754,
+    "thumbnail": "/thumbnails/campo-y-ciudad/15.webp",
+    "fullImage": "/projects/campo-y-ciudad/15.webp",
+    "initialPosition": [
+      -6.855434865092236,
+      -16.114127284102565,
+      0
+    ],
+    "initialRotation": 0.03566339451951703,
+    "scale": [
+      5.655644241733182,
+      4,
+      1
+    ]
+  },
+  {
+    "id": "campo-y-ciudad-16",
+    "title": "Campo y ciudad // 16",
+    "filename": "16.jpg",
+    "projectId": "campo-y-ciudad",
+    "projectTitle": "Campo y ciudad",
+    "glowColor": "#ff007f",
+    "year": 2024,
+    "type": "Blueprint",
+    "aspectRatio": 1.4139110604332954,
+    "width": 2480,
+    "height": 1754,
+    "thumbnail": "/thumbnails/campo-y-ciudad/16.webp",
+    "fullImage": "/projects/campo-y-ciudad/16.webp",
+    "initialPosition": [
+      11.517447707454675,
+      -1.5081769748766682,
+      0
+    ],
+    "initialRotation": -0.08678105739699726,
+    "scale": [
+      5.655644241733182,
+      4,
+      1
+    ]
+  },
+  {
+    "id": "campo-y-ciudad-17",
+    "title": "Campo y ciudad // 17",
+    "filename": "17.jpg",
+    "projectId": "campo-y-ciudad",
+    "projectTitle": "Campo y ciudad",
+    "glowColor": "#ff007f",
+    "year": 2024,
+    "type": "Blueprint",
+    "aspectRatio": 1.4139110604332954,
+    "width": 2480,
+    "height": 1754,
+    "thumbnail": "/thumbnails/campo-y-ciudad/17.webp",
+    "fullImage": "/projects/campo-y-ciudad/17.webp",
+    "initialPosition": [
+      5.722676557175349,
+      -3.234975488023765,
+      0
+    ],
+    "initialRotation": 0.1127076454521021,
+    "scale": [
+      5.655644241733182,
+      4,
+      1
+    ]
+  },
+  {
+    "id": "campo-y-ciudad-18",
+    "title": "Campo y ciudad // 18",
+    "filename": "18.jpg",
+    "projectId": "campo-y-ciudad",
+    "projectTitle": "Campo y ciudad",
+    "glowColor": "#ff007f",
+    "year": 2024,
+    "type": "Blueprint",
+    "aspectRatio": 1.4139110604332954,
+    "width": 2480,
+    "height": 1754,
+    "thumbnail": "/thumbnails/campo-y-ciudad/18.webp",
+    "fullImage": "/projects/campo-y-ciudad/18.webp",
+    "initialPosition": [
+      21.84745345481889,
+      10.665709830005166,
+      0
+    ],
+    "initialRotation": -0.06933182188642628,
+    "scale": [
+      5.655644241733182,
+      4,
+      1
+    ]
+  },
+  {
+    "id": "campo-y-ciudad-19",
+    "title": "Campo y ciudad // 19",
+    "filename": "19.jpg",
+    "projectId": "campo-y-ciudad",
+    "projectTitle": "Campo y ciudad",
+    "glowColor": "#ff007f",
+    "year": 2024,
+    "type": "Blueprint",
+    "aspectRatio": 1.4139110604332954,
+    "width": 2480,
+    "height": 1754,
+    "thumbnail": "/thumbnails/campo-y-ciudad/19.webp",
+    "fullImage": "/projects/campo-y-ciudad/19.webp",
+    "initialPosition": [
+      2.4348943367886458,
+      7.846224504960512,
+      0
+    ],
+    "initialRotation": 0.025937994896439914,
+    "scale": [
+      5.655644241733182,
+      4,
+      1
+    ]
+  },
+  {
+    "id": "campo-y-ciudad-2-3-4",
+    "title": "Campo y ciudad // 3 4",
+    "filename": "2-3-4.jpg",
+    "projectId": "campo-y-ciudad",
+    "projectTitle": "Campo y ciudad",
+    "glowColor": "#ff007f",
+    "year": 2024,
+    "type": "Blueprint",
+    "aspectRatio": 1.4139110604332954,
+    "width": 2480,
+    "height": 1754,
+    "thumbnail": "/thumbnails/campo-y-ciudad/2-3-4.webp",
+    "fullImage": "/projects/campo-y-ciudad/2-3-4.webp",
+    "initialPosition": [
+      21.501516131196414,
+      -12.611452109589694,
+      0
+    ],
+    "initialRotation": 0.10418898325908826,
+    "scale": [
+      5.655644241733182,
+      4,
+      1
+    ]
+  },
+  {
+    "id": "campo-y-ciudad-20",
+    "title": "Campo y ciudad // 20",
+    "filename": "20.jpg",
+    "projectId": "campo-y-ciudad",
+    "projectTitle": "Campo y ciudad",
+    "glowColor": "#ff007f",
+    "year": 2024,
+    "type": "Blueprint",
+    "aspectRatio": 1.4139110604332954,
+    "width": 2480,
+    "height": 1754,
+    "thumbnail": "/thumbnails/campo-y-ciudad/20.webp",
+    "fullImage": "/projects/campo-y-ciudad/20.webp",
+    "initialPosition": [
+      -14.909869552486448,
+      -1.5005822739056418,
+      0
+    ],
+    "initialRotation": -0.07040177457027316,
+    "scale": [
+      5.655644241733182,
+      4,
+      1
+    ]
+  },
+  {
+    "id": "campo-y-ciudad-20b",
+    "title": "Campo y ciudad // 20B",
+    "filename": "20B.jpg",
+    "projectId": "campo-y-ciudad",
+    "projectTitle": "Campo y ciudad",
+    "glowColor": "#ff007f",
+    "year": 2024,
+    "type": "Blueprint",
+    "aspectRatio": 1.4139110604332954,
+    "width": 2480,
+    "height": 1754,
+    "thumbnail": "/thumbnails/campo-y-ciudad/20b.webp",
+    "fullImage": "/projects/campo-y-ciudad/20b.webp",
+    "initialPosition": [
+      -18.976829289004915,
+      7.637819257131962,
+      0
+    ],
+    "initialRotation": 0.0295412008761482,
+    "scale": [
+      5.655644241733182,
+      4,
+      1
+    ]
+  },
+  {
+    "id": "campo-y-ciudad-21",
+    "title": "Campo y ciudad // 21",
+    "filename": "21.jpg",
+    "projectId": "campo-y-ciudad",
+    "projectTitle": "Campo y ciudad",
+    "glowColor": "#ff007f",
+    "year": 2024,
+    "type": "Blueprint",
+    "aspectRatio": 1.4139110604332954,
+    "width": 2480,
+    "height": 1754,
+    "thumbnail": "/thumbnails/campo-y-ciudad/21.webp",
+    "fullImage": "/projects/campo-y-ciudad/21.webp",
+    "initialPosition": [
+      -18.28070255046595,
+      -6.461242157421622,
+      0
+    ],
+    "initialRotation": -0.05293919948556303,
+    "scale": [
+      5.655644241733182,
+      4,
+      1
+    ]
+  },
+  {
+    "id": "campo-y-ciudad-22",
+    "title": "Campo y ciudad // 22",
+    "filename": "22.jpg",
+    "projectId": "campo-y-ciudad",
+    "projectTitle": "Campo y ciudad",
+    "glowColor": "#ff007f",
+    "year": 2024,
+    "type": "Blueprint",
+    "aspectRatio": 1.4139110604332954,
+    "width": 2480,
+    "height": 1754,
+    "thumbnail": "/thumbnails/campo-y-ciudad/22.webp",
+    "fullImage": "/projects/campo-y-ciudad/22.webp",
+    "initialPosition": [
+      -21.624976205891826,
+      -4.501191849515781,
+      0
+    ],
+    "initialRotation": -0.015530251164390024,
+    "scale": [
+      5.655644241733182,
+      4,
+      1
+    ]
+  },
+  {
+    "id": "campo-y-ciudad-23",
+    "title": "Campo y ciudad // 23",
+    "filename": "23.jpg",
+    "projectId": "campo-y-ciudad",
+    "projectTitle": "Campo y ciudad",
+    "glowColor": "#ff007f",
+    "year": 2024,
+    "type": "Blueprint",
+    "aspectRatio": 1.4139110604332954,
+    "width": 2480,
+    "height": 1754,
+    "thumbnail": "/thumbnails/campo-y-ciudad/23.webp",
+    "fullImage": "/projects/campo-y-ciudad/23.webp",
+    "initialPosition": [
+      -11.676010973728795,
+      -2.3154720702896454,
+      0
+    ],
+    "initialRotation": 0.05480142161362661,
+    "scale": [
+      5.655644241733182,
+      4,
+      1
+    ]
+  },
+  {
+    "id": "campo-y-ciudad-24",
+    "title": "Campo y ciudad // 24",
+    "filename": "24.jpg",
+    "projectId": "campo-y-ciudad",
+    "projectTitle": "Campo y ciudad",
+    "glowColor": "#ff007f",
+    "year": 2024,
+    "type": "Blueprint",
+    "aspectRatio": 1.4139110604332954,
+    "width": 2480,
+    "height": 1754,
+    "thumbnail": "/thumbnails/campo-y-ciudad/24.webp",
+    "fullImage": "/projects/campo-y-ciudad/24.webp",
+    "initialPosition": [
+      -3.1447188714134877,
+      -2.6779339617048215,
+      0
+    ],
+    "initialRotation": -0.06500305103016357,
+    "scale": [
+      5.655644241733182,
+      4,
+      1
+    ]
+  },
+  {
+    "id": "campo-y-ciudad-25",
+    "title": "Campo y ciudad // 25",
+    "filename": "25.jpg",
+    "projectId": "campo-y-ciudad",
+    "projectTitle": "Campo y ciudad",
+    "glowColor": "#ff007f",
+    "year": 2024,
+    "type": "Blueprint",
+    "aspectRatio": 1.4139110604332954,
+    "width": 2480,
+    "height": 1754,
+    "thumbnail": "/thumbnails/campo-y-ciudad/25.webp",
+    "fullImage": "/projects/campo-y-ciudad/25.webp",
+    "initialPosition": [
+      14.206585887090156,
+      17.141810201279046,
+      0
+    ],
+    "initialRotation": -0.11920868789290828,
+    "scale": [
+      5.655644241733182,
+      4,
+      1
+    ]
+  },
+  {
+    "id": "campo-y-ciudad-26b",
+    "title": "Campo y ciudad // 26B",
+    "filename": "26B.jpg",
+    "projectId": "campo-y-ciudad",
+    "projectTitle": "Campo y ciudad",
+    "glowColor": "#ff007f",
+    "year": 2024,
+    "type": "Blueprint",
+    "aspectRatio": 1.4139110604332954,
+    "width": 2480,
+    "height": 1754,
+    "thumbnail": "/thumbnails/campo-y-ciudad/26b.webp",
+    "fullImage": "/projects/campo-y-ciudad/26b.webp",
+    "initialPosition": [
+      -17.640072919144405,
+      -2.7489935944473936,
+      0
+    ],
+    "initialRotation": -0.030928248758722715,
+    "scale": [
+      5.655644241733182,
+      4,
+      1
+    ]
+  },
+  {
+    "id": "campo-y-ciudad-5c",
+    "title": "Campo y ciudad // 5C",
+    "filename": "5C.jpg",
+    "projectId": "campo-y-ciudad",
+    "projectTitle": "Campo y ciudad",
+    "glowColor": "#ff007f",
+    "year": 2024,
+    "type": "Blueprint",
+    "aspectRatio": 1.4139110604332954,
+    "width": 2480,
+    "height": 1754,
+    "thumbnail": "/thumbnails/campo-y-ciudad/5c.webp",
+    "fullImage": "/projects/campo-y-ciudad/5c.webp",
+    "initialPosition": [
+      24.478304174118254,
+      5.313465378819241,
+      0
+    ],
+    "initialRotation": 0.002000088980561837,
+    "scale": [
+      5.655644241733182,
+      4,
+      1
+    ]
+  },
+  {
+    "id": "campo-y-ciudad-6b",
+    "title": "Campo y ciudad // 6B",
+    "filename": "6B.jpg",
+    "projectId": "campo-y-ciudad",
+    "projectTitle": "Campo y ciudad",
+    "glowColor": "#ff007f",
+    "year": 2024,
+    "type": "Blueprint",
+    "aspectRatio": 1.4139110604332954,
+    "width": 2480,
+    "height": 1754,
+    "thumbnail": "/thumbnails/campo-y-ciudad/6b.webp",
+    "fullImage": "/projects/campo-y-ciudad/6b.webp",
+    "initialPosition": [
+      17.07496614518448,
+      -13.019350637837535,
+      0
+    ],
+    "initialRotation": 0.004472954575860305,
+    "scale": [
+      5.655644241733182,
+      4,
+      1
+    ]
+  },
+  {
+    "id": "campo-y-ciudad-6b-jusitificacion-al-problema",
+    "title": "Campo y ciudad // 6B Jusitificación al problema",
+    "filename": "6B_Jusitificación al problema.jpg",
+    "projectId": "campo-y-ciudad",
+    "projectTitle": "Campo y ciudad",
+    "glowColor": "#ff007f",
+    "year": 2024,
+    "type": "Blueprint",
+    "aspectRatio": 1.4139110604332954,
+    "width": 2480,
+    "height": 1754,
+    "thumbnail": "/thumbnails/campo-y-ciudad/6b-jusitificacion-al-problema.webp",
+    "fullImage": "/projects/campo-y-ciudad/6b-jusitificacion-al-problema.webp",
+    "initialPosition": [
+      17.99397152935887,
+      0.5388885710325503,
+      0
+    ],
+    "initialRotation": 0.10857605014400548,
+    "scale": [
+      5.655644241733182,
+      4,
+      1
+    ]
+  },
+  {
+    "id": "campo-y-ciudad-7b",
+    "title": "Campo y ciudad // 7B",
+    "filename": "7B.jpg",
+    "projectId": "campo-y-ciudad",
+    "projectTitle": "Campo y ciudad",
+    "glowColor": "#ff007f",
+    "year": 2024,
+    "type": "Blueprint",
+    "aspectRatio": 1.4139110604332954,
+    "width": 2480,
+    "height": 1754,
+    "thumbnail": "/thumbnails/campo-y-ciudad/7b.webp",
+    "fullImage": "/projects/campo-y-ciudad/7b.webp",
+    "initialPosition": [
+      7.6107072214835645,
+      -12.543142439856881,
+      0
+    ],
+    "initialRotation": 0.08376858656319308,
+    "scale": [
+      5.655644241733182,
+      4,
+      1
+    ]
+  },
+  {
+    "id": "campo-y-ciudad-8b",
+    "title": "Campo y ciudad // 8B",
+    "filename": "8B.jpg",
+    "projectId": "campo-y-ciudad",
+    "projectTitle": "Campo y ciudad",
+    "glowColor": "#ff007f",
+    "year": 2024,
+    "type": "Blueprint",
+    "aspectRatio": 1.4139110604332954,
+    "width": 2480,
+    "height": 1754,
+    "thumbnail": "/thumbnails/campo-y-ciudad/8b.webp",
+    "fullImage": "/projects/campo-y-ciudad/8b.webp",
+    "initialPosition": [
+      -22.718906538349355,
+      -6.066842152400079,
+      0
+    ],
+    "initialRotation": -0.11318170045344841,
+    "scale": [
+      5.655644241733182,
+      4,
+      1
+    ]
+  },
+  {
+    "id": "campo-y-ciudad-9b",
+    "title": "Campo y ciudad // 9B",
+    "filename": "9B.jpg",
+    "projectId": "campo-y-ciudad",
+    "projectTitle": "Campo y ciudad",
+    "glowColor": "#ff007f",
+    "year": 2024,
+    "type": "Blueprint",
+    "aspectRatio": 1.4139110604332954,
+    "width": 2480,
+    "height": 1754,
+    "thumbnail": "/thumbnails/campo-y-ciudad/9b.webp",
+    "fullImage": "/projects/campo-y-ciudad/9b.webp",
+    "initialPosition": [
+      13.912973378881105,
+      -13.808494394068193,
+      0
+    ],
+    "initialRotation": -0.07298717164730678,
+    "scale": [
+      5.655644241733182,
+      4,
+      1
+    ]
+  },
+  {
+    "id": "campo-y-ciudad-abertura-b",
+    "title": "Campo y ciudad // Abertura B",
+    "filename": "Abertura B.jpg",
+    "projectId": "campo-y-ciudad",
+    "projectTitle": "Campo y ciudad",
+    "glowColor": "#ff007f",
+    "year": 2024,
+    "type": "Blueprint",
+    "aspectRatio": 1.4139110604332954,
+    "width": 2480,
+    "height": 1754,
+    "thumbnail": "/thumbnails/campo-y-ciudad/abertura-b.webp",
+    "fullImage": "/projects/campo-y-ciudad/abertura-b.webp",
+    "initialPosition": [
+      9.074136619826717,
+      1.4055105906172383,
+      0
+    ],
+    "initialRotation": -0.0923748308150446,
+    "scale": [
+      5.655644241733182,
+      4,
+      1
+    ]
+  },
+  {
+    "id": "campo-trabajo-y-educacion-1",
+    "title": "Campo, trabajo y educación // 1",
+    "filename": "1.jpg",
+    "projectId": "campo-trabajo-y-educacion",
+    "projectTitle": "Campo, trabajo y educación",
+    "glowColor": "#9d4edd",
+    "year": 2024,
+    "type": "Blueprint",
+    "aspectRatio": 1.4139110604332954,
+    "width": 2480,
+    "height": 1754,
+    "thumbnail": "/thumbnails/campo-trabajo-y-educacion/1.webp",
+    "fullImage": "/projects/campo-trabajo-y-educacion/1.webp",
+    "initialPosition": [
+      -11.147726006711018,
+      7.437360727188298,
+      0
+    ],
+    "initialRotation": -0.06485200520670359,
+    "scale": [
+      5.655644241733182,
+      4,
+      1
+    ]
+  },
+  {
+    "id": "campo-trabajo-y-educacion-2",
+    "title": "Campo, trabajo y educación // 2",
+    "filename": "2.jpg",
+    "projectId": "campo-trabajo-y-educacion",
+    "projectTitle": "Campo, trabajo y educación",
+    "glowColor": "#9d4edd",
+    "year": 2024,
+    "type": "Blueprint",
+    "aspectRatio": 1.4139110604332954,
+    "width": 2480,
+    "height": 1754,
+    "thumbnail": "/thumbnails/campo-trabajo-y-educacion/2.webp",
+    "fullImage": "/projects/campo-trabajo-y-educacion/2.webp",
+    "initialPosition": [
+      -11.816556552478957,
+      -15.850168976872585,
+      0
+    ],
+    "initialRotation": -0.09772436827145298,
+    "scale": [
+      5.655644241733182,
+      4,
+      1
+    ]
+  },
+  {
+    "id": "campo-trabajo-y-educacion-3",
+    "title": "Campo, trabajo y educación // 3",
+    "filename": "3.jpg",
+    "projectId": "campo-trabajo-y-educacion",
+    "projectTitle": "Campo, trabajo y educación",
+    "glowColor": "#9d4edd",
+    "year": 2024,
+    "type": "Blueprint",
+    "aspectRatio": 1.4139110604332954,
+    "width": 2480,
+    "height": 1754,
+    "thumbnail": "/thumbnails/campo-trabajo-y-educacion/3.webp",
+    "fullImage": "/projects/campo-trabajo-y-educacion/3.webp",
+    "initialPosition": [
+      13.73551380060934,
+      -12.980938011712455,
+      0
+    ],
+    "initialRotation": -0.05649740604204337,
+    "scale": [
+      5.655644241733182,
+      4,
+      1
+    ]
+  },
+  {
+    "id": "campo-trabajo-y-educacion-4",
+    "title": "Campo, trabajo y educación // 4",
+    "filename": "4.jpg",
+    "projectId": "campo-trabajo-y-educacion",
+    "projectTitle": "Campo, trabajo y educación",
+    "glowColor": "#9d4edd",
+    "year": 2024,
+    "type": "Blueprint",
+    "aspectRatio": 1.4139110604332954,
+    "width": 2480,
+    "height": 1754,
+    "thumbnail": "/thumbnails/campo-trabajo-y-educacion/4.webp",
+    "fullImage": "/projects/campo-trabajo-y-educacion/4.webp",
+    "initialPosition": [
+      18.416629577682038,
+      -5.715610597749869,
+      0
+    ],
+    "initialRotation": 0.11423598189175663,
+    "scale": [
+      5.655644241733182,
+      4,
+      1
+    ]
+  },
+  {
+    "id": "campo-trabajo-y-educacion-5-variables-minimas",
+    "title": "Campo, trabajo y educación // Variables mínimas",
+    "filename": "5 Variables mínimas.jpg",
+    "projectId": "campo-trabajo-y-educacion",
+    "projectTitle": "Campo, trabajo y educación",
+    "glowColor": "#9d4edd",
+    "year": 2024,
+    "type": "Blueprint",
+    "aspectRatio": 1.4139110604332954,
+    "width": 2480,
+    "height": 1754,
+    "thumbnail": "/thumbnails/campo-trabajo-y-educacion/5-variables-minimas.webp",
+    "fullImage": "/projects/campo-trabajo-y-educacion/5-variables-minimas.webp",
+    "initialPosition": [
+      10.823315885637214,
+      -4.617198818230814,
+      0
+    ],
+    "initialRotation": -0.08723846636955346,
+    "scale": [
+      5.655644241733182,
+      4,
+      1
+    ]
+  },
+  {
+    "id": "campo-trabajo-y-educacion-6-partes",
+    "title": "Campo, trabajo y educación // Partes",
+    "filename": "6 Partes.jpg",
+    "projectId": "campo-trabajo-y-educacion",
+    "projectTitle": "Campo, trabajo y educación",
+    "glowColor": "#9d4edd",
+    "year": 2024,
+    "type": "Blueprint",
+    "aspectRatio": 1.4139110604332954,
+    "width": 2480,
+    "height": 1754,
+    "thumbnail": "/thumbnails/campo-trabajo-y-educacion/6-partes.webp",
+    "fullImage": "/projects/campo-trabajo-y-educacion/6-partes.webp",
+    "initialPosition": [
+      -4.763060085291981,
+      5.152917056541083,
+      0
+    ],
+    "initialRotation": 0.10715514975441667,
+    "scale": [
+      5.655644241733182,
+      4,
+      1
+    ]
+  },
+  {
+    "id": "campo-trabajo-y-educacion-7-partes",
+    "title": "Campo, trabajo y educación // Partes",
+    "filename": "7 Partes.jpg",
+    "projectId": "campo-trabajo-y-educacion",
+    "projectTitle": "Campo, trabajo y educación",
+    "glowColor": "#9d4edd",
+    "year": 2024,
+    "type": "Blueprint",
+    "aspectRatio": 1.4139110604332954,
+    "width": 2480,
+    "height": 1754,
+    "thumbnail": "/thumbnails/campo-trabajo-y-educacion/7-partes.webp",
+    "fullImage": "/projects/campo-trabajo-y-educacion/7-partes.webp",
+    "initialPosition": [
+      19.621006690343613,
+      4.599507215778535,
+      0
+    ],
+    "initialRotation": -0.09527866964406953,
+    "scale": [
+      5.655644241733182,
+      4,
+      1
+    ]
+  },
+  {
+    "id": "campo-trabajo-y-educacion-8-partes",
+    "title": "Campo, trabajo y educación // Partes",
+    "filename": "8 Partes.jpg",
+    "projectId": "campo-trabajo-y-educacion",
+    "projectTitle": "Campo, trabajo y educación",
+    "glowColor": "#9d4edd",
+    "year": 2024,
+    "type": "Blueprint",
+    "aspectRatio": 1.4139110604332954,
+    "width": 2480,
+    "height": 1754,
+    "thumbnail": "/thumbnails/campo-trabajo-y-educacion/8-partes.webp",
+    "fullImage": "/projects/campo-trabajo-y-educacion/8-partes.webp",
+    "initialPosition": [
+      -13.089641854424272,
+      -10.181365829107495,
+      0
+    ],
+    "initialRotation": -0.12377425932315672,
+    "scale": [
+      5.655644241733182,
+      4,
+      1
+    ]
+  },
+  {
+    "id": "diagramas-y-ensayos-28-8-collagge-2",
+    "title": "Diagramas y ensayos // 8 collagge 2",
+    "filename": "28-8-collagge 2.jpg",
+    "projectId": "diagramas-y-ensayos",
+    "projectTitle": "Diagramas y ensayos",
+    "glowColor": "#2ec4b6",
+    "year": 2024,
+    "type": "Blueprint",
+    "aspectRatio": 1.4139110604332954,
+    "width": 2480,
+    "height": 1754,
+    "thumbnail": "/thumbnails/diagramas-y-ensayos/28-8-collagge-2.webp",
+    "fullImage": "/projects/diagramas-y-ensayos/28-8-collagge-2.webp",
+    "initialPosition": [
+      -13.35267388740311,
+      -0.24906165514246292,
+      0
+    ],
+    "initialRotation": -0.10659043964275683,
+    "scale": [
+      5.655644241733182,
+      4,
+      1
+    ]
+  },
+  {
+    "id": "diagramas-y-ensayos-28-8-collagge-3",
+    "title": "Diagramas y ensayos // 8 collagge 3",
+    "filename": "28-8-collagge 3.jpg",
+    "projectId": "diagramas-y-ensayos",
+    "projectTitle": "Diagramas y ensayos",
+    "glowColor": "#2ec4b6",
+    "year": 2024,
+    "type": "Blueprint",
+    "aspectRatio": 1.4141961231470923,
+    "width": 4961,
+    "height": 3508,
+    "thumbnail": "/thumbnails/diagramas-y-ensayos/28-8-collagge-3.webp",
+    "fullImage": "/projects/diagramas-y-ensayos/28-8-collagge-3.webp",
+    "initialPosition": [
+      9.497713212176206,
+      1.1583883455327348,
+      0
+    ],
+    "initialRotation": 0.1247196429682201,
+    "scale": [
+      5.656784492588369,
+      4,
+      1
+    ]
+  },
+  {
+    "id": "diagramas-y-ensayos-cbc",
+    "title": "Diagramas y ensayos // CBC",
+    "filename": "CBC.jpg",
+    "projectId": "diagramas-y-ensayos",
+    "projectTitle": "Diagramas y ensayos",
+    "glowColor": "#2ec4b6",
+    "year": 2024,
+    "type": "Blueprint",
+    "aspectRatio": 1.3333333333333333,
+    "width": 4032,
+    "height": 3024,
+    "thumbnail": "/thumbnails/diagramas-y-ensayos/cbc.webp",
+    "fullImage": "/projects/diagramas-y-ensayos/cbc.webp",
+    "initialPosition": [
+      -22.653880813171785,
+      -1.280396795740032,
+      0
+    ],
+    "initialRotation": 0.03538921086724586,
+    "scale": [
+      5.333333333333333,
+      4,
+      1
+    ]
+  },
+  {
+    "id": "diagramas-y-ensayos-clase-17-modelo-de-espacio-publico",
+    "title": "Diagramas y ensayos // Clase 17 Modelo de Espacio Público",
+    "filename": "Clase 17-Modelo de Espacio Público.jpg",
+    "projectId": "diagramas-y-ensayos",
+    "projectTitle": "Diagramas y ensayos",
+    "glowColor": "#2ec4b6",
+    "year": 2024,
+    "type": "Blueprint",
+    "aspectRatio": 1.4141961231470923,
+    "width": 4961,
+    "height": 3508,
+    "thumbnail": "/thumbnails/diagramas-y-ensayos/clase-17-modelo-de-espacio-publico.webp",
+    "fullImage": "/projects/diagramas-y-ensayos/clase-17-modelo-de-espacio-publico.webp",
+    "initialPosition": [
+      -9.637280641640123,
+      15.212151503009991,
+      0
+    ],
+    "initialRotation": 0.058712518613778825,
+    "scale": [
+      5.656784492588369,
+      4,
+      1
+    ]
+  },
+  {
+    "id": "diagramas-y-ensayos-clase-5-final-e3-espacio-b",
+    "title": "Diagramas y ensayos // Clase 5 FINAL E3 Espacio b",
+    "filename": "Clase 5-FINAL E3-Espacio b.jpg",
+    "projectId": "diagramas-y-ensayos",
+    "projectTitle": "Diagramas y ensayos",
+    "glowColor": "#2ec4b6",
+    "year": 2024,
+    "type": "Blueprint",
+    "aspectRatio": 1.4139110604332954,
+    "width": 2480,
+    "height": 1754,
+    "thumbnail": "/thumbnails/diagramas-y-ensayos/clase-5-final-e3-espacio-b.webp",
+    "fullImage": "/projects/diagramas-y-ensayos/clase-5-final-e3-espacio-b.webp",
+    "initialPosition": [
+      23.200728357260893,
+      8.309418993263547,
+      0
+    ],
+    "initialRotation": -0.06666810976920928,
+    "scale": [
+      5.655644241733182,
+      4,
+      1
+    ]
+  },
+  {
+    "id": "diagramas-y-ensayos-diagrama-a",
+    "title": "Diagramas y ensayos // DIAGRAMA A",
+    "filename": "DIAGRAMA A.jpg",
+    "projectId": "diagramas-y-ensayos",
+    "projectTitle": "Diagramas y ensayos",
+    "glowColor": "#2ec4b6",
+    "year": 2024,
+    "type": "Diagram",
+    "aspectRatio": 1.414516129032258,
+    "width": 3508,
+    "height": 2480,
+    "thumbnail": "/thumbnails/diagramas-y-ensayos/diagrama-a.webp",
+    "fullImage": "/projects/diagramas-y-ensayos/diagrama-a.webp",
+    "initialPosition": [
+      24.1850941602011,
+      1.8776393699732707,
+      0
+    ],
+    "initialRotation": 0.07843627480613019,
+    "scale": [
+      5.658064516129032,
+      4,
+      1
+    ]
+  },
+  {
+    "id": "diagramas-y-ensayos-e-collagge-y-perspectivas",
+    "title": "Diagramas y ensayos // E Collagge y Perspectivas,",
+    "filename": "E-Collagge y Perspectivas,.jpg",
+    "projectId": "diagramas-y-ensayos",
+    "projectTitle": "Diagramas y ensayos",
+    "glowColor": "#2ec4b6",
+    "year": 2024,
+    "type": "Blueprint",
+    "aspectRatio": 1.4141961231470923,
+    "width": 4961,
+    "height": 3508,
+    "thumbnail": "/thumbnails/diagramas-y-ensayos/e-collagge-y-perspectivas.webp",
+    "fullImage": "/projects/diagramas-y-ensayos/e-collagge-y-perspectivas.webp",
+    "initialPosition": [
+      13.423601382321998,
+      -13.701264611482209,
+      0
+    ],
+    "initialRotation": -0.010235170488649165,
+    "scale": [
+      5.656784492588369,
+      4,
+      1
+    ]
+  },
+  {
+    "id": "m1-1",
+    "title": "m1 // 1",
+    "filename": "1.jpg",
+    "projectId": "m1",
+    "projectTitle": "m1",
+    "glowColor": "#ffb703",
+    "year": 2022,
+    "type": "Blueprint",
+    "aspectRatio": 1.4139110604332954,
+    "width": 2480,
+    "height": 1754,
+    "thumbnail": "/thumbnails/m1/1.webp",
+    "fullImage": "/projects/m1/1.webp",
+    "initialPosition": [
+      -16.970865257478003,
+      15.955946206116195,
+      0
+    ],
+    "initialRotation": 0.09822527240357684,
+    "scale": [
+      5.655644241733182,
+      4,
+      1
+    ]
+  },
+  {
+    "id": "m1-2",
+    "title": "m1 // 2",
+    "filename": "2.jpg",
+    "projectId": "m1",
+    "projectTitle": "m1",
+    "glowColor": "#ffb703",
+    "year": 2022,
+    "type": "Blueprint",
+    "aspectRatio": 1.4139110604332954,
+    "width": 2480,
+    "height": 1754,
+    "thumbnail": "/thumbnails/m1/2.webp",
+    "fullImage": "/projects/m1/2.webp",
+    "initialPosition": [
+      1.8120443774834238,
+      -9.697400142322014,
+      0
+    ],
+    "initialRotation": 0.029074882804955654,
+    "scale": [
+      5.655644241733182,
+      4,
+      1
+    ]
+  },
+  {
+    "id": "m1-3",
+    "title": "m1 // 3",
+    "filename": "3.jpg",
+    "projectId": "m1",
+    "projectTitle": "m1",
+    "glowColor": "#ffb703",
+    "year": 2022,
+    "type": "Blueprint",
+    "aspectRatio": 1.4139110604332954,
+    "width": 2480,
+    "height": 1754,
+    "thumbnail": "/thumbnails/m1/3.webp",
+    "fullImage": "/projects/m1/3.webp",
+    "initialPosition": [
+      12.180162094169777,
+      -1.5093914326941205,
+      0
+    ],
+    "initialRotation": -0.10725442034756871,
+    "scale": [
+      5.655644241733182,
+      4,
+      1
+    ]
+  },
+  {
+    "id": "m1-4",
+    "title": "m1 // 4",
+    "filename": "4.jpg",
+    "projectId": "m1",
+    "projectTitle": "m1",
+    "glowColor": "#ffb703",
+    "year": 2022,
+    "type": "Blueprint",
+    "aspectRatio": 1.4139110604332954,
+    "width": 2480,
+    "height": 1754,
+    "thumbnail": "/thumbnails/m1/4.webp",
+    "fullImage": "/projects/m1/4.webp",
+    "initialPosition": [
+      -16.46207986843858,
+      -5.932431232208855,
+      0
+    ],
+    "initialRotation": -0.012432335362128122,
+    "scale": [
+      5.655644241733182,
+      4,
+      1
+    ]
+  },
+  {
+    "id": "m1-5",
+    "title": "m1 // 5",
+    "filename": "5.jpg",
+    "projectId": "m1",
+    "projectTitle": "m1",
+    "glowColor": "#ffb703",
+    "year": 2022,
+    "type": "Blueprint",
+    "aspectRatio": 1.4139110604332954,
+    "width": 2480,
+    "height": 1754,
+    "thumbnail": "/thumbnails/m1/5.webp",
+    "fullImage": "/projects/m1/5.webp",
+    "initialPosition": [
+      23.861127299132267,
+      14.008950613625247,
+      0
+    ],
+    "initialRotation": 0.08729230673600513,
+    "scale": [
+      5.655644241733182,
+      4,
+      1
+    ]
+  },
+  {
+    "id": "megacamalote-10-3-humedal-cibernetico-1",
+    "title": "Megacamalote // 3 Humedal Cibernético 1",
+    "filename": "10-3_Humedal Cibernético 1.jpg",
+    "projectId": "megacamalote",
+    "projectTitle": "Megacamalote",
+    "glowColor": "#fb8500",
+    "year": 2024,
+    "type": "Blueprint",
+    "aspectRatio": 1.4139110604332954,
+    "width": 2480,
+    "height": 1754,
+    "thumbnail": "/thumbnails/megacamalote/10-3-humedal-cibernetico-1.webp",
+    "fullImage": "/projects/megacamalote/10-3-humedal-cibernetico-1.webp",
+    "initialPosition": [
+      10.636386493685269,
+      0.03946575246630335,
+      0
+    ],
+    "initialRotation": -0.03825460573016462,
+    "scale": [
+      5.655644241733182,
+      4,
+      1
+    ]
+  },
+  {
+    "id": "megacamalote-10-3-humedal-cibernetico-2",
+    "title": "Megacamalote // 3 Humedal Cibernético 2",
+    "filename": "10-3_Humedal Cibernético 2.jpg",
+    "projectId": "megacamalote",
+    "projectTitle": "Megacamalote",
+    "glowColor": "#fb8500",
+    "year": 2024,
+    "type": "Blueprint",
+    "aspectRatio": 1.4139110604332954,
+    "width": 2480,
+    "height": 1754,
+    "thumbnail": "/thumbnails/megacamalote/10-3-humedal-cibernetico-2.webp",
+    "fullImage": "/projects/megacamalote/10-3-humedal-cibernetico-2.webp",
+    "initialPosition": [
+      -21.793801874430308,
+      -1.5741338362291675,
+      0
+    ],
+    "initialRotation": 0.013359514265520595,
+    "scale": [
+      5.655644241733182,
+      4,
+      1
+    ]
+  },
+  {
+    "id": "megacamalote-10-3-humedal-cibernetico-3",
+    "title": "Megacamalote // 3 Humedal Cibernético 3",
+    "filename": "10-3_Humedal Cibernético 3.jpg",
+    "projectId": "megacamalote",
+    "projectTitle": "Megacamalote",
+    "glowColor": "#fb8500",
+    "year": 2024,
+    "type": "Blueprint",
+    "aspectRatio": 1.4139110604332954,
+    "width": 2480,
+    "height": 1754,
+    "thumbnail": "/thumbnails/megacamalote/10-3-humedal-cibernetico-3.webp",
+    "fullImage": "/projects/megacamalote/10-3-humedal-cibernetico-3.webp",
+    "initialPosition": [
+      -17.088718308914697,
+      6.984656219293841,
+      0
+    ],
+    "initialRotation": -0.09921337641548539,
+    "scale": [
+      5.655644241733182,
+      4,
+      1
+    ]
+  },
+  {
+    "id": "megacamalote-10-3-humedal-cibernetico-4",
+    "title": "Megacamalote // 3 Humedal Cibernético 4",
+    "filename": "10-3_Humedal Cibernético 4.jpg",
+    "projectId": "megacamalote",
+    "projectTitle": "Megacamalote",
+    "glowColor": "#fb8500",
+    "year": 2024,
+    "type": "Blueprint",
+    "aspectRatio": 1.4139110604332954,
+    "width": 2480,
+    "height": 1754,
+    "thumbnail": "/thumbnails/megacamalote/10-3-humedal-cibernetico-4.webp",
+    "fullImage": "/projects/megacamalote/10-3-humedal-cibernetico-4.webp",
+    "initialPosition": [
+      -0.8039842690947541,
+      2.595937047875099,
+      0
+    ],
+    "initialRotation": -0.07592115232581634,
+    "scale": [
+      5.655644241733182,
+      4,
+      1
+    ]
+  },
+  {
+    "id": "megacamalote-10-3-humedal-cibernetico-5",
+    "title": "Megacamalote // 3 Humedal Cibernético 5",
+    "filename": "10-3_Humedal Cibernético 5.jpg",
+    "projectId": "megacamalote",
+    "projectTitle": "Megacamalote",
+    "glowColor": "#fb8500",
+    "year": 2024,
+    "type": "Blueprint",
+    "aspectRatio": 1.5048543689320388,
+    "width": 2480,
+    "height": 1648,
+    "thumbnail": "/thumbnails/megacamalote/10-3-humedal-cibernetico-5.webp",
+    "fullImage": "/projects/megacamalote/10-3-humedal-cibernetico-5.webp",
+    "initialPosition": [
+      -21.327652352895615,
+      11.35111073216614,
+      0
+    ],
+    "initialRotation": 0.07731852108914392,
+    "scale": [
+      6.019417475728155,
+      4,
+      1
+    ]
+  },
+  {
+    "id": "megacamalote-10-3-humedal-cibernetico-6",
+    "title": "Megacamalote // 3 Humedal Cibernético 6",
+    "filename": "10-3_Humedal Cibernético 6.jpg",
+    "projectId": "megacamalote",
+    "projectTitle": "Megacamalote",
+    "glowColor": "#fb8500",
+    "year": 2024,
+    "type": "Blueprint",
+    "aspectRatio": 1.4139110604332954,
+    "width": 2480,
+    "height": 1754,
+    "thumbnail": "/thumbnails/megacamalote/10-3-humedal-cibernetico-6.webp",
+    "fullImage": "/projects/megacamalote/10-3-humedal-cibernetico-6.webp",
+    "initialPosition": [
+      0.6634391683728591,
+      -9.616343842003992,
+      0
+    ],
+    "initialRotation": -0.06715773023141527,
+    "scale": [
+      5.655644241733182,
+      4,
+      1
+    ]
+  },
+  {
+    "id": "megacamalote-10-3-humedal-cibernetico-e",
+    "title": "Megacamalote // 3 Humedal Cibernético e",
+    "filename": "10-3_Humedal Cibernético e.jpg",
+    "projectId": "megacamalote",
+    "projectTitle": "Megacamalote",
+    "glowColor": "#fb8500",
+    "year": 2024,
+    "type": "Blueprint",
+    "aspectRatio": 1.4139110604332954,
+    "width": 2480,
+    "height": 1754,
+    "thumbnail": "/thumbnails/megacamalote/10-3-humedal-cibernetico-e.webp",
+    "fullImage": "/projects/megacamalote/10-3-humedal-cibernetico-e.webp",
+    "initialPosition": [
+      2.4714741438997434,
+      2.0800260004453186,
+      0
+    ],
+    "initialRotation": 0.05796345239443204,
+    "scale": [
+      5.655644241733182,
+      4,
+      1
+    ]
+  },
+  {
+    "id": "morfologia-1-1",
+    "title": "Morfología 1 // 1",
+    "filename": "1.jpg",
+    "projectId": "morfologia-1",
+    "projectTitle": "Morfología 1",
+    "glowColor": "#00ffff",
+    "year": 2024,
+    "type": "Blueprint",
+    "aspectRatio": 1.4139110604332954,
+    "width": 2480,
+    "height": 1754,
+    "thumbnail": "/thumbnails/morfologia-1/1.webp",
+    "fullImage": "/projects/morfologia-1/1.webp",
+    "initialPosition": [
+      16.834157015250945,
+      1.2287827002076983,
+      0
+    ],
+    "initialRotation": -0.02977054574151125,
+    "scale": [
+      5.655644241733182,
+      4,
+      1
+    ]
+  },
+  {
+    "id": "morfologia-1-2",
+    "title": "Morfología 1 // 2",
+    "filename": "2.jpg",
+    "projectId": "morfologia-1",
+    "projectTitle": "Morfología 1",
+    "glowColor": "#00ffff",
+    "year": 2024,
+    "type": "Blueprint",
+    "aspectRatio": 1.4139110604332954,
+    "width": 2480,
+    "height": 1754,
+    "thumbnail": "/thumbnails/morfologia-1/2.webp",
+    "fullImage": "/projects/morfologia-1/2.webp",
+    "initialPosition": [
+      -22.0090812494878,
+      15.775451250031733,
+      0
+    ],
+    "initialRotation": 0.10430628328941968,
+    "scale": [
+      5.655644241733182,
+      4,
+      1
+    ]
+  },
+  {
+    "id": "morfologia-1-3",
+    "title": "Morfología 1 // 3",
+    "filename": "3.jpg",
+    "projectId": "morfologia-1",
+    "projectTitle": "Morfología 1",
+    "glowColor": "#00ffff",
+    "year": 2024,
+    "type": "Blueprint",
+    "aspectRatio": 1.4139110604332954,
+    "width": 2480,
+    "height": 1754,
+    "thumbnail": "/thumbnails/morfologia-1/3.webp",
+    "fullImage": "/projects/morfologia-1/3.webp",
+    "initialPosition": [
+      -2.327260800661035,
+      5.44280324038431,
+      0
+    ],
+    "initialRotation": -0.1052089399170113,
+    "scale": [
+      5.655644241733182,
+      4,
+      1
+    ]
+  },
+  {
+    "id": "morfologia-1-4",
+    "title": "Morfología 1 // 4",
+    "filename": "4.jpg",
+    "projectId": "morfologia-1",
+    "projectTitle": "Morfología 1",
+    "glowColor": "#00ffff",
+    "year": 2024,
+    "type": "Blueprint",
+    "aspectRatio": 1.4139110604332954,
+    "width": 2480,
+    "height": 1754,
+    "thumbnail": "/thumbnails/morfologia-1/4.webp",
+    "fullImage": "/projects/morfologia-1/4.webp",
+    "initialPosition": [
+      -16.2428938000442,
+      -14.536872364804815,
+      0
+    ],
+    "initialRotation": 0.08500224147452329,
+    "scale": [
+      5.655644241733182,
+      4,
+      1
+    ]
+  },
+  {
+    "id": "morfologia-1-5",
+    "title": "Morfología 1 // 5",
+    "filename": "5.jpg",
+    "projectId": "morfologia-1",
+    "projectTitle": "Morfología 1",
+    "glowColor": "#00ffff",
+    "year": 2024,
+    "type": "Blueprint",
+    "aspectRatio": 1.4139110604332954,
+    "width": 2480,
+    "height": 1754,
+    "thumbnail": "/thumbnails/morfologia-1/5.webp",
+    "fullImage": "/projects/morfologia-1/5.webp",
+    "initialPosition": [
+      18.388975330178013,
+      1.1635759747013403,
+      0
+    ],
+    "initialRotation": 0.006353670748374729,
+    "scale": [
+      5.655644241733182,
+      4,
+      1
+    ]
+  },
+  {
+    "id": "reconstruccion-civica-30-11-constructivo-1",
+    "title": "Reconstrucción cívica // 11 CONSTRUCTIVO 1",
+    "filename": "30_11_CONSTRUCTIVO_1.jpg",
+    "projectId": "reconstruccion-civica",
+    "projectTitle": "Reconstrucción cívica",
+    "glowColor": "#ff007f",
+    "year": 2024,
+    "type": "Blueprint",
+    "aspectRatio": 1,
+    "width": 7016,
+    "height": 7016,
+    "thumbnail": "/thumbnails/reconstruccion-civica/30-11-constructivo-1.webp",
+    "fullImage": "/projects/reconstruccion-civica/30-11-constructivo-1.webp",
+    "initialPosition": [
+      -11.053208787462744,
+      10.431038363442603,
+      0
+    ],
+    "initialRotation": 0.08822996372841546,
+    "scale": [
+      3,
+      3,
+      1
+    ]
+  },
+  {
+    "id": "reconstruccion-civica-30-11-constructivo-2",
+    "title": "Reconstrucción cívica // 11 CONSTRUCTIVO 2",
+    "filename": "30_11_CONSTRUCTIVO_2.jpg",
+    "projectId": "reconstruccion-civica",
+    "projectTitle": "Reconstrucción cívica",
+    "glowColor": "#ff007f",
+    "year": 2024,
+    "type": "Blueprint",
+    "aspectRatio": 1,
+    "width": 3508,
+    "height": 3508,
+    "thumbnail": "/thumbnails/reconstruccion-civica/30-11-constructivo-2.webp",
+    "fullImage": "/projects/reconstruccion-civica/30-11-constructivo-2.webp",
+    "initialPosition": [
+      -22.900014687924987,
+      -7.108888572678575,
+      0
+    ],
+    "initialRotation": -0.021952295760509832,
+    "scale": [
+      3,
+      3,
+      1
+    ]
+  },
+  {
+    "id": "reconstruccion-civica-30-11-constructivo-3",
+    "title": "Reconstrucción cívica // 11 CONSTRUCTIVO 3",
+    "filename": "30_11_CONSTRUCTIVO_3.jpg",
+    "projectId": "reconstruccion-civica",
+    "projectTitle": "Reconstrucción cívica",
+    "glowColor": "#ff007f",
+    "year": 2024,
+    "type": "Blueprint",
+    "aspectRatio": 1,
+    "width": 3508,
+    "height": 3508,
+    "thumbnail": "/thumbnails/reconstruccion-civica/30-11-constructivo-3.webp",
+    "fullImage": "/projects/reconstruccion-civica/30-11-constructivo-3.webp",
+    "initialPosition": [
+      -21.18610017902478,
+      4.760705786135148,
+      0
+    ],
+    "initialRotation": -0.08011729681987775,
+    "scale": [
+      3,
+      3,
+      1
+    ]
+  },
+  {
+    "id": "reconstruccion-civica-30-11-diagrama-inicial",
+    "title": "Reconstrucción cívica // 11 DIAGRAMA INICIAL",
+    "filename": "30_11_DIAGRAMA INICIAL.jpg",
+    "projectId": "reconstruccion-civica",
+    "projectTitle": "Reconstrucción cívica",
+    "glowColor": "#ff007f",
+    "year": 2024,
+    "type": "Diagram",
+    "aspectRatio": 1,
+    "width": 3508,
+    "height": 3508,
+    "thumbnail": "/thumbnails/reconstruccion-civica/30-11-diagrama-inicial.webp",
+    "fullImage": "/projects/reconstruccion-civica/30-11-diagrama-inicial.webp",
+    "initialPosition": [
+      14.793922114175329,
+      5.2690719191172155,
+      0
+    ],
+    "initialRotation": -0.05025231445406503,
+    "scale": [
+      3,
+      3,
+      1
+    ]
+  },
+  {
+    "id": "reconstruccion-civica-30-11-diagrama-programatico-1",
+    "title": "Reconstrucción cívica // 11 DIAGRAMA PROGRAMÁTICO 1",
+    "filename": "30_11_DIAGRAMA PROGRAMÁTICO_1.jpg",
+    "projectId": "reconstruccion-civica",
+    "projectTitle": "Reconstrucción cívica",
+    "glowColor": "#ff007f",
+    "year": 2024,
+    "type": "Diagram",
+    "aspectRatio": 1,
+    "width": 3508,
+    "height": 3508,
+    "thumbnail": "/thumbnails/reconstruccion-civica/30-11-diagrama-programatico-1.webp",
+    "fullImage": "/projects/reconstruccion-civica/30-11-diagrama-programatico-1.webp",
+    "initialPosition": [
+      18.400354408865283,
+      2.6424920872565405,
+      0
+    ],
+    "initialRotation": 0.005171560703199102,
+    "scale": [
+      3,
+      3,
+      1
+    ]
+  },
+  {
+    "id": "reconstruccion-civica-30-11-diagrama-programatico-2",
+    "title": "Reconstrucción cívica // 11 DIAGRAMA PROGRAMÁTICO 2",
+    "filename": "30_11_DIAGRAMA PROGRAMÁTICO_2.jpg",
+    "projectId": "reconstruccion-civica",
+    "projectTitle": "Reconstrucción cívica",
+    "glowColor": "#ff007f",
+    "year": 2024,
+    "type": "Diagram",
+    "aspectRatio": 1,
+    "width": 3508,
+    "height": 3508,
+    "thumbnail": "/thumbnails/reconstruccion-civica/30-11-diagrama-programatico-2.webp",
+    "fullImage": "/projects/reconstruccion-civica/30-11-diagrama-programatico-2.webp",
+    "initialPosition": [
+      4.88157605051911,
+      -0.5837483461603504,
+      0
+    ],
+    "initialRotation": 0.062268804354745605,
+    "scale": [
+      3,
+      3,
+      1
+    ]
+  },
+  {
+    "id": "reconstruccion-civica-30-11-diagrama-programatico-3",
+    "title": "Reconstrucción cívica // 11 DIAGRAMA PROGRAMÁTICO 3",
+    "filename": "30_11_DIAGRAMA PROGRAMÁTICO_3.jpg",
+    "projectId": "reconstruccion-civica",
+    "projectTitle": "Reconstrucción cívica",
+    "glowColor": "#ff007f",
+    "year": 2024,
+    "type": "Diagram",
+    "aspectRatio": 1,
+    "width": 3508,
+    "height": 3508,
+    "thumbnail": "/thumbnails/reconstruccion-civica/30-11-diagrama-programatico-3.webp",
+    "fullImage": "/projects/reconstruccion-civica/30-11-diagrama-programatico-3.webp",
+    "initialPosition": [
+      -10.25472546397187,
+      -4.09566454821468,
+      0
+    ],
+    "initialRotation": -0.07906508370234169,
+    "scale": [
+      3,
+      3,
+      1
+    ]
+  },
+  {
+    "id": "reconstruccion-civica-30-11-implantacion",
+    "title": "Reconstrucción cívica // 11 IMPLANTACIÓN",
+    "filename": "30_11_IMPLANTACIÓN.jpg",
+    "projectId": "reconstruccion-civica",
+    "projectTitle": "Reconstrucción cívica",
+    "glowColor": "#ff007f",
+    "year": 2024,
+    "type": "Blueprint",
+    "aspectRatio": 1,
+    "width": 14043,
+    "height": 14043,
+    "thumbnail": "/thumbnails/reconstruccion-civica/30-11-implantacion.webp",
+    "fullImage": "/projects/reconstruccion-civica/30-11-implantacion.webp",
+    "initialPosition": [
+      16.537854673402773,
+      -2.384143424783731,
+      0
+    ],
+    "initialRotation": -0.03147960013295609,
+    "scale": [
+      3,
+      3,
+      1
+    ]
+  },
+  {
+    "id": "reconstruccion-civica-30-11-p1-p2",
+    "title": "Reconstrucción cívica // 11 P1 P2",
+    "filename": "30_11_P1_P2.jpg",
+    "projectId": "reconstruccion-civica",
+    "projectTitle": "Reconstrucción cívica",
+    "glowColor": "#ff007f",
+    "year": 2024,
+    "type": "Blueprint",
+    "aspectRatio": 1,
+    "width": 14043,
+    "height": 14043,
+    "thumbnail": "/thumbnails/reconstruccion-civica/30-11-p1-p2.webp",
+    "fullImage": "/projects/reconstruccion-civica/30-11-p1-p2.webp",
+    "initialPosition": [
+      -0.43387830852922304,
+      -14.0218862142102,
+      0
+    ],
+    "initialRotation": 0.10225488385294251,
+    "scale": [
+      3,
+      3,
+      1
+    ]
+  },
+  {
+    "id": "reconstruccion-civica-30-11-pb",
+    "title": "Reconstrucción cívica // 11 PB",
+    "filename": "30_11_PB.jpg",
+    "projectId": "reconstruccion-civica",
+    "projectTitle": "Reconstrucción cívica",
+    "glowColor": "#ff007f",
+    "year": 2024,
+    "type": "Blueprint",
+    "aspectRatio": 1,
+    "width": 14043,
+    "height": 14043,
+    "thumbnail": "/thumbnails/reconstruccion-civica/30-11-pb.webp",
+    "fullImage": "/projects/reconstruccion-civica/30-11-pb.webp",
+    "initialPosition": [
+      -13.1652128564894,
+      -6.6013292939622055,
+      0
+    ],
+    "initialRotation": 0.045778300358457646,
+    "scale": [
+      3,
+      3,
+      1
+    ]
+  },
+  {
+    "id": "reconstruccion-civica-30-11-pt",
+    "title": "Reconstrucción cívica // 11 PT",
+    "filename": "30_11_PT.jpg",
+    "projectId": "reconstruccion-civica",
+    "projectTitle": "Reconstrucción cívica",
+    "glowColor": "#ff007f",
+    "year": 2024,
+    "type": "Blueprint",
+    "aspectRatio": 1,
+    "width": 14043,
+    "height": 14043,
+    "thumbnail": "/thumbnails/reconstruccion-civica/30-11-pt.webp",
+    "fullImage": "/projects/reconstruccion-civica/30-11-pt.webp",
+    "initialPosition": [
+      23.919469749671485,
+      -7.8370365509817566,
+      0
+    ],
+    "initialRotation": -0.030660603631940425,
+    "scale": [
+      3,
+      3,
+      1
+    ]
+  },
+  {
+    "id": "reconstruccion-civica-30-11-render-1-1",
+    "title": "Reconstrucción cívica // 11 RENDER 1 (1)",
+    "filename": "30_11_RENDER_1 (1).jpg",
+    "projectId": "reconstruccion-civica",
+    "projectTitle": "Reconstrucción cívica",
+    "glowColor": "#ff007f",
+    "year": 2024,
+    "type": "Render",
+    "aspectRatio": 1,
+    "width": 3508,
+    "height": 3508,
+    "thumbnail": "/thumbnails/reconstruccion-civica/30-11-render-1-1.webp",
+    "fullImage": "/projects/reconstruccion-civica/30-11-render-1-1.webp",
+    "initialPosition": [
+      3.902761400651383,
+      -1.836651233954432,
+      0
+    ],
+    "initialRotation": -0.04988614685076059,
+    "scale": [
+      3,
+      3,
+      1
+    ]
+  },
+  {
+    "id": "reconstruccion-civica-30-11-render-1",
+    "title": "Reconstrucción cívica // 11 RENDER 1",
+    "filename": "30_11_RENDER_1.jpg",
+    "projectId": "reconstruccion-civica",
+    "projectTitle": "Reconstrucción cívica",
+    "glowColor": "#ff007f",
+    "year": 2024,
+    "type": "Render",
+    "aspectRatio": 1,
+    "width": 3508,
+    "height": 3508,
+    "thumbnail": "/thumbnails/reconstruccion-civica/30-11-render-1.webp",
+    "fullImage": "/projects/reconstruccion-civica/30-11-render-1.webp",
+    "initialPosition": [
+      18.761198931760525,
+      -10.781790426783749,
+      0
+    ],
+    "initialRotation": -0.0751369928320787,
+    "scale": [
+      3,
+      3,
+      1
+    ]
+  },
+  {
+    "id": "reconstruccion-civica-30-11-render-2",
+    "title": "Reconstrucción cívica // 11 RENDER 2",
+    "filename": "30_11_RENDER_2.jpg",
+    "projectId": "reconstruccion-civica",
+    "projectTitle": "Reconstrucción cívica",
+    "glowColor": "#ff007f",
+    "year": 2024,
+    "type": "Render",
+    "aspectRatio": 1,
+    "width": 3508,
+    "height": 3508,
+    "thumbnail": "/thumbnails/reconstruccion-civica/30-11-render-2.webp",
+    "fullImage": "/projects/reconstruccion-civica/30-11-render-2.webp",
+    "initialPosition": [
+      20.00581557538303,
+      1.1220690917696756,
+      0
+    ],
+    "initialRotation": 0.0051123177868775405,
+    "scale": [
+      3,
+      3,
+      1
+    ]
+  },
+  {
+    "id": "reconstruccion-civica-30-11-render-3",
+    "title": "Reconstrucción cívica // 11 RENDER 3",
+    "filename": "30_11_RENDER_3.jpg",
+    "projectId": "reconstruccion-civica",
+    "projectTitle": "Reconstrucción cívica",
+    "glowColor": "#ff007f",
+    "year": 2024,
+    "type": "Render",
+    "aspectRatio": 1,
+    "width": 3508,
+    "height": 3508,
+    "thumbnail": "/thumbnails/reconstruccion-civica/30-11-render-3.webp",
+    "fullImage": "/projects/reconstruccion-civica/30-11-render-3.webp",
+    "initialPosition": [
+      1.7603964554193219,
+      4.348328736603916,
+      0
+    ],
+    "initialRotation": -0.11758631265817013,
+    "scale": [
+      3,
+      3,
+      1
+    ]
+  },
+  {
+    "id": "reconstruccion-civica-30-11-render-4",
+    "title": "Reconstrucción cívica // 11 RENDER 4",
+    "filename": "30_11_RENDER_4.jpg",
+    "projectId": "reconstruccion-civica",
+    "projectTitle": "Reconstrucción cívica",
+    "glowColor": "#ff007f",
+    "year": 2024,
+    "type": "Render",
+    "aspectRatio": 1,
+    "width": 3508,
+    "height": 3508,
+    "thumbnail": "/thumbnails/reconstruccion-civica/30-11-render-4.webp",
+    "fullImage": "/projects/reconstruccion-civica/30-11-render-4.webp",
+    "initialPosition": [
+      -22.05409055346052,
+      13.986801820986157,
+      0
+    ],
+    "initialRotation": 0.052809189922763344,
+    "scale": [
+      3,
+      3,
+      1
+    ]
+  },
+  {
+    "id": "reconstruccion-civica-30-11-render-7",
+    "title": "Reconstrucción cívica // 11 RENDER 7",
+    "filename": "30_11_RENDER_7.jpg",
+    "projectId": "reconstruccion-civica",
+    "projectTitle": "Reconstrucción cívica",
+    "glowColor": "#ff007f",
+    "year": 2024,
+    "type": "Render",
+    "aspectRatio": 1,
+    "width": 3508,
+    "height": 3508,
+    "thumbnail": "/thumbnails/reconstruccion-civica/30-11-render-7.webp",
+    "fullImage": "/projects/reconstruccion-civica/30-11-render-7.webp",
+    "initialPosition": [
+      -12.711021706722741,
+      8.299619215730065,
+      0
+    ],
+    "initialRotation": 0.12492017421235832,
+    "scale": [
+      3,
+      3,
+      1
+    ]
+  },
+  {
+    "id": "reconstruccion-civica-30-11-render-8",
+    "title": "Reconstrucción cívica // 11 RENDER 8",
+    "filename": "30_11_RENDER_8.jpg",
+    "projectId": "reconstruccion-civica",
+    "projectTitle": "Reconstrucción cívica",
+    "glowColor": "#ff007f",
+    "year": 2024,
+    "type": "Render",
+    "aspectRatio": 1,
+    "width": 3508,
+    "height": 3508,
+    "thumbnail": "/thumbnails/reconstruccion-civica/30-11-render-8.webp",
+    "fullImage": "/projects/reconstruccion-civica/30-11-render-8.webp",
+    "initialPosition": [
+      -22.10048256602818,
+      13.809032173399832,
+      0
+    ],
+    "initialRotation": -0.1022998396190811,
+    "scale": [
+      3,
+      3,
+      1
+    ]
+  },
+  {
+    "id": "reconstruccion-civica-30-11-render-9",
+    "title": "Reconstrucción cívica // 11 RENDER 9",
+    "filename": "30_11_RENDER_9.jpg",
+    "projectId": "reconstruccion-civica",
+    "projectTitle": "Reconstrucción cívica",
+    "glowColor": "#ff007f",
+    "year": 2024,
+    "type": "Render",
+    "aspectRatio": 1,
+    "width": 3508,
+    "height": 3508,
+    "thumbnail": "/thumbnails/reconstruccion-civica/30-11-render-9.webp",
+    "fullImage": "/projects/reconstruccion-civica/30-11-render-9.webp",
+    "initialPosition": [
+      0.7309463224424051,
+      -9.986420010269027,
+      0
+    ],
+    "initialRotation": -0.017234985358579424,
+    "scale": [
+      3,
+      3,
+      1
+    ]
+  },
+  {
+    "id": "reconstruccion-civica-30-11-render-axo-despiezada",
+    "title": "Reconstrucción cívica // 11 RENDER AXO DESPIEZADA",
+    "filename": "30_11_RENDER_AXO DESPIEZADA.jpg",
+    "projectId": "reconstruccion-civica",
+    "projectTitle": "Reconstrucción cívica",
+    "glowColor": "#ff007f",
+    "year": 2024,
+    "type": "Render",
+    "aspectRatio": 1,
+    "width": 3508,
+    "height": 3508,
+    "thumbnail": "/thumbnails/reconstruccion-civica/30-11-render-axo-despiezada.webp",
+    "fullImage": "/projects/reconstruccion-civica/30-11-render-axo-despiezada.webp",
+    "initialPosition": [
+      0.915538429128665,
+      12.810019560874025,
+      0
+    ],
+    "initialRotation": 0.011137778218502287,
+    "scale": [
+      3,
+      3,
+      1
+    ]
+  },
+  {
+    "id": "reconstruccion-civica-30-11-render-axos",
+    "title": "Reconstrucción cívica // 11 RENDER AXOS",
+    "filename": "30_11_RENDER_AXOS.jpg",
+    "projectId": "reconstruccion-civica",
+    "projectTitle": "Reconstrucción cívica",
+    "glowColor": "#ff007f",
+    "year": 2024,
+    "type": "Render",
+    "aspectRatio": 1,
+    "width": 3508,
+    "height": 3508,
+    "thumbnail": "/thumbnails/reconstruccion-civica/30-11-render-axos.webp",
+    "fullImage": "/projects/reconstruccion-civica/30-11-render-axos.webp",
+    "initialPosition": [
+      5.323891658150293,
+      4.092335627774071,
+      0
+    ],
+    "initialRotation": -0.036458541170746483,
+    "scale": [
+      3,
+      3,
+      1
+    ]
+  },
+  {
+    "id": "reconstruccion-civica-30-11-vista-a",
+    "title": "Reconstrucción cívica // 11 VISTA A",
+    "filename": "30_11_VISTA A.jpg",
+    "projectId": "reconstruccion-civica",
+    "projectTitle": "Reconstrucción cívica",
+    "glowColor": "#ff007f",
+    "year": 2024,
+    "type": "Blueprint",
+    "aspectRatio": 1,
+    "width": 14043,
+    "height": 14043,
+    "thumbnail": "/thumbnails/reconstruccion-civica/30-11-vista-a.webp",
+    "fullImage": "/projects/reconstruccion-civica/30-11-vista-a.webp",
+    "initialPosition": [
+      14.410174230938122,
+      12.407849439678735,
+      0
+    ],
+    "initialRotation": 0.014857369962701483,
+    "scale": [
+      3,
+      3,
+      1
+    ]
+  },
+  {
+    "id": "reconstruccion-civica-30-11-vista-b",
+    "title": "Reconstrucción cívica // 11 VISTA B",
+    "filename": "30_11_VISTA B.jpg",
+    "projectId": "reconstruccion-civica",
+    "projectTitle": "Reconstrucción cívica",
+    "glowColor": "#ff007f",
+    "year": 2024,
+    "type": "Blueprint",
+    "aspectRatio": 1,
+    "width": 14043,
+    "height": 14043,
+    "thumbnail": "/thumbnails/reconstruccion-civica/30-11-vista-b.webp",
+    "fullImage": "/projects/reconstruccion-civica/30-11-vista-b.webp",
+    "initialPosition": [
+      -23.884509125321852,
+      6.83517865180148,
+      0
+    ],
+    "initialRotation": 0.08042687513807029,
+    "scale": [
+      3,
+      3,
+      1
+    ]
+  },
+  {
+    "id": "reconstruccion-civica-30-11-vista-c-d",
+    "title": "Reconstrucción cívica // 11 VISTA C D",
+    "filename": "30_11_VISTA C-D.jpg",
+    "projectId": "reconstruccion-civica",
+    "projectTitle": "Reconstrucción cívica",
+    "glowColor": "#ff007f",
+    "year": 2024,
+    "type": "Blueprint",
+    "aspectRatio": 1,
+    "width": 14043,
+    "height": 14043,
+    "thumbnail": "/thumbnails/reconstruccion-civica/30-11-vista-c-d.webp",
+    "fullImage": "/projects/reconstruccion-civica/30-11-vista-c-d.webp",
+    "initialPosition": [
+      -23.459432174555715,
+      14.527073353088376,
+      0
+    ],
+    "initialRotation": 0.06463152723728172,
+    "scale": [
+      3,
+      3,
+      1
+    ]
+  }
+]

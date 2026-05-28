@@ -1,0 +1,217 @@
+:root {
+  --color-bg: #ffffff;
+  --color-bg-darker: #f3f4f6;
+  --color-bg-transparent: rgba(255, 255, 255, 0.9);
+  
+  /* Neon Frame Borders */
+  --color-frame-purple: #9d4edd; /* Violet */
+  --color-frame-green: #2ec4b6;  /* CAD Tech Green */
+  --color-frame-yellow: #ffb703; /* Yellow */
+  --color-frame-orange: #fb8500; /* Orange */
+  --color-frame-cyan: #00b4d8;   /* Cyan */
+  --color-frame-pink: #ff007f;   /* Hot Magenta/Pink */
+  
+  --color-text: #000000;
+  --color-text-muted: #6b7280;
+  --color-border: #000000;
+  
+  --font-mono: 'JetBrains Mono', monospace;
+  
+  --scanline-color: rgba(0, 0, 0, 0.04);
+}
+
+/* Base resets & layouts */
+html, body, #root {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-mono);
+  user-select: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  position: relative;
+}
+
+/* Disabled scanline effects for clean technical white background */
+.crt-overlay {
+  display: none;
+}
+.crt-overlay::after {
+  display: none;
+}
+.flicker {
+  animation: none;
+}
+
+/* Brutalist terminal layout elements */
+.terminal-hud {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--color-text);
+}
+
+/* Framed Panels (HUD Borders) */
+.frame-purple {
+  border: 2px solid var(--color-frame-purple) !important;
+  box-shadow: 4px 4px 0px rgba(157, 78, 221, 0.25) !important;
+}
+
+.frame-green {
+  border: 2px solid var(--color-frame-green) !important;
+  box-shadow: 4px 4px 0px rgba(46, 196, 182, 0.25) !important;
+}
+
+.frame-yellow {
+  border: 2px solid var(--color-frame-yellow) !important;
+  box-shadow: 4px 4px 0px rgba(255, 183, 3, 0.25) !important;
+}
+
+.frame-orange {
+  border: 2px solid var(--color-frame-orange) !important;
+  box-shadow: 4px 4px 0px rgba(251, 133, 0, 0.25) !important;
+}
+
+.frame-cyan {
+  border: 2px solid var(--color-frame-cyan) !important;
+  box-shadow: 4px 4px 0px rgba(0, 180, 216, 0.25) !important;
+}
+
+.frame-pink {
+  border: 2px solid var(--color-frame-pink) !important;
+  box-shadow: 4px 4px 0px rgba(255, 0, 127, 0.25) !important;
+}
+
+/* UI Panel frames */
+.brutalist-panel {
+  background-color: var(--color-bg-transparent);
+  border: 2px solid var(--color-border);
+  box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(8px);
+}
+
+/* Title Font matching JetBrains Mono for clean high-tech architecture */
+.title-display {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+}
+
+/* Interactive elements */
+.brutalist-btn {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: bold;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  border: 2px solid var(--color-border);
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.1s steps(3);
+}
+
+.brutalist-btn:hover, .brutalist-btn.active {
+  background-color: var(--color-border);
+  color: var(--color-bg);
+  box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.2);
+  transform: translate(-1px, -1px);
+}
+
+.brutalist-btn:active {
+  transform: translate(0px, 0px);
+  box-shadow: none;
+}
+
+/* Monospace CAD layout annotations */
+.cad-label {
+  position: relative;
+  font-size: 0.65rem;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.cad-label::before {
+  content: '▪ ';
+  color: var(--color-text);
+  margin-right: 2px;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-darker);
+  border-left: 1px solid var(--color-border);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-muted);
+}
+
+/* Touch controls parent overrides */
+canvas, .canvas-container {
+  touch-action: none !important;
+}
+
+/* Mobile HUD & responsive styles */
+@media (max-width: 768px) {
+  .hud-controls,
+  .hud-config,
+  .hud-logs,
+  .hud-coords {
+    display: none !important;
+  }
+  
+  .terminal-hud {
+    padding: 0.6rem !important;
+  }
+
+  .brutalist-panel.frame-purple {
+    width: 100% !important;
+    text-align: center !important;
+  }
+
+  .brutalist-btn {
+    min-height: 44px;
+    min-width: 44px;
+    font-size: 0.85rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Filters panel horizontal scroll on mobile */
+  .brutalist-panel.frame-pink {
+    max-width: 95vw !important;
+    overflow-x: auto !important;
+    white-space: nowrap !important;
+    padding: 0.6rem !important;
+    display: flex !important;
+    gap: 0.8rem !important;
+  }
+}
