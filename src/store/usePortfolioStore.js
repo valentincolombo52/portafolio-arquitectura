@@ -107,17 +107,28 @@ export const usePortfolioStore = create((set, get) => ({
 
   // Set Active Project Group (Secondary Collage magnetic trigger)
   setActiveProjectId: (projectId) => {
-    set({
-      activeProjectId: projectId,
-      systemStatus: `PROYECTO_AGRUPADO: ${projectId.toUpperCase()}`,
+    set((state) => {
+      const currentZ = state.cameraOffset[2];
+      return {
+        activeProjectId: projectId,
+        cameraOffset: [0, 0, currentZ],
+        targetCameraOffset: [0, 0, currentZ],
+        systemStatus: `PROYECTO_AGRUPADO: ${projectId.toUpperCase()}`,
+      };
     });
   },
 
   clearActiveProjectId: () => {
-    set({
-      activeProjectId: null,
-      fullscreenImageId: null,
-      systemStatus: 'CANVAS_CHAOS_ENGAGED',
+    set((state) => {
+      const currentZ = state.cameraOffset[2];
+      const initialZ = typeof window !== 'undefined' && window.innerWidth < 768 ? 95 : 15;
+      return {
+        activeProjectId: null,
+        fullscreenImageId: null,
+        cameraOffset: [0, 0, initialZ],
+        targetCameraOffset: [0, 0, initialZ],
+        systemStatus: 'CANVAS_CHAOS_ENGAGED',
+      };
     });
   },
 

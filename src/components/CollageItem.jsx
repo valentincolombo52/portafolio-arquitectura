@@ -197,22 +197,16 @@ export default function CollageItem({ element, index }) {
           const col = idx % cols;
           const row = Math.floor(idx / cols);
           
-          // Spacing offsets
-          const gapX = 6.0;
-          const gapY = 5.0;
+          // Spacing offsets (responsive grid gaps to fit screen)
+          const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+          const gapX = isMobile ? 2.8 : 6.0;
+          const gapY = isMobile ? 2.4 : 5.0;
+          
           const gridWidth = (cols - 1) * gapX;
           const gridHeight = (Math.ceil(groupElements.length / cols) - 1) * gapY;
           
-          const calculatedX = col * gapX - gridWidth / 2;
-          const calculatedY = gridHeight / 2 - row * gapY;
-          
-          if (window.innerWidth < 768) {
-            targetX = calculatedX * 0.5;
-            targetY = calculatedY * 0.5;
-          } else {
-            targetX = calculatedX;
-            targetY = calculatedY;
-          }
+          targetX = col * gapX - gridWidth / 2;
+          targetY = gridHeight / 2 - row * gapY;
           targetZ = 5.0 + index * 0.05; // Bring closer to camera (Z = 5 + offset)
           targetRot = 0; // Rigid orthogonal alignment
         }

@@ -22,92 +22,68 @@ export default function ControlPanel() {
   });
 
   return (
-    <div
+    <div 
+      className="brutalist-panel frame-pink scrollbar-hide"
       style={{
-        position: 'absolute',
-        bottom: '1.2rem',
-        left: '50%',
-        transform: 'translateX(-50%)',
-        zIndex: 200,
+        position: 'fixed',
+        bottom: 0,
+        left: 0,
+        width: '100vw',
+        zIndex: 50,
         display: 'flex',
-        flexDirection: 'column',
-        gap: '0.6rem',
+        flexDirection: 'row',
+        flexWrap: 'nowrap',
+        overflowX: 'auto',
+        overflowY: 'hidden',
+        whiteSpace: 'nowrap',
+        height: '56px',
         alignItems: 'center',
-        width: '95vw',
-        maxWidth: '850px',
-        pointerEvents: 'auto',
-        transition: 'all 0.3s cubic-bezier(0.19, 1, 0.22, 1)',
+        gap: '8px',
+        padding: '12px 16px',
+        fontSize: '11px',
+        touchAction: 'pan-x',
+        backgroundColor: 'rgba(255, 255, 255, 0.90)',
+        backdropFilter: 'blur(8px)',
+        borderTop: '2px solid var(--color-border)',
+        borderLeft: 'none',
+        borderRight: 'none',
+        borderBottom: 'none',
+        boxShadow: 'none',
       }}
     >
-      <div 
-        className="brutalist-panel frame-pink scrollbar-hide"
-        style={{
-          display: 'flex',
-          flexDirection: 'row',
-          flexWrap: 'nowrap',
-          overflowX: 'auto',
-          overflowY: 'hidden',
-          whiteSpace: 'nowrap',
-          height: '56px',
-          alignItems: 'center',
-          gap: '12px',
-          padding: '12px 16px',
-          fontSize: '11px',
-          width: '100%',
-          maxWidth: '100vw',
-          touchAction: 'pan-x',
-          backgroundColor: 'rgba(255, 255, 255, 0.95)',
-          borderWidth: '2px',
+      {/* Reset / Canvas Initial Chaos Button */}
+      <button
+        onClick={clearActiveProjectId}
+        className={`brutalist-btn ${activeProjectId === null ? 'active' : ''}`}
+        style={{ 
+          borderColor: 'var(--color-frame-pink)', 
+          boxShadow: activeProjectId === null ? '3px 3px 0px var(--color-frame-pink)' : 'none',
+          flexShrink: 0,
         }}
       >
-        {/* Reset / Canvas Initial Chaos Button */}
+        [INICIAL]
+      </button>
+
+      <div style={{ height: '24px', width: '1px', backgroundColor: 'var(--color-border)', flexShrink: 0 }} />
+
+      <span className="cad-label" style={{ fontSize: '0.55rem', color: '#000', marginRight: '0.2rem', flexShrink: 0 }}>
+        :: FILTRAR // PROYECTO
+      </span>
+
+      {projects.map((proj) => (
         <button
-          onClick={clearActiveProjectId}
-          className={`brutalist-btn ${activeProjectId === null ? 'active' : ''}`}
-          style={{ 
-            borderColor: 'var(--color-frame-pink)', 
-            boxShadow: activeProjectId === null ? '3px 3px 0px var(--color-frame-pink)' : 'none',
+          key={proj.id}
+          onClick={() => setActiveProjectId(proj.id)}
+          className={`brutalist-btn ${activeProjectId === proj.id ? 'active' : ''}`}
+          style={{
+            borderColor: activeProjectId === proj.id ? 'var(--color-frame-pink)' : 'var(--color-border)',
+            boxShadow: activeProjectId === proj.id ? '3px 3px 0px var(--color-frame-pink)' : 'none',
             flexShrink: 0,
           }}
         >
-          [INICIAL]
+          {proj.title.toUpperCase()}
         </button>
-
-        <div style={{ height: '24px', width: '1px', backgroundColor: 'var(--color-border)', flexShrink: 0 }} />
-
-        <span className="cad-label" style={{ fontSize: '0.55rem', color: '#000', marginRight: '0.2rem', flexShrink: 0 }}>
-          :: FILTRAR // PROYECTO
-        </span>
-
-        {projects.map((proj) => (
-          <button
-            key={proj.id}
-            onClick={() => setActiveProjectId(proj.id)}
-            className={`brutalist-btn ${activeProjectId === proj.id ? 'active' : ''}`}
-            style={{
-              borderColor: activeProjectId === proj.id ? 'var(--color-frame-pink)' : 'var(--color-border)',
-              boxShadow: activeProjectId === proj.id ? '3px 3px 0px var(--color-frame-pink)' : 'none',
-              flexShrink: 0,
-            }}
-          >
-            {proj.title.toUpperCase()}
-          </button>
-        ))}
-      </div>
-      
-      {/* Console details tag */}
-      <span 
-        style={{ 
-          fontSize: '0.55rem', 
-          color: 'var(--color-text-muted)', 
-          fontFamily: 'var(--font-mono)',
-          textTransform: 'uppercase',
-          letterSpacing: '1px',
-          fontWeight: 'bold'
-        }}
-      >
-        SELECCIÓN_DE_PROYECTO // TABLERO_ARQUITECTÓNICO
-      </span>
+      ))}
     </div>
   );
 }
