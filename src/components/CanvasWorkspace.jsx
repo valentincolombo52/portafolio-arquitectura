@@ -70,6 +70,10 @@ export default function CanvasWorkspace() {
   const handlePointerDown = (e) => {
     if (draggingElementId) return;
 
+    try {
+      e.target.setPointerCapture(e.pointerId);
+    } catch (err) {}
+
     // Track active pointer
     activePointersRef.current[e.pointerId] = { x: e.clientX, y: e.clientY };
     const activePointerIds = Object.keys(activePointersRef.current);
@@ -139,6 +143,10 @@ export default function CanvasWorkspace() {
 
   // Release capture
   const handlePointerUp = (e) => {
+    try {
+      e.target.releasePointerCapture(e.pointerId);
+    } catch (err) {}
+
     delete activePointersRef.current[e.pointerId];
     
     const activePointerIds = Object.keys(activePointersRef.current);

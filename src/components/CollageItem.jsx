@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react';
-import { useFrame, useLoader } from '@react-three/fiber';
+import { useFrame, useLoader, useThree } from '@react-three/fiber';
 import * as THREE from 'three';
 import { usePortfolioStore } from '../store/usePortfolioStore';
 
@@ -97,6 +97,10 @@ const ProjectShader = {
 };
 
 export default function CollageItem({ element, index }) {
+  const { width: viewportWidth } = useThree((state) => state.viewport);
+  // Base scale multiplier is 2.2 on desktop. On mobile, scale it down proportionally to fit the viewport.
+  const scaleMultiplier = Math.max(1.0, viewportWidth < 18 ? (viewportWidth / 18) * 2.2 : 2.2);
+
   const meshRef = useRef();
   const materialRef = useRef();
   const [hovered, setHovered] = useState(false);
@@ -277,7 +281,7 @@ export default function CollageItem({ element, index }) {
       ref={meshRef}
       position={[element.currentPosition[0], element.currentPosition[1], 0]}
       rotation={[0, 0, element.currentRotation]}
-      scale={[element.scale[0] * 2.2, element.scale[1] * 2.2, 1]}
+      scale={[element.scale[0] * scaleMultiplier, element.scale[1] * scaleMultiplier, 1]}
       onPointerDown={handlePointerDown}
       onPointerMove={handlePointerMove}
       onPointerUp={handlePointerUp}
