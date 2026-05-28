@@ -40,18 +40,23 @@ export default function ControlPanel() {
       }}
     >
       <div 
-        className="brutalist-panel frame-pink"
+        className="brutalist-panel frame-pink scrollbar-hide"
         style={{
-          padding: '0.6rem 1rem',
           display: 'flex',
-          flexWrap: 'wrap',
-          gap: '0.6rem',
+          flexDirection: 'row',
+          flexWrap: 'nowrap',
+          overflowX: 'auto',
+          overflowY: 'hidden',
+          whiteSpace: 'nowrap',
+          height: '56px',
           alignItems: 'center',
-          justifyContent: 'center',
-          backgroundColor: 'rgba(255, 255, 255, 0.95)',
-          borderWidth: '2px',
+          gap: '12px',
+          padding: '0 16px',
+          fontSize: '11px',
           width: '100%',
           maxWidth: '100vw',
+          backgroundColor: 'rgba(255, 255, 255, 0.95)',
+          borderWidth: '2px',
         }}
       >
         {/* Reset / Canvas Initial Chaos Button */}
@@ -61,14 +66,15 @@ export default function ControlPanel() {
           style={{ 
             borderColor: 'var(--color-frame-pink)', 
             boxShadow: activeProjectId === null ? '3px 3px 0px var(--color-frame-pink)' : 'none',
+            flexShrink: 0,
           }}
         >
           [INICIAL]
         </button>
 
-        <div style={{ height: '24px', width: '1px', backgroundColor: 'var(--color-border)' }} />
+        <div style={{ height: '24px', width: '1px', backgroundColor: 'var(--color-border)', flexShrink: 0 }} />
 
-        <span className="cad-label" style={{ fontSize: '0.55rem', color: '#000', marginRight: '0.2rem' }}>
+        <span className="cad-label" style={{ fontSize: '0.55rem', color: '#000', marginRight: '0.2rem', flexShrink: 0 }}>
           :: FILTRAR // PROYECTO
         </span>
 
@@ -80,6 +86,7 @@ export default function ControlPanel() {
             style={{
               borderColor: activeProjectId === proj.id ? 'var(--color-frame-pink)' : 'var(--color-border)',
               boxShadow: activeProjectId === proj.id ? '3px 3px 0px var(--color-frame-pink)' : 'none',
+              flexShrink: 0,
             }}
           >
             {proj.title.toUpperCase()}

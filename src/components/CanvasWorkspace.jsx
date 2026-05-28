@@ -110,8 +110,8 @@ export default function CanvasWorkspace() {
 
     const activePointerIds = Object.keys(activePointersRef.current);
     const isTouch = e.pointerType === 'touch';
-    const panSensitivity = isTouch ? 2.5 : 1.0;
-    const zoomSensitivity = isTouch ? 1.5 : 1.0;
+    const panSensitivity = isTouch ? 1.0 : 1.0;
+    const zoomSensitivity = isTouch ? 3.0 : 1.0;
 
     if (activePointerIds.length === 2 && lastTouchDistanceRef.current !== null) {
       e.preventDefault();
@@ -234,7 +234,7 @@ export default function CanvasWorkspace() {
       <Canvas
         eventPrefix="client"
         orthographic={false}
-        camera={{ fov: 60, position: [0, 0, 15], near: 0.1, far: 2000 }}
+        camera={{ fov: 60, position: [0, 0, typeof window !== 'undefined' && window.innerWidth < 768 ? 32 : 15], near: 0.1, far: 2000 }}
         gl={{ antialias: true, powerPreference: 'high-performance', logarithmicDepthBuffer: true }}
       >
         <color attach="background" args={['#ffffff']} />

@@ -73,8 +73,8 @@ export const usePortfolioStore = create((set, get) => ({
   draggingElementId: null,
   
   // Viewport navigation (Rhino/AutoCAD style)
-  cameraOffset: [0, 0, 15], 
-  targetCameraOffset: [0, 0, 15],
+  cameraOffset: [0, 0, typeof window !== 'undefined' && window.innerWidth < 768 ? 32 : 15], 
+  targetCameraOffset: [0, 0, typeof window !== 'undefined' && window.innerWidth < 768 ? 32 : 15],
   gridOpacity: 0.25,
   systemStatus: 'SYS_OK',
   fps: 60,
