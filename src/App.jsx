@@ -113,24 +113,7 @@ export default function App() {
         
         {/* Active Project Group Overlay Panel (Subtablero / Colage Secundario) */}
         {activeProjectId && (
-          <div
-            className="brutalist-panel frame-pink"
-            style={{
-              position: 'absolute',
-              bottom: '2.5rem', // Centered beautifully at the bottom
-              left: '50%',
-              transform: 'translateX(-50%)',
-              zIndex: 300,
-              padding: '0.8rem 1.6rem',
-              backgroundColor: '#ffffff',
-              display: 'flex',
-              alignItems: 'center',
-              gap: '2.5rem',
-              pointerEvents: 'auto',
-              boxShadow: '6px 6px 0px #ff007f',
-              borderWidth: '2px',
-            }}
-          >
+          <div className="brutalist-panel frame-pink active-project-overlay">
             <span
               style={{
                 fontFamily: 'var(--font-mono)',
@@ -138,7 +121,9 @@ export default function App() {
                 fontWeight: 'bold',
                 color: '#000000',
                 textTransform: 'uppercase',
-                letterSpacing: '1px'
+                letterSpacing: '1px',
+                whiteSpace: 'normal',
+                textAlign: 'center'
               }}
             >
               GRUPO // {activeProjectTitle.toUpperCase()} // {activeGroupCount} ACTIVOS AGRUPADOS
@@ -152,6 +137,7 @@ export default function App() {
                 color: '#ff007f',
                 fontSize: '0.75rem',
                 fontWeight: 'bold',
+                flexShrink: 0
               }}
             >
               [CERRAR_PROYECTO]

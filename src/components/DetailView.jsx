@@ -33,38 +33,13 @@ export default function DetailView() {
       {/* Brutalist Close Button (Top Right) */}
       <button
         onClick={deselectElement}
-        className="brutalist-btn"
-        style={{
-          position: 'absolute',
-          top: '2rem',
-          right: '2rem',
-          padding: '0.6rem 1.2rem',
-          borderColor: '#000000',
-          color: '#000000',
-          fontSize: '1rem',
-          display: 'flex',
-          alignItems: 'center',
-          gap: '0.4rem',
-          boxShadow: '4px 4px 0px #ff007f', // Pink shadow accent
-          zIndex: 2100,
-        }}
+        className="brutalist-btn responsive-close-btn"
       >
         <X size={16} /> [CERRAR_ARCHIVO]
       </button>
 
       {/* Main Lightbox Layout Wrapper */}
-      <div
-        style={{
-          maxWidth: '1200px',
-          width: '90%',
-          height: '85%',
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'center',
-          gap: '1.5rem',
-        }}
-      >
+      <div className="detail-view-modal">
         {/* Large Original Hi-Res Graphic Viewport */}
         <div
           className="brutalist-panel frame-pink"
@@ -109,15 +84,10 @@ export default function DetailView() {
 
         {/* Technical Data Stream Overlay Card */}
         <div
-          className="brutalist-panel"
+          className="brutalist-panel responsive-row-to-col"
           style={{
-            width: '100%',
-            padding: '1.2rem 2rem',
             backgroundColor: '#ffffff',
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            gap: '2rem',
+            padding: '1.2rem 2rem',
           }}
         >
           {/* Left Block: Title and tags */}
@@ -142,19 +112,10 @@ export default function DetailView() {
           </div>
 
           {/* Right Block: Technical Grid Details */}
-          <div
-            style={{
-              display: 'flex',
-              gap: '2rem',
-              fontSize: '0.65rem',
-              textAlign: 'right',
-              fontFamily: 'var(--font-mono)',
-              lineHeight: '1.5',
-            }}
-          >
+          <div className="technical-data-grid">
             <div>
               <div className="cad-label" style={{ color: '#000' }}>NOMBRE_ARCHIVO</div>
-              <div style={{ color: 'var(--color-frame-cyan)', fontWeight: 'bold' }}>{element.filename}</div>
+              <div style={{ color: 'var(--color-frame-cyan)', fontWeight: 'bold', wordBreak: 'break-all' }}>{element.filename}</div>
             </div>
             <div>
               <div className="cad-label" style={{ color: '#000' }}>AÑO_CICLO</div>

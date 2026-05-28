@@ -194,8 +194,10 @@ export default function CanvasWorkspace() {
     <div
       ref={containerRef}
       style={{
-        width: '100%',
-        height: '100%',
+        width: '100vw',
+        height: '100vh',
+        maxWidth: '100%',
+        maxHeight: '100%',
         touchAction: 'none',
       }}
       onPointerDown={handlePointerDown}
