@@ -63,7 +63,8 @@ export default function TerminalHUD() {
         padding: '1.2rem',
         zIndex: 100,
         // SILENCE AND DESATURATE HUD WHEN A PROJECT GROUP IS FOCUS-ACTIVE
-        filter: activeProjectId ? 'grayscale(1) opacity(0.2)' : 'none',
+        // Excluded from opacity reduction to keep main titles and HUD texts 100% readable!
+        filter: activeProjectId ? 'grayscale(0.5)' : 'none',
         transition: 'all 0.3s cubic-bezier(0.19, 1, 0.22, 1)',
       }}
     >

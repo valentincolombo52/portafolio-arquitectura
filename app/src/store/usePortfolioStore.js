@@ -96,15 +96,34 @@ export const usePortfolioStore = create((set, get) => ({
 
   // Load database items
   loadElements: (data) => {
-    // Messy Desk Layout (mesa de taller arquitectónico)
-    const spreadX = 58;
-    const spreadY = 40;
+    const count = data.length;
+    const cols = Math.ceil(Math.sqrt(count));
+    const rows = Math.ceil(count / cols);
+    
+    // Spacing between columns and rows for nice layout dispersion
+    const spacingX = 6.8;
+    const spacingY = 5.8;
+    
+    const gridWidth = (cols - 1) * spacingX;
+    const gridHeight = (rows - 1) * spacingY;
+    const startX = -gridWidth / 2;
+    const startY = gridHeight / 2;
 
     const initialized = data.map((item, index) => {
-      const x = (Math.random() - 0.5) * spreadX;
-      const y = (Math.random() - 0.5) * spreadY;
+      const col = index % cols;
+      const row = Math.floor(index / cols);
+      
+      const gridX = startX + col * spacingX;
+      const gridY = startY - row * spacingY;
+      
+      // Jitter
+      const jitterX = (Math.random() - 0.5) * 1.5;
+      const jitterY = (Math.random() - 0.5) * 1.5;
+      
+      const x = gridX + jitterX;
+      const y = gridY + jitterY;
       const z = index * 0.01; // Strict layer height depth based on array index to prevent Z-fighting!
-      const rotZ = (Math.random() - 0.5) * 0.3; // Organic random Z rotation tilt
+      const rotZ = (Math.random() - 0.5) * 0.25; // Organic random Z rotation tilt
 
       const calculatedPosition = [x, y, z];
       

@@ -196,11 +196,18 @@ export default function CollageItem({ element, index }) {
             // Mobile vertical perfect column layout (no overlaps, aspect ratio preserving)
             targetX = 0;
             
-            const targetWidth = viewportWidth * 0.45;
-            const altura = targetWidth / element.aspectRatio;
-            const margen = 1.5; // 3D world units gap
+            const targetWidth = viewportWidth * 0.85;
+            const margen = 1.2; // 3D world units gap
             
-            targetY = -idx * (altura + margen);
+            let cumulativeY = 0;
+            for (let i = 0; i < idx; i++) {
+              const prevEl = groupElements[i];
+              const prevHeight = targetWidth / prevEl.aspectRatio;
+              const currentHeight = targetWidth / groupElements[i + 1].aspectRatio;
+              cumulativeY -= (prevHeight / 2 + currentHeight / 2 + margen);
+            }
+            
+            targetY = cumulativeY;
             targetZ = 5.0 + index * 0.01;
             targetRot = 0;
           } else {
@@ -263,7 +270,7 @@ export default function CollageItem({ element, index }) {
     if (activeProjectId) {
       if (element.projectId === activeProjectId) {
         if (viewportWidth < 18) {
-          const targetWidth = viewportWidth * 0.45;
+          const targetWidth = viewportWidth * 0.85;
           targetScaleX = targetWidth;
           targetScaleY = targetWidth / element.aspectRatio;
         }
