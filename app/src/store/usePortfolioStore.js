@@ -96,16 +96,14 @@ export const usePortfolioStore = create((set, get) => ({
 
   // Load database items
   loadElements: (data) => {
-    const count = data.length;
-    const cols = Math.ceil(Math.sqrt(count));
-    const rows = Math.ceil(count / cols);
+    const totalElements = data.length;
+    const cols = Math.ceil(Math.sqrt(totalElements));
+    const rows = Math.ceil(totalElements / cols);
+    const spacing = 8.0;
+    const jitterAmount = 1.5;
     
-    // Spacing between columns and rows for nice layout dispersion
-    const spacingX = 6.8;
-    const spacingY = 5.8;
-    
-    const gridWidth = (cols - 1) * spacingX;
-    const gridHeight = (rows - 1) * spacingY;
+    const gridWidth = (cols - 1) * spacing;
+    const gridHeight = (rows - 1) * spacing;
     const startX = -gridWidth / 2;
     const startY = gridHeight / 2;
 
@@ -113,19 +111,15 @@ export const usePortfolioStore = create((set, get) => ({
       const col = index % cols;
       const row = Math.floor(index / cols);
       
-      const gridX = startX + col * spacingX;
-      const gridY = startY - row * spacingY;
+      const baseX = startX + col * spacing;
+      const baseY = startY - row * spacing;
       
-      // Jitter
-      const jitterX = (Math.random() - 0.5) * 1.5;
-      const jitterY = (Math.random() - 0.5) * 1.5;
-      
-      const x = gridX + jitterX;
-      const y = gridY + jitterY;
-      const z = index * 0.01; // Strict layer height depth based on array index to prevent Z-fighting!
+      const finalX = baseX + (Math.random() - 0.5) * jitterAmount;
+      const finalY = baseY + (Math.random() - 0.5) * jitterAmount;
+      const finalZ = index * 0.01; // Strict progressive Z height to prevent Z-fighting!
       const rotZ = (Math.random() - 0.5) * 0.25; // Organic random Z rotation tilt
 
-      const calculatedPosition = [x, y, z];
+      const calculatedPosition = [finalX, finalY, finalZ];
       
       return {
         ...item,
@@ -134,7 +128,7 @@ export const usePortfolioStore = create((set, get) => ({
         targetPosition: [...calculatedPosition],
         currentRotation: rotZ,
         targetRotation: rotZ,
-        zIndex: z,
+        zIndex: finalZ,
         isActive: true,
       };
     });
@@ -158,8 +152,34 @@ export const usePortfolioStore = create((set, get) => ({
     set((state) => {
       const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
       const targetZ = isMobile ? 95 : state.cameraOffset[2];
+      
+      // Loop only over elements of the selected project
+      const groupElements = state.elements.filter((el) => el.projectId === projectId);
+      
+      let currentY = 0;
+      const targetWidth = 12.0; // Scaled to ~85% of mobile viewport width
+      const margen = 1.5;
+      
+      const mobileHeightsMap = {};
+      groupElements.forEach((el) => {
+        const alturaEscalada = targetWidth / el.aspectRatio;
+        mobileHeightsMap[el.id] = currentY;
+        currentY -= (alturaEscalada + margen);
+      });
+      
+      const updatedElements = state.elements.map((el) => {
+        if (el.id in mobileHeightsMap) {
+          return {
+            ...el,
+            targetMobileY: mobileHeightsMap[el.id],
+          };
+        }
+        return el;
+      });
+
       return {
         activeProjectId: projectId,
+        elements: updatedElements,
         cameraOffset: [0, 0, targetZ],
         targetCameraOffset: [0, 0, targetZ],
         systemStatus: `PROYECTO_AGRUPADO: ${projectId.toUpperCase()}`,
