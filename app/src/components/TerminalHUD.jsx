@@ -182,7 +182,8 @@ export default function TerminalHUD() {
           display: 'flex',
           justifyContent: 'space-between',
           alignItems: 'flex-end',
-          width: '100%'
+          width: '100%',
+          marginBottom: '80px' // <-- ESTE ES EL MARGEN QUE SEPARA LOS CARTELES DE LA BARRA INFERIOR
         }}
       >
         {/* Terminal log stream (Yellow Neon Frame) */}
