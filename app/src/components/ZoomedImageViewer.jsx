@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { usePortfolioStore } from '../store/usePortfolioStore';
 
 export default function ZoomedImageViewer() {
@@ -8,29 +8,30 @@ export default function ZoomedImageViewer() {
   const elements = usePortfolioStore((state) => state.elements);
   const activeProjectId = usePortfolioStore((state) => state.activeProjectId);
 
-  // Estados para detectar el deslizamiento (Swipe) en celulares
-  const [touchStartX, setTouchStartX] = useState(null);
-  const [touchEndX, setTouchEndX] = useState(null);
-
-  // Estados para Pan & Zoom
+  // Estados de Zoom y Paneo (Mesa de dibujo interactiva)
   const [scale, setScale] = useState(1);
   const [positionX, setPositionX] = useState(0);
   const [positionY, setPositionY] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
-  const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
+
+  // Referencias para arrastre en PC y gestos en Móvil
+  const mouseStart = useRef({ x: 0, y: 0 });
+  const touchStartX = useRef(null);
+  const touchEndX = useRef(null);
+  const initialTouchDistance = useRef(null);
+  const initialScale = useRef(1);
+  const initialTouchCenter = useRef({ x: 0, y: 0 });
+  const initialPosition = useRef({ x: 0, y: 0 });
 
   if (!zoomedImage) return null;
 
-  // Mantenemos la sanitización estricta para que siga cargando en HD
   let zoomPath = zoomedImage.image || zoomedImage.url || zoomedImage.thumbnail || '';
   let cleanZoomPath = zoomPath.replace(/thumbnails/i, 'projects').replace(/^.*public\//, '/');
   if (!cleanZoomPath.startsWith('/')) cleanZoomPath = '/' + cleanZoomPath;
 
-  // Filtramos la base de datos para armar el carrete solo con las fotos del proyecto activo
   const projectImages = elements.filter(el => String(el.projectId) === String(activeProjectId));
   const currentIndex = projectImages.findIndex(el => el.id === zoomedImage.id);
 
-  // Reseteo de Zoom
   const resetZoom = () => {
     setScale(1);
     setPositionX(0);
@@ -38,93 +39,147 @@ export default function ZoomedImageViewer() {
     setIsDragging(false);
   };
 
-  // Funciones de navegación
   const handleNext = (e) => {
     if (e) e.stopPropagation();
     if (projectImages.length <= 1) return;
+    resetZoom();
     const nextIndex = (currentIndex + 1) % projectImages.length;
     setZoomedImage(projectImages[nextIndex]);
-    resetZoom();
   };
 
   const handlePrev = (e) => {
     if (e) e.stopPropagation();
     if (projectImages.length <= 1) return;
+    resetZoom();
     const prevIndex = (currentIndex - 1 + projectImages.length) % projectImages.length;
     setZoomedImage(projectImages[prevIndex]);
-    resetZoom();
   };
 
-  // Lógica del motor táctil (Swipe)
+  // Zoom con Rueda de Ratón (PC)
+  const handleWheel = (e) => {
+    e.stopPropagation();
+    const zoomFactor = 0.15;
+    let newScale = scale + (e.deltaY < 0 ? zoomFactor : -zoomFactor);
+    newScale = Math.max(1, Math.min(5, newScale));
+    setScale(newScale);
+    if (newScale === 1) {
+      setPositionX(0);
+      setPositionY(0);
+    }
+  };
+
+  // Paneo con Mouse (PC)
+  const handleMouseDown = (e) => {
+    if (scale <= 1) return;
+    e.stopPropagation();
+    setIsDragging(true);
+    mouseStart.current = { x: e.clientX - positionX, y: e.clientY - positionY };
+  };
+
+  const handleMouseMove = (e) => {
+    if (!isDragging || scale <= 1) return;
+    e.stopPropagation();
+    setPositionX(e.clientX - mouseStart.current.x);
+    setPositionY(e.clientY - mouseStart.current.y);
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+  };
+
+  // Lógica Táctil Unificada (Celular: Swipe vs Pinch-to-Zoom)
   const handleTouchStart = (e) => {
-    if (scale > 1) return; // Conflicto: bloquear swipe cuando hay zoom
-    setTouchStartX(e.targetTouches[0].clientX);
+    if (e.touches.length === 2) {
+      // Gesto de Pellizco (Dos dedos)
+      e.stopPropagation();
+      const t1 = e.touches[0];
+      const t2 = e.touches[1];
+      const dist = Math.hypot(t1.clientX - t2.clientX, t1.clientY - t2.clientY);
+      initialTouchDistance.current = dist;
+      initialScale.current = scale;
+      initialTouchCenter.current = {
+        x: (t1.clientX + t2.clientX) / 2,
+        y: (t1.clientY + t2.clientY) / 2
+      };
+      initialPosition.current = { x: positionX, y: positionY };
+      setIsDragging(true);
+    } else if (e.touches.length === 1) {
+      if (scale === 1) {
+        // Un solo dedo sin zoom: Preparar arrastre de carrete (Swipe)
+        touchStartX.current = e.targetTouches[0].clientX;
+      } else {
+        // Un solo dedo con zoom: Preparar paneo por el plano
+        const t = e.touches[0];
+        mouseStart.current = { x: t.clientX - positionX, y: t.clientY - positionY };
+        setIsDragging(true);
+      }
+    }
   };
 
   const handleTouchMove = (e) => {
-    if (scale > 1) return; // Conflicto: bloquear swipe cuando hay zoom
-    setTouchEndX(e.targetTouches[0].clientX);
-  };
+    if (e.touches.length === 2 && initialTouchDistance.current !== null) {
+      // Ejecutando Zoom con dos dedos
+      e.stopPropagation();
+      const t1 = e.touches[0];
+      const t2 = e.touches[1];
+      const dist = Math.hypot(t1.clientX - t2.clientX, t1.clientY - t2.clientY);
 
-  const handleTouchEnd = () => {
-    if (scale > 1) return; // Conflicto: bloquear swipe cuando hay zoom
-    if (!touchStartX || !touchEndX) return;
-    const distance = touchStartX - touchEndX;
-    const minSwipeDistance = 50; // Píxeles mínimos que hay que arrastrar para que cuente como cambio
+      const factor = dist / initialTouchDistance.current;
+      let newScale = initialScale.current * factor;
+      newScale = Math.max(1, Math.min(5, newScale));
+      setScale(newScale);
 
-    if (distance > minSwipeDistance) {
-      handleNext();
-    } else if (distance < -minSwipeDistance) {
-      handlePrev();
-    }
-
-    setTouchStartX(null);
-    setTouchEndX(null);
-  };
-
-  // Lógica de Zoom con la Rueda del Ratón (Wheel)
-  const handleWheel = (e) => {
-    e.stopPropagation();
-    setScale((prevScale) => {
-      // scroll up es negativo (acercar), scroll down es positivo (alejar)
-      const delta = -e.deltaY * 0.002;
-      const nextScale = Math.min(5, Math.max(1, prevScale + delta));
-      if (nextScale === 1) {
+      if (newScale > 1) {
+        const currentCenter = {
+          x: (t1.clientX + t2.clientX) / 2,
+          y: (t1.clientY + t2.clientY) / 2
+        };
+        const deltaX = currentCenter.x - initialTouchCenter.current.x;
+        const deltaY = currentCenter.y - initialTouchCenter.current.y;
+        setPositionX(initialPosition.current.x + deltaX);
+        setPositionY(initialPosition.current.y + deltaY);
+      } else {
         setPositionX(0);
         setPositionY(0);
       }
-      return nextScale;
-    });
-  };
-
-  // Lógica de arrastre / panning con puntero
-  const handlePointerDown = (e) => {
-    if (scale > 1) {
-      e.stopPropagation();
-      setIsDragging(true);
-      setDragStart({ x: e.clientX - positionX, y: e.clientY - positionY });
-      e.currentTarget.setPointerCapture(e.pointerId);
-    }
-  };
-
-  const handlePointerMove = (e) => {
-    if (isDragging && scale > 1) {
-      e.stopPropagation();
-      setPositionX(e.clientX - dragStart.x);
-      setPositionY(e.clientY - dragStart.y);
-    }
-  };
-
-  const handlePointerUp = (e) => {
-    if (isDragging) {
-      e.stopPropagation();
-      setIsDragging(false);
-      try {
-        e.currentTarget.releasePointerCapture(e.pointerId);
-      } catch (err) {
-        // Ignorar si el pointer capture ya fue liberado
+    } else if (e.touches.length === 1) {
+      if (scale === 1) {
+        // Registrando movimiento de Swipe
+        touchEndX.current = e.targetTouches[0].clientX;
+      } else if (isDragging) {
+        // Moviéndose por adentro de la imagen agrandada
+        const t = e.touches[0];
+        setPositionX(t.clientX - mouseStart.current.x);
+        setPositionY(t.clientY - mouseStart.current.y);
       }
     }
+  };
+
+  const handleTouchEnd = (e) => {
+    if (initialTouchDistance.current !== null && e.touches.length < 2) {
+      initialTouchDistance.current = null;
+      setIsDragging(false);
+    }
+
+    // Regla de conflicto: Si está ampliado, bloqueamos el cambio de foto
+    if (scale > 1) {
+      setIsDragging(false);
+      return;
+    }
+
+    // Ejecutar cambio de foto si estábamos en escala 1:1
+    if (scale === 1 && touchStartX.current && touchEndX.current) {
+      const distance = touchStartX.current - touchEndX.current;
+      const minSwipeDistance = 45;
+      if (distance > minSwipeDistance) {
+        handleNext();
+      } else if (distance < -minSwipeDistance) {
+        handlePrev();
+      }
+    }
+    touchStartX.current = null;
+    touchEndX.current = null;
+    setIsDragging(false);
   };
 
   return (
@@ -140,8 +195,8 @@ export default function ZoomedImageViewer() {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        overflow: 'hidden', // Evitamos el scroll nativo que traba el swipe
-        touchAction: 'none' // Le decimos al celular que nosotros manejamos los gestos
+        overflow: 'hidden',
+        touchAction: 'none'
       }}
       onClick={clearZoomedImage}
       onTouchStart={handleTouchStart}
@@ -171,8 +226,7 @@ export default function ZoomedImageViewer() {
         [X] CERRAR
       </button>
 
-      {/* Flecha Anterior (Para PC) */}
-      {projectImages.length > 1 && (
+      {projectImages.length > 1 && scale === 1 && (
         <button
           onClick={handlePrev}
           style={{
@@ -187,57 +241,51 @@ export default function ZoomedImageViewer() {
             cursor: 'pointer',
             zIndex: 10000,
             padding: '20px',
-            opacity: 0.6,
-            transition: 'opacity 0.2s'
+            opacity: 0.6
           }}
-          onMouseOver={(e) => e.target.style.opacity = 1}
-          onMouseOut={(e) => e.target.style.opacity = 0.6}
         >
           &#10094;
         </button>
       )}
 
-      {/* Contenedor de la imagen con overflow hidden para que la foto no tape los botones principales al agrandarse */}
       <div
         style={{
-          position: 'relative',
+          overflow: 'hidden',
           width: '90vw',
           height: '90vh',
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
-          overflow: 'hidden',
-          zIndex: 1
+          cursor: scale > 1 ? 'grab' : 'zoom-in'
         }}
         onClick={(e) => e.stopPropagation()}
+        onWheel={handleWheel}
+        onMouseDown={handleMouseDown}
+        onMouseMove={handleMouseMove}
+        onMouseUp={handleMouseUp}
+        onMouseLeave={handleMouseUp}
+        onDoubleClick={resetZoom}
       >
         <img
-          key={zoomedImage.id} // Forza un mini reseteo visual al cambiar de foto
+          key={zoomedImage.id}
           src={cleanZoomPath}
           alt={zoomedImage.projectTitle || 'Zoom'}
           style={{
             maxWidth: '100%',
             maxHeight: '100%',
             objectFit: 'contain',
-            boxShadow: '10px 10px 0px rgba(0,0,0,0.1)',
-            userSelect: 'none', // Previene que la imagen se pinte de azul al arrastrar en PC
+            boxShadow: scale === 1 ? '10px 10px 0px rgba(0,0,0,0.1)' : 'none',
+            userSelect: 'none',
             WebkitUserSelect: 'none',
             transform: `translate(${positionX}px, ${positionY}px) scale(${scale})`,
-            transition: isDragging ? 'none' : 'transform 0.1s ease-out',
-            cursor: scale > 1 ? (isDragging ? 'grabbing' : 'grab') : 'zoom-in'
+            transition: isDragging ? 'none' : 'transform 0.2s cubic-bezier(0.16, 1, 0.3, 1)',
+            transformOrigin: 'center center'
           }}
-          onPointerDown={handlePointerDown}
-          onPointerMove={handlePointerMove}
-          onPointerUp={handlePointerUp}
-          onPointerCancel={handlePointerUp}
-          onWheel={handleWheel}
-          onDoubleClick={resetZoom}
           draggable="false"
         />
       </div>
 
-      {/* Flecha Siguiente (Para PC) */}
-      {projectImages.length > 1 && (
+      {projectImages.length > 1 && scale === 1 && (
         <button
           onClick={handleNext}
           style={{
@@ -252,17 +300,13 @@ export default function ZoomedImageViewer() {
             cursor: 'pointer',
             zIndex: 10000,
             padding: '20px',
-            opacity: 0.6,
-            transition: 'opacity 0.2s'
+            opacity: 0.6
           }}
-          onMouseOver={(e) => e.target.style.opacity = 1}
-          onMouseOut={(e) => e.target.style.opacity = 0.6}
         >
           &#10095;
         </button>
       )}
 
-      {/* Contador de Fotos */}
       {projectImages.length > 1 && (
         <div style={{
           position: 'absolute',
@@ -277,7 +321,7 @@ export default function ZoomedImageViewer() {
           boxShadow: '4px 4px 0px #ff007f',
           zIndex: 10000,
         }}>
-          {currentIndex + 1} / {projectImages.length}
+          {scale > 1 ? `ZOOM: ${scale.toFixed(1)}x` : `${currentIndex + 1} / {projectImages.length}`}
         </div>
       )}
     </div>
