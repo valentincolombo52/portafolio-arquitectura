@@ -251,10 +251,10 @@ canvas,
 
 .active-project-overlay {
   position: absolute;
-  bottom: 2.5rem;
+  bottom: 100px; /* Cambiado a 100px para elevarlo por encima de la barra de filtros */
   left: 50%;
   transform: translateX(-50%);
-  z-index: 300;
+  z-index: 1100; /* Aseguramos que quede visible sobre el ControlPanel (zIndex: 1000) */
   padding: 0.8rem 1.6rem;
   background-color: #ffffff;
   display: flex;
@@ -309,7 +309,7 @@ canvas,
   }
 
   .active-project-overlay {
-    bottom: 6rem;
+    bottom: 140px; /* Cambiado a 140px para levantarlo por encima del ControlPanel en móviles */
     /* Raise it above the control panel so they don't overlap */
     width: 92vw;
     flex-direction: column;
