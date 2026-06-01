@@ -48,7 +48,7 @@ export default function TerminalHUD() {
   const activeCount = elements.filter(el => el.isActive).length;
 
   return (
-    <div 
+    <div
       className="terminal-hud"
       style={{
         position: 'absolute',
@@ -69,7 +69,7 @@ export default function TerminalHUD() {
       }}
     >
       {/* Top HUD Header */}
-      <div 
+      <div
         style={{
           display: 'flex',
           justifyContent: 'space-between',
@@ -78,9 +78,9 @@ export default function TerminalHUD() {
         }}
       >
         {/* Title logo (Purple Neon Frame) */}
-        <div 
+        <div
           className="brutalist-panel frame-purple"
-          style={{ 
+          style={{
             pointerEvents: 'auto',
             padding: '1rem 1.5rem',
             backgroundColor: 'rgba(255, 255, 255, 0.95)'
@@ -90,12 +90,12 @@ export default function TerminalHUD() {
             ARQ. FADU, UBA
           </h1>
           <div style={{ fontSize: '0.65rem', marginTop: '0.4rem', color: '#000000', fontWeight: 'bold' }}>
-            TABLERO DE COLAGE ARQUITECTÓNICO
+            VALENTÍN COLOMBO BARATTA
           </div>
         </div>
 
         {/* Real-time coordinates readouts (Cyan Neon Frame) */}
-        <div 
+        <div
           className="brutalist-panel frame-cyan hud-coords"
           style={{
             padding: '0.6rem 1rem',
@@ -128,7 +128,7 @@ export default function TerminalHUD() {
       </div>
 
       {/* Middle side help panels (CAD style blueprint notes) */}
-      <div 
+      <div
         style={{
           display: 'flex',
           justifyContent: 'space-between',
@@ -138,7 +138,7 @@ export default function TerminalHUD() {
         }}
       >
         {/* Navigation Instructions (Purple Neon Frame) */}
-        <div 
+        <div
           className="brutalist-panel frame-purple hud-controls"
           style={{
             padding: '0.8rem',
@@ -157,7 +157,7 @@ export default function TerminalHUD() {
         </div>
 
         {/* CAD Blueprint details box (Orange Neon Frame) */}
-        <div 
+        <div
           className="brutalist-panel frame-orange hud-config"
           style={{
             padding: '0.8rem',
@@ -177,7 +177,7 @@ export default function TerminalHUD() {
       </div>
 
       {/* Bottom HUD Log Console */}
-      <div 
+      <div
         style={{
           display: 'flex',
           justifyContent: 'space-between',
@@ -186,7 +186,7 @@ export default function TerminalHUD() {
         }}
       >
         {/* Terminal log stream (Yellow Neon Frame) */}
-        <div 
+        <div
           className="brutalist-panel frame-yellow hud-logs"
           style={{
             padding: '0.6rem 1rem',
@@ -208,7 +208,7 @@ export default function TerminalHUD() {
         </div>
 
         {/* Time and Status Box (Green Neon Frame) */}
-        <div 
+        <div
           className="brutalist-panel frame-green hud-logs"
           style={{
             padding: '0.6rem 1rem',

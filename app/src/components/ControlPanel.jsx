@@ -10,7 +10,7 @@ export default function ControlPanel() {
   // Extract unique projects (id and title) dynamically from loaded elements
   const projects = [];
   const seenIds = new Set();
-  
+
   elements.forEach((el) => {
     if (el.projectId && !seenIds.has(el.projectId)) {
       seenIds.add(el.projectId);
@@ -22,14 +22,14 @@ export default function ControlPanel() {
   });
 
   return (
-    <div 
+    <div
       className="brutalist-panel frame-pink scrollbar-hide"
       style={{
         position: 'fixed',
-        bottom: 0,
+        bottom: '30px',   // <-- ACÁ LO DESPEGAMOS DEL PISO
         left: 0,
         width: '100vw',
-        zIndex: 50,
+        zIndex: 1000,     // <-- ACÁ LO MANDAMOS AL FRENTE DE TODO
         display: 'flex',
         flexDirection: 'row',
         flexWrap: 'nowrap',
@@ -55,8 +55,8 @@ export default function ControlPanel() {
       <button
         onClick={clearActiveProjectId}
         className={`brutalist-btn ${activeProjectId === null ? 'active' : ''}`}
-        style={{ 
-          borderColor: 'var(--color-frame-pink)', 
+        style={{
+          borderColor: 'var(--color-frame-pink)',
           boxShadow: activeProjectId === null ? '3px 3px 0px var(--color-frame-pink)' : 'none',
           flexShrink: 0,
         }}
