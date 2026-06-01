@@ -26,7 +26,7 @@ function calculateGridPositions(elements, activeFilter) {
   const cols = Math.min(4, Math.ceil(Math.sqrt(activeElements.length)));
   const gapX = 7.5;
   const gapY = 6.25;
-  
+
   const rowCount = Math.ceil(activeElements.length / cols);
   const gridWidth = (cols - 1) * gapX;
   const gridHeight = (rowCount - 1) * gapY;
@@ -39,7 +39,7 @@ function calculateGridPositions(elements, activeFilter) {
     const row = Math.floor(index / cols);
     const targetX = startX + col * gapX;
     const targetY = startY - row * gapY;
-    
+
     return {
       ...el,
       targetPosition: [targetX, targetY, 0.5],
@@ -52,7 +52,7 @@ function calculateGridPositions(elements, activeFilter) {
   const positionedInactive = inactiveElements.map((el) => {
     const fallX = el.initialPosition[0] * 1.5;
     const fallY = -40 - Math.random() * 20; // Fall off screen
-    
+
     return {
       ...el,
       targetPosition: [fallX, fallY, -0.5],
@@ -65,14 +65,13 @@ function calculateGridPositions(elements, activeFilter) {
 }
 
 export const usePortfolioStore = create((set, get) => ({
-  // Simplified Core Portfolio State (Centering exclusively on activeProjectId)
   activeFilter: 'ALL',
   elements: [],
   activeProjectId: null,
   fullscreenImageId: null,
   zoomedImage: null,
   draggingElementId: null,
-  
+
   setZoomedImage: (image) => {
     set({
       zoomedImage: image,
@@ -86,22 +85,20 @@ export const usePortfolioStore = create((set, get) => ({
       systemStatus: 'SYS_OK',
     });
   },
-  
-  // Viewport navigation (Rhino/AutoCAD style)
-  cameraOffset: [0, 0, typeof window !== 'undefined' && window.innerWidth < 768 ? 95 : 15], 
+
+  cameraOffset: [0, 0, typeof window !== 'undefined' && window.innerWidth < 768 ? 95 : 15],
   targetCameraOffset: [0, 0, typeof window !== 'undefined' && window.innerWidth < 768 ? 95 : 15],
   gridOpacity: 0.25,
   systemStatus: 'SYS_OK',
   fps: 60,
 
-  // Load database items
   loadElements: (data) => {
     const totalElements = data.length;
     const cols = Math.ceil(Math.sqrt(totalElements));
     const rows = Math.ceil(totalElements / cols);
     const spacing = 8.0;
     const jitterAmount = 1.5;
-    
+
     const gridWidth = (cols - 1) * spacing;
     const gridHeight = (rows - 1) * spacing;
     const startX = -gridWidth / 2;
@@ -110,17 +107,17 @@ export const usePortfolioStore = create((set, get) => ({
     const initialized = data.map((item, index) => {
       const col = index % cols;
       const row = Math.floor(index / cols);
-      
+
       const baseX = startX + col * spacing;
       const baseY = startY - row * spacing;
-      
+
       const finalX = baseX + (Math.random() - 0.5) * jitterAmount;
       const finalY = baseY + (Math.random() - 0.5) * jitterAmount;
-      const finalZ = index * 0.01; // Strict progressive Z height to prevent Z-fighting!
-      const rotZ = (Math.random() - 0.5) * 0.25; // Organic random Z rotation tilt
+      const finalZ = index * 0.01;
+      const rotZ = (Math.random() - 0.5) * 0.25;
 
       const calculatedPosition = [finalX, finalY, finalZ];
-      
+
       return {
         ...item,
         initialPosition: calculatedPosition,
@@ -135,7 +132,6 @@ export const usePortfolioStore = create((set, get) => ({
     set({ elements: initialized });
   },
 
-  // Set filter & trigger spring layout calculations
   setFilter: (filter) => {
     set((state) => {
       const updatedElements = calculateGridPositions(state.elements, filter);
@@ -147,26 +143,34 @@ export const usePortfolioStore = create((set, get) => ({
     });
   },
 
-  // Set Active Project Group (Secondary Collage magnetic trigger)
   setActiveProjectId: (projectId) => {
     set((state) => {
       const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
       const targetZ = isMobile ? 95 : state.cameraOffset[2];
-      
-      // Loop only over elements of the selected project
+
       const groupElements = state.elements.filter((el) => el.projectId === projectId);
-      
-      let currentY = 0;
-      const targetWidth = 12.0; // Scaled to ~85% of mobile viewport width
+
+      const targetWidth = 12.0;
       const margen = 1.5;
-      
       const mobileHeightsMap = {};
-      groupElements.forEach((el) => {
-        const alturaEscalada = targetWidth / el.aspectRatio;
-        mobileHeightsMap[el.id] = currentY;
-        currentY -= (alturaEscalada + margen);
+
+      let currentY = 0;
+
+      // Cálculo matemático corregido para orígenes centrales en 3D
+      groupElements.forEach((el, index) => {
+        const ratio = el.aspectRatio || 1; // Salvavidas matemático
+        const alturaEscalada = targetWidth / ratio;
+
+        if (index === 0) {
+          mobileHeightsMap[el.id] = 0;
+          currentY = -(alturaEscalada / 2) - margen;
+        } else {
+          const centerPos = currentY - (alturaEscalada / 2);
+          mobileHeightsMap[el.id] = centerPos;
+          currentY = centerPos - (alturaEscalada / 2) - margen;
+        }
       });
-      
+
       const updatedElements = state.elements.map((el) => {
         if (el.id in mobileHeightsMap) {
           return {
@@ -189,7 +193,6 @@ export const usePortfolioStore = create((set, get) => ({
 
   clearActiveProjectId: () => {
     set((state) => {
-      const currentZ = state.cameraOffset[2];
       const initialZ = typeof window !== 'undefined' && window.innerWidth < 768 ? 95 : 15;
       return {
         activeProjectId: null,
@@ -215,7 +218,6 @@ export const usePortfolioStore = create((set, get) => ({
     });
   },
 
-  // Interactive Raycast Dragging Actions
   startDragging: (id) => {
     set((state) => {
       const updatedElements = state.elements.map((el) => {
@@ -228,7 +230,7 @@ export const usePortfolioStore = create((set, get) => ({
         }
         return el;
       });
-      
+
       return {
         draggingElementId: id,
         elements: updatedElements,
@@ -273,14 +275,13 @@ export const usePortfolioStore = create((set, get) => ({
     });
   },
 
-  // Camera Pan and Zoom methods
   panCamera: (dx, dy) => {
     set((state) => {
       const [cx, cy, cz] = state.cameraOffset;
       const factor = cz * 0.0015;
       const nx = cx - dx * factor;
       const ny = cy + dy * factor;
-      
+
       const limitX = 80;
       const limitY = 60;
       const clampedX = Math.max(-limitX, Math.min(limitX, nx));
@@ -305,6 +306,5 @@ export const usePortfolioStore = create((set, get) => ({
     });
   },
 
-  // Manual frame performance rating
   setFps: (fps) => set({ fps }),
 }));

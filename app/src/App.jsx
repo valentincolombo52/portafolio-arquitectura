@@ -11,9 +11,9 @@ import projectsData from './data/projects.json';
 // Dynamic Retro Loading Terminal using Drei progress hooks
 function TerminalLoader() {
   const { active, progress, item } = useProgress();
-  
+
   if (!active) return null;
-  
+
   const barLength = 30;
   const filledCount = Math.round((progress / 100) * barLength);
   const loadingBar = '[' + '='.repeat(filledCount) + ' '.repeat(barLength - filledCount) + ']';
@@ -39,7 +39,7 @@ function TerminalLoader() {
         padding: '2rem',
       }}
     >
-      <div 
+      <div
         className="brutalist-panel frame-pink"
         style={{
           padding: '2rem 3rem',
@@ -52,13 +52,13 @@ function TerminalLoader() {
         <div className="title-display flicker" style={{ fontSize: '2rem', marginBottom: '1.5rem', color: '#ff007f' }}>
           INICIANDO // TABLERO_ARQUITECTURA
         </div>
-        
+
         <div>ASIGNANDO TEXTURAS DE GPU...</div>
         <div style={{ fontSize: '0.7rem', color: 'var(--color-text-muted)' }}>ARCHIVO: {item ? item.slice(-45) : 'COMPILANDO_DIBUJOS.webp'}</div>
         <div style={{ color: '#00b4d8', margin: '1rem 0', letterSpacing: '2px', fontWeight: 'bold' }}>
           {loadingBar} {progress.toFixed(0)}%
         </div>
-        
+
         <div style={{ display: 'flex', justifyContent: 'space-between', borderTop: '1px dashed var(--color-border)', paddingTop: '0.5rem', marginTop: '0.5rem', fontSize: '0.65rem' }}>
           <span>MEMORIA_VRAM: CARGADA</span>
           <span>COMPILADOR_WebGL: ACTIVO</span>
@@ -72,47 +72,43 @@ export default function App() {
   const loadElements = usePortfolioStore((state) => state.loadElements);
   const activeProjectId = usePortfolioStore((state) => state.activeProjectId);
   const fullscreenImageId = usePortfolioStore((state) => state.fullscreenImageId);
+  const zoomedImage = usePortfolioStore((state) => state.zoomedImage);
   const clearActiveProjectId = usePortfolioStore((state) => state.clearActiveProjectId);
   const elements = usePortfolioStore((state) => state.elements);
 
-  // Load database on mount
   useEffect(() => {
     if (projectsData && projectsData.length > 0) {
       loadElements(projectsData);
     }
   }, [loadElements]);
 
-  // Find pretty name and assets count for the active project
   const activeElement = elements.find((el) => el.projectId === activeProjectId);
   const activeProjectTitle = activeElement ? activeElement.projectTitle : '';
   const activeGroupCount = elements.filter((el) => el.projectId === activeProjectId).length;
 
   return (
     <div style={{ width: '100%', height: '100%', position: 'relative', overflow: 'hidden' }}>
-      {/* CRT Scanline and Vignette visual shader overlay */}
       <div className="crt-overlay flicker"></div>
-      
-      {/* Main workspace container (Canvas + HUDs), hidden when viewing fullscreen to release GPU workload */}
-      <div 
-        style={{ 
-          display: fullscreenImageId ? 'none' : 'block', 
-          width: '100%', 
-          height: '100%', 
-          position: 'relative' 
+
+      {/* Ocultamos el mundo 3D sin destruirlo para que el visor 2D funcione */}
+      <div
+        style={{
+          visibility: (fullscreenImageId || zoomedImage) ? 'hidden' : 'visible',
+          opacity: (fullscreenImageId || zoomedImage) ? 0 : 1,
+          pointerEvents: (fullscreenImageId || zoomedImage) ? 'none' : 'auto',
+          width: '100%',
+          height: '100%',
+          position: 'absolute',
+          transition: 'opacity 0.3s ease'
         }}
       >
-        {/* Main R3F Canvas Container */}
         <Suspense fallback={null}>
           <CanvasWorkspace />
         </Suspense>
-        
-        {/* HUD Layer (Data streams and details) */}
+
         <TerminalHUD />
-        
-        {/* Filter Switches Layer */}
         <ControlPanel />
-        
-        {/* Active Project Group Overlay Panel (Subtablero / Colage Secundario) */}
+
         {activeProjectId && (
           <div className="brutalist-panel frame-pink active-project-overlay">
             <span
@@ -147,13 +143,8 @@ export default function App() {
         )}
       </div>
 
-      {/* Pure DOM Fullscreen Viewer rendered at the same level */}
       <FullscreenViewer />
-      
-      {/* HTML Lightbox Zoomed Image Viewer */}
       <ZoomedImageViewer />
-      
-      {/* Retro Boot Screen Loader */}
       <TerminalLoader />
     </div>
   );

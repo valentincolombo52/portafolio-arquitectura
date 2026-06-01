@@ -1,6 +1,5 @@
 import React from 'react';
 import { usePortfolioStore } from '../store/usePortfolioStore';
-import { X } from 'lucide-react';
 
 export default function ZoomedImageViewer() {
   const zoomedImage = usePortfolioStore((state) => state.zoomedImage);
@@ -8,28 +7,29 @@ export default function ZoomedImageViewer() {
 
   if (!zoomedImage) return null;
 
+  // Limpiamos la ruta también en la etiqueta HTML para evitar el error 404 de Vite
+  let zoomPath = zoomedImage.image || zoomedImage.url || zoomedImage.thumbnail || '';
+  let cleanZoomPath = zoomPath.replace(/thumbnails/i, 'projects').replace(/^.*public\//, '/');
+  if (!cleanZoomPath.startsWith('/')) cleanZoomPath = '/' + cleanZoomPath;
+
   return (
     <div
       style={{
         position: 'fixed',
         top: 0,
         left: 0,
-        right: 0,
-        bottom: 0,
-        backgroundColor: '#ffffff', // White background matching original design
-        zIndex: 99999, // Render on top of everything
+        width: '100vw',
+        height: '100vh',
+        backgroundColor: 'rgba(255, 255, 255, 0.98)',
+        zIndex: 9999,
         display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
         justifyContent: 'center',
-        padding: '2rem',
+        alignItems: 'center',
         overflow: 'auto',
-        touchAction: 'pan-x pan-y pinch-zoom',
-        cursor: 'zoom-out',
+        touchAction: 'pan-x pan-y pinch-zoom'
       }}
-      onClick={clearZoomedImage} // Closing by clicking the background
+      onClick={clearZoomedImage}
     >
-      {/* Brutalist Close Button */}
       <button
         onClick={(e) => {
           e.stopPropagation();
@@ -38,66 +38,32 @@ export default function ZoomedImageViewer() {
         className="brutalist-btn"
         style={{
           position: 'fixed',
-          top: '2rem',
-          right: '2rem',
-          padding: '0.6rem 1.2rem',
-          borderColor: '#000000',
-          color: '#000000',
-          fontSize: '1rem',
-          fontFamily: 'var(--font-mono)',
-          fontWeight: 'bold',
+          top: '20px',
+          right: '20px',
+          padding: '0.5rem 1rem',
           backgroundColor: '#ffffff',
-          boxShadow: '5px 5px 0px #000000',
-          cursor: 'pointer',
-          zIndex: 100000,
+          borderColor: '#ff007f',
+          color: '#ff007f',
+          fontSize: '0.8rem',
+          fontWeight: 'bold',
+          zIndex: 10000,
+          cursor: 'pointer'
         }}
       >
-        <X size={16} style={{ display: 'inline', marginRight: '6px', verticalAlign: 'middle' }} />
-        [CERRAR_ZOOM]
+        [X] CERRAR
       </button>
 
-      {/* Main Image Container to prevent click propagation and support native sizing/scrolling */}
-      <div
+      <img
+        src={cleanZoomPath}
+        alt={zoomedImage.projectTitle || 'Zoom'}
         style={{
-          maxWidth: '90%',
-          maxHeight: '85%',
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'center',
-          gap: '1.5rem',
-          cursor: 'default',
+          maxWidth: '100vw',
+          maxHeight: '100vh',
+          objectFit: 'contain',
+          boxShadow: '10px 10px 0px rgba(0,0,0,0.1)'
         }}
-        onClick={(e) => e.stopPropagation()} // Click on image card does not close the viewer
-      >
-        <img
-          src={zoomedImage.fullImage}
-          alt={zoomedImage.title}
-          style={{
-            maxWidth: '100%',
-            maxHeight: '100%',
-            objectFit: 'contain',
-            border: '2px solid #000000',
-            boxShadow: '15px 15px 0px rgba(0, 0, 0, 0.1)',
-            pointerEvents: 'auto',
-          }}
-        />
-        
-        {/* Monospace annotation */}
-        <span 
-          style={{
-            fontFamily: 'var(--font-mono)',
-            fontSize: '0.65rem',
-            fontWeight: 'bold',
-            color: '#000000',
-            textTransform: 'uppercase',
-            letterSpacing: '1px',
-            textAlign: 'center',
-          }}
-        >
-          {zoomedImage.title.toUpperCase()} // RESOLUCIÓN_DETALLADA
-        </span>
-      </div>
+        onClick={(e) => e.stopPropagation()}
+      />
     </div>
   );
 }
