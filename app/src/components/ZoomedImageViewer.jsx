@@ -1,16 +1,66 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { usePortfolioStore } from '../store/usePortfolioStore';
 
 export default function ZoomedImageViewer() {
   const zoomedImage = usePortfolioStore((state) => state.zoomedImage);
   const clearZoomedImage = usePortfolioStore((state) => state.clearZoomedImage);
+  const setZoomedImage = usePortfolioStore((state) => state.setZoomedImage);
+  const elements = usePortfolioStore((state) => state.elements);
+  const activeProjectId = usePortfolioStore((state) => state.activeProjectId);
+
+  // Estados para detectar el deslizamiento (Swipe) en celulares
+  const [touchStartX, setTouchStartX] = useState(null);
+  const [touchEndX, setTouchEndX] = useState(null);
 
   if (!zoomedImage) return null;
 
-  // Limpiamos la ruta también en la etiqueta HTML para evitar el error 404 de Vite
+  // Mantenemos la sanitización estricta para que siga cargando en HD
   let zoomPath = zoomedImage.image || zoomedImage.url || zoomedImage.thumbnail || '';
   let cleanZoomPath = zoomPath.replace(/thumbnails/i, 'projects').replace(/^.*public\//, '/');
   if (!cleanZoomPath.startsWith('/')) cleanZoomPath = '/' + cleanZoomPath;
+
+  // Filtramos la base de datos para armar el carrete solo con las fotos del proyecto activo
+  const projectImages = elements.filter(el => String(el.projectId) === String(activeProjectId));
+  const currentIndex = projectImages.findIndex(el => el.id === zoomedImage.id);
+
+  // Funciones de navegación
+  const handleNext = (e) => {
+    if (e) e.stopPropagation();
+    if (projectImages.length <= 1) return;
+    const nextIndex = (currentIndex + 1) % projectImages.length;
+    setZoomedImage(projectImages[nextIndex]);
+  };
+
+  const handlePrev = (e) => {
+    if (e) e.stopPropagation();
+    if (projectImages.length <= 1) return;
+    const prevIndex = (currentIndex - 1 + projectImages.length) % projectImages.length;
+    setZoomedImage(projectImages[prevIndex]);
+  };
+
+  // Lógica del motor táctil (Swipe)
+  const handleTouchStart = (e) => {
+    setTouchStartX(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchMove = (e) => {
+    setTouchEndX(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStartX || !touchEndX) return;
+    const distance = touchStartX - touchEndX;
+    const minSwipeDistance = 50; // Píxeles mínimos que hay que arrastrar para que cuente como cambio
+
+    if (distance > minSwipeDistance) {
+      handleNext();
+    } else if (distance < -minSwipeDistance) {
+      handlePrev();
+    }
+
+    setTouchStartX(null);
+    setTouchEndX(null);
+  };
 
   return (
     <div
@@ -25,10 +75,13 @@ export default function ZoomedImageViewer() {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        overflow: 'auto',
-        touchAction: 'pan-x pan-y pinch-zoom'
+        overflow: 'hidden', // Evitamos el scroll nativo que traba el swipe
+        touchAction: 'none' // Le decimos al celular que nosotros manejamos los gestos
       }}
       onClick={clearZoomedImage}
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
     >
       <button
         onClick={(e) => {
@@ -53,17 +106,92 @@ export default function ZoomedImageViewer() {
         [X] CERRAR
       </button>
 
+      {/* Flecha Anterior (Para PC) */}
+      {projectImages.length > 1 && (
+        <button
+          onClick={handlePrev}
+          style={{
+            position: 'absolute',
+            left: '20px',
+            top: '50%',
+            transform: 'translateY(-50%)',
+            background: 'transparent',
+            border: 'none',
+            fontSize: '3rem',
+            color: '#ff007f',
+            cursor: 'pointer',
+            zIndex: 10000,
+            padding: '20px',
+            opacity: 0.6,
+            transition: 'opacity 0.2s'
+          }}
+          onMouseOver={(e) => e.target.style.opacity = 1}
+          onMouseOut={(e) => e.target.style.opacity = 0.6}
+        >
+          &#10094;
+        </button>
+      )}
+
       <img
+        key={zoomedImage.id} // Forza un mini reseteo visual al cambiar de foto
         src={cleanZoomPath}
         alt={zoomedImage.projectTitle || 'Zoom'}
         style={{
-          maxWidth: '100vw',
-          maxHeight: '100vh',
+          maxWidth: '90vw', // Dejamos un margen para que respire y entren las flechas
+          maxHeight: '90vh',
           objectFit: 'contain',
-          boxShadow: '10px 10px 0px rgba(0,0,0,0.1)'
+          boxShadow: '10px 10px 0px rgba(0,0,0,0.1)',
+          userSelect: 'none', // Previene que la imagen se pinte de azul al arrastrar en PC
+          WebkitUserSelect: 'none'
         }}
         onClick={(e) => e.stopPropagation()}
+        draggable="false"
       />
+
+      {/* Flecha Siguiente (Para PC) */}
+      {projectImages.length > 1 && (
+        <button
+          onClick={handleNext}
+          style={{
+            position: 'absolute',
+            right: '20px',
+            top: '50%',
+            transform: 'translateY(-50%)',
+            background: 'transparent',
+            border: 'none',
+            fontSize: '3rem',
+            color: '#ff007f',
+            cursor: 'pointer',
+            zIndex: 10000,
+            padding: '20px',
+            opacity: 0.6,
+            transition: 'opacity 0.2s'
+          }}
+          onMouseOver={(e) => e.target.style.opacity = 1}
+          onMouseOut={(e) => e.target.style.opacity = 0.6}
+        >
+          &#10095;
+        </button>
+      )}
+
+      {/* Contador de Fotos */}
+      {projectImages.length > 1 && (
+        <div style={{
+          position: 'absolute',
+          bottom: '30px',
+          fontFamily: 'var(--font-mono)',
+          fontSize: '0.9rem',
+          fontWeight: 'bold',
+          color: '#000000',
+          backgroundColor: '#ffffff',
+          padding: '0.5rem 1rem',
+          border: '2px solid #000000',
+          boxShadow: '4px 4px 0px #ff007f',
+          zIndex: 10000,
+        }}>
+          {currentIndex + 1} / {projectImages.length}
+        </div>
+      )}
     </div>
   );
 }

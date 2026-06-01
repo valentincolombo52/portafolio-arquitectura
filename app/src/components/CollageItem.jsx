@@ -98,21 +98,19 @@ export default function CollageItem({ element, index }) {
 
   const isAttenuated = activeProjectId !== null && String(activeProjectId) !== String(element.projectId);
 
-  // Limpieza estricta de rutas para Vite
   let rawPath = element.image || element.url || element.thumbnail || '';
   let hdPath = rawPath.replace(/thumbnails/i, 'projects').replace(/^.*public\//, '/');
   if (!hdPath.startsWith('/')) hdPath = '/' + hdPath;
 
   const texture = useLoader(THREE.TextureLoader, hdPath);
 
-  // CONFIGURACIÓN ULTRA-NITIDEZ (Sin Mipmaps para evitar el pixelado borroso)
   useEffect(() => {
     if (texture) {
-      texture.colorSpace = THREE.SRGBColorSpace;
-      texture.generateMipmaps = false; // CRÍTICO: Evita el empañamiento de renders planos
-      texture.minFilter = THREE.LinearFilter; // Filtro de máxima definición de cerca
+      // CORRECCIÓN: Eliminamos THREE.SRGBColorSpace para evitar la doble saturación
+      texture.generateMipmaps = false;
+      texture.minFilter = THREE.LinearFilter;
       texture.magFilter = THREE.LinearFilter;
-      texture.anisotropy = 16; // Rompe el pixelado diagonal
+      texture.anisotropy = 16;
       texture.needsUpdate = true;
     }
   }, [texture]);
@@ -210,7 +208,6 @@ export default function CollageItem({ element, index }) {
       mat.uniforms.u_dragged.value = nextDrag;
       mat.uniforms.u_time.value = state.clock.getElapsedTime();
 
-      // SUAVIZADO DE OPACIDAD CONTROLADO (Evita imágenes congeladas)
       const targetOpacity = (currentActiveProject !== null && String(currentActiveProject) !== String(element.projectId)) ? 0.15 : 1.0;
       mat.transparent = true;
       mat.uniforms.u_opacity.value += (targetOpacity - mat.uniforms.u_opacity.value) * 0.2;
@@ -231,7 +228,6 @@ export default function CollageItem({ element, index }) {
         e.stopPropagation();
         if (isAttenuated) return;
 
-        // FIX DE CONSOLA TÁCTIL: Si es pantalla touch, ignora el umbral de movimiento del mouse
         if (e.pointerType !== 'touch') {
           const dx = e.clientX - pointerDownPosRef.current.x;
           const dy = e.clientY - pointerDownPosRef.current.y;
