@@ -12,6 +12,13 @@ export default function ZoomedImageViewer() {
   const [touchStartX, setTouchStartX] = useState(null);
   const [touchEndX, setTouchEndX] = useState(null);
 
+  // Estados para Pan & Zoom
+  const [scale, setScale] = useState(1);
+  const [positionX, setPositionX] = useState(0);
+  const [positionY, setPositionY] = useState(0);
+  const [isDragging, setIsDragging] = useState(false);
+  const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
+
   if (!zoomedImage) return null;
 
   // Mantenemos la sanitización estricta para que siga cargando en HD
@@ -23,12 +30,21 @@ export default function ZoomedImageViewer() {
   const projectImages = elements.filter(el => String(el.projectId) === String(activeProjectId));
   const currentIndex = projectImages.findIndex(el => el.id === zoomedImage.id);
 
+  // Reseteo de Zoom
+  const resetZoom = () => {
+    setScale(1);
+    setPositionX(0);
+    setPositionY(0);
+    setIsDragging(false);
+  };
+
   // Funciones de navegación
   const handleNext = (e) => {
     if (e) e.stopPropagation();
     if (projectImages.length <= 1) return;
     const nextIndex = (currentIndex + 1) % projectImages.length;
     setZoomedImage(projectImages[nextIndex]);
+    resetZoom();
   };
 
   const handlePrev = (e) => {
@@ -36,18 +52,22 @@ export default function ZoomedImageViewer() {
     if (projectImages.length <= 1) return;
     const prevIndex = (currentIndex - 1 + projectImages.length) % projectImages.length;
     setZoomedImage(projectImages[prevIndex]);
+    resetZoom();
   };
 
   // Lógica del motor táctil (Swipe)
   const handleTouchStart = (e) => {
+    if (scale > 1) return; // Conflicto: bloquear swipe cuando hay zoom
     setTouchStartX(e.targetTouches[0].clientX);
   };
 
   const handleTouchMove = (e) => {
+    if (scale > 1) return; // Conflicto: bloquear swipe cuando hay zoom
     setTouchEndX(e.targetTouches[0].clientX);
   };
 
   const handleTouchEnd = () => {
+    if (scale > 1) return; // Conflicto: bloquear swipe cuando hay zoom
     if (!touchStartX || !touchEndX) return;
     const distance = touchStartX - touchEndX;
     const minSwipeDistance = 50; // Píxeles mínimos que hay que arrastrar para que cuente como cambio
@@ -60,6 +80,51 @@ export default function ZoomedImageViewer() {
 
     setTouchStartX(null);
     setTouchEndX(null);
+  };
+
+  // Lógica de Zoom con la Rueda del Ratón (Wheel)
+  const handleWheel = (e) => {
+    e.stopPropagation();
+    setScale((prevScale) => {
+      // scroll up es negativo (acercar), scroll down es positivo (alejar)
+      const delta = -e.deltaY * 0.002;
+      const nextScale = Math.min(5, Math.max(1, prevScale + delta));
+      if (nextScale === 1) {
+        setPositionX(0);
+        setPositionY(0);
+      }
+      return nextScale;
+    });
+  };
+
+  // Lógica de arrastre / panning con puntero
+  const handlePointerDown = (e) => {
+    if (scale > 1) {
+      e.stopPropagation();
+      setIsDragging(true);
+      setDragStart({ x: e.clientX - positionX, y: e.clientY - positionY });
+      e.currentTarget.setPointerCapture(e.pointerId);
+    }
+  };
+
+  const handlePointerMove = (e) => {
+    if (isDragging && scale > 1) {
+      e.stopPropagation();
+      setPositionX(e.clientX - dragStart.x);
+      setPositionY(e.clientY - dragStart.y);
+    }
+  };
+
+  const handlePointerUp = (e) => {
+    if (isDragging) {
+      e.stopPropagation();
+      setIsDragging(false);
+      try {
+        e.currentTarget.releasePointerCapture(e.pointerId);
+      } catch (err) {
+        // Ignorar si el pointer capture ya fue liberado
+      }
+    }
   };
 
   return (
@@ -132,21 +197,44 @@ export default function ZoomedImageViewer() {
         </button>
       )}
 
-      <img
-        key={zoomedImage.id} // Forza un mini reseteo visual al cambiar de foto
-        src={cleanZoomPath}
-        alt={zoomedImage.projectTitle || 'Zoom'}
+      {/* Contenedor de la imagen con overflow hidden para que la foto no tape los botones principales al agrandarse */}
+      <div
         style={{
-          maxWidth: '90vw', // Dejamos un margen para que respire y entren las flechas
-          maxHeight: '90vh',
-          objectFit: 'contain',
-          boxShadow: '10px 10px 0px rgba(0,0,0,0.1)',
-          userSelect: 'none', // Previene que la imagen se pinte de azul al arrastrar en PC
-          WebkitUserSelect: 'none'
+          position: 'relative',
+          width: '90vw',
+          height: '90vh',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          overflow: 'hidden',
+          zIndex: 1
         }}
         onClick={(e) => e.stopPropagation()}
-        draggable="false"
-      />
+      >
+        <img
+          key={zoomedImage.id} // Forza un mini reseteo visual al cambiar de foto
+          src={cleanZoomPath}
+          alt={zoomedImage.projectTitle || 'Zoom'}
+          style={{
+            maxWidth: '100%',
+            maxHeight: '100%',
+            objectFit: 'contain',
+            boxShadow: '10px 10px 0px rgba(0,0,0,0.1)',
+            userSelect: 'none', // Previene que la imagen se pinte de azul al arrastrar en PC
+            WebkitUserSelect: 'none',
+            transform: `translate(${positionX}px, ${positionY}px) scale(${scale})`,
+            transition: isDragging ? 'none' : 'transform 0.1s ease-out',
+            cursor: scale > 1 ? (isDragging ? 'grabbing' : 'grab') : 'zoom-in'
+          }}
+          onPointerDown={handlePointerDown}
+          onPointerMove={handlePointerMove}
+          onPointerUp={handlePointerUp}
+          onPointerCancel={handlePointerUp}
+          onWheel={handleWheel}
+          onDoubleClick={resetZoom}
+          draggable="false"
+        />
+      </div>
 
       {/* Flecha Siguiente (Para PC) */}
       {projectImages.length > 1 && (
