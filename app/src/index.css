@@ -1,7 +1,7 @@
 :root {
-  --color-bg: #ffffff;
+  --color-bg: #e5e7eb;
   --color-bg-darker: #f3f4f6;
-  --color-bg-transparent: rgba(255, 255, 255, 0.9);
+  --color-bg-transparent: rgba(255, 255, 255, 0.92);
 
   /* Neon Frame Borders */
   --color-frame-purple: #9d4edd;
@@ -27,25 +27,29 @@
 }
 
 /* Base resets & layouts */
+@keyframes nebula {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
 html,
 body,
 #root {
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  min-height: 100vh;
   margin: 0;
   padding: 0;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
   box-sizing: border-box;
 }
 
-* {
-  box-sizing: inherit;
-  margin: 0;
-  padding: 0;
-}
-
 body {
-  background-color: var(--color-bg);
+  /* Fondo claro técnico arquitectónico */
+  background: linear-gradient(-45deg, #ffffff, #f1f5f9, #e2e8f0, #ffffff);
+  background-size: 400% 400%;
+  animation: nebula 25s ease infinite;
   color: var(--color-text);
   font-family: var(--font-mono);
   user-select: none;
@@ -140,7 +144,7 @@ body {
 .brutalist-btn:hover,
 .brutalist-btn.active {
   background-color: var(--color-border);
-  color: var(--color-bg);
+  color: #ffffff;
   box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.2);
   transform: translate(-1px, -1px);
 }
@@ -251,12 +255,13 @@ canvas,
 
 .active-project-overlay {
   position: absolute;
-  bottom: 100px; /* Cambiado a 100px para elevarlo por encima de la barra de filtros */
+  bottom: 70px; /* Elevado apenas por encima del ControlPanel que ahora está pegado abajo */
   left: 50%;
   transform: translateX(-50%);
   z-index: 1100; /* Aseguramos que quede visible sobre el ControlPanel (zIndex: 1000) */
   padding: 0.8rem 1.6rem;
   background-color: #ffffff;
+  color: #000000;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -309,8 +314,7 @@ canvas,
   }
 
   .active-project-overlay {
-    bottom: 140px; /* Cambiado a 140px para levantarlo por encima del ControlPanel en móviles */
-    /* Raise it above the control panel so they don't overlap */
+    bottom: calc(70px + env(safe-area-inset-bottom)); /* Justo arriba del panel con soporte safe-area */
     width: 92vw;
     flex-direction: column;
     gap: 0.8rem;

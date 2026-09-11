@@ -1,7 +1,14 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { useFrame, useLoader, useThree } from '@react-three/fiber';
 import * as THREE from 'three';
 import { usePortfolioStore } from '../store/usePortfolioStore';
+
+// Constantes reutilizadas (evita crear objetos en cada movimiento)
+const DRAG_PLANE = new THREE.Plane(new THREE.Vector3(0, 0, 1), -1.0);
+const DRAG_INTERSECTION = new THREE.Vector3();
+
+// px máximos de movimiento para contar como "toque limpio" (aplica a mouse Y táctil)
+const TAP_THRESHOLD = 8;
 
 const ProjectShader = {
   uniforms: {
@@ -81,7 +88,8 @@ export default function CollageItem({ element, index }) {
   const meshRef = useRef();
   const materialRef = useRef();
   const pointerDownPosRef = useRef({ x: 0, y: 0 });
-  const [dragValue, setDragValue] = useState(0);
+  const dragValue = useRef(0);
+  const hoverValue = useRef(0);
 
   const startDragging = usePortfolioStore((state) => state.startDragging);
   const updateDraggedPosition = usePortfolioStore((state) => state.updateDraggedPosition);
@@ -98,15 +106,15 @@ export default function CollageItem({ element, index }) {
 
   const isAttenuated = activeProjectId !== null && String(activeProjectId) !== String(element.projectId);
 
-  let rawPath = element.image || element.url || element.thumbnail || '';
-  let hdPath = rawPath.replace(/thumbnails/i, 'projects').replace(/^.*public\//, '/');
+  // Use thumbnails for the 3D canvas (lightweight ~15kb each), full images only in the zoomed viewer
+  let rawPath = element.thumbnail || element.image || element.url || '';
+  let hdPath = rawPath.replace(/^.*public\//, '/');
   if (!hdPath.startsWith('/')) hdPath = '/' + hdPath;
 
   const texture = useLoader(THREE.TextureLoader, hdPath);
 
   useEffect(() => {
     if (texture) {
-      // CORRECCIÓN: Eliminamos THREE.SRGBColorSpace para evitar la doble saturación
       texture.generateMipmaps = false;
       texture.minFilter = THREE.LinearFilter;
       texture.magFilter = THREE.LinearFilter;
@@ -115,12 +123,36 @@ export default function CollageItem({ element, index }) {
     }
   }, [texture]);
 
+  // ── RED DE SEGURIDAD ──
+  // Si el pointerup ocurre fuera del mesh (drag rápido) o el sistema cancela
+  // el pointer, liberamos el drag para que NUNCA quede "pegado" bloqueando el pan.
+  useEffect(() => {
+    const stopIfDragging = () => {
+      if (usePortfolioStore.getState().draggingElementId === element.id) {
+        stopDragging(element.id);
+      }
+    };
+    window.addEventListener('pointerup', stopIfDragging);
+    window.addEventListener('pointercancel', stopIfDragging);
+    return () => {
+      window.removeEventListener('pointerup', stopIfDragging);
+      window.removeEventListener('pointercancel', stopIfDragging);
+    };
+  }, [element.id, stopDragging]);
+
+  // ── POINTER EVENTS ──
+  // MOUSE (non-touch): pointerDown starts drag, pointerMove updates, pointerUp ends.
+  // TOUCH: we do NOT start dragging. Touch users tap to click (onClick).
+  //        Canvas panning for touch is managed by CanvasWorkspace.
+
   const handlePointerDown = (e) => {
     if (isAttenuated) return;
+    // Guardamos posición inicial SIEMPRE (mouse y táctil): la usa el onClick
+    // para distinguir "toque limpio" de "arrastre de paneo"
     pointerDownPosRef.current = { x: e.clientX, y: e.clientY };
     if (e.pointerType === 'touch') return;
     e.stopPropagation();
-    e.target.setPointerCapture(e.pointerId);
+    try { e.target.setPointerCapture(e.pointerId); } catch (err) {}
     startDragging(element.id);
   };
 
@@ -128,16 +160,16 @@ export default function CollageItem({ element, index }) {
     if (isAttenuated || e.pointerType === 'touch') return;
     e.stopPropagation();
     if (draggingElementId === element.id) {
-      const planeIntersection = new THREE.Vector3();
-      e.raycast.ray.intersectPlane(new THREE.Plane(new THREE.Vector3(0, 0, 1), -1.0), planeIntersection);
-      updateDraggedPosition(element.id, [planeIntersection.x, planeIntersection.y]);
+      e.raycast.ray.intersectPlane(DRAG_PLANE, DRAG_INTERSECTION);
+      updateDraggedPosition(element.id, [DRAG_INTERSECTION.x, DRAG_INTERSECTION.y]);
     }
   };
 
   const handlePointerUp = (e) => {
     if (isAttenuated || e.pointerType === 'touch') return;
+    if (draggingElementId !== element.id) return;
     e.stopPropagation();
-    e.target.releasePointerCapture(e.pointerId);
+    try { e.target.releasePointerCapture(e.pointerId); } catch (err) {}
     stopDragging(element.id);
   };
 
@@ -187,12 +219,20 @@ export default function CollageItem({ element, index }) {
     mesh.position.z += ((isDragged ? 8.0 : targetZ) - mesh.position.z) * 0.25;
     mesh.rotation.z += (targetRot - mesh.rotation.z) * springStrength;
 
-    let targetScaleX = element.scale[0] * finalScaleMultiplier;
-    let targetScaleY = element.scale[1] * finalScaleMultiplier;
+    let baseScaleX = element.targetScale ? element.targetScale[0] : element.scale[0];
+    let baseScaleY = element.targetScale ? element.targetScale[1] : element.scale[1];
+    let targetScaleX = baseScaleX * finalScaleMultiplier;
+    let targetScaleY = baseScaleY * finalScaleMultiplier;
 
-    if (currentActiveProject && String(element.projectId) === String(currentActiveProject) && viewportWidth < 18) {
-      targetScaleX = 12.0;
-      targetScaleY = 12.0 / (element.aspectRatio || 1);
+    if (currentActiveProject && String(element.projectId) === String(currentActiveProject)) {
+      if (viewportWidth < 18) {
+        targetScaleX = 12.0;
+        targetScaleY = 12.0 / (element.aspectRatio || 1);
+      } else {
+        // En vista de proyecto, volvemos a la escala original para que se vea en su tamaño de diseño
+        targetScaleX = element.scale[0] * finalScaleMultiplier;
+        targetScaleY = element.scale[1] * finalScaleMultiplier;
+      }
     }
 
     mesh.scale.x += (targetScaleX - mesh.scale.x) * 0.15;
@@ -202,16 +242,16 @@ export default function CollageItem({ element, index }) {
 
     if (materialRef.current) {
       const mat = materialRef.current;
-      mat.uniforms.u_hover.value = 0.0;
-      const nextDrag = dragValue + ((isDragged ? 1.0 : 0.0) - dragValue) * 0.15;
-      setDragValue(nextDrag);
+      // Hover con suavizado (antes estaba forzado a 0 = efecto muerto)
+      mat.uniforms.u_hover.value += (hoverValue.current - mat.uniforms.u_hover.value) * 0.2;
+      const nextDrag = dragValue.current + ((isDragged ? 1.0 : 0.0) - dragValue.current) * 0.15;
+      dragValue.current = nextDrag;
       mat.uniforms.u_dragged.value = nextDrag;
       mat.uniforms.u_time.value = state.clock.getElapsedTime();
 
       const targetOpacity = (currentActiveProject !== null && String(currentActiveProject) !== String(element.projectId)) ? 0.15 : 1.0;
       mat.transparent = true;
       mat.uniforms.u_opacity.value += (targetOpacity - mat.uniforms.u_opacity.value) * 0.2;
-      mat.needsUpdate = true;
     }
   });
 
@@ -224,15 +264,26 @@ export default function CollageItem({ element, index }) {
       onPointerDown={handlePointerDown}
       onPointerMove={handlePointerMove}
       onPointerUp={handlePointerUp}
+      onPointerCancel={handlePointerUp}
+      onPointerOver={(e) => {
+        // Brillo de hover solo para mouse (en táctil no tiene sentido)
+        if (e.pointerType === 'mouse' && !isAttenuated) {
+          hoverValue.current = 1;
+        }
+      }}
+      onPointerOut={() => {
+        hoverValue.current = 0;
+      }}
       onClick={(e) => {
         e.stopPropagation();
         if (isAttenuated) return;
 
-        if (e.pointerType !== 'touch') {
-          const dx = e.clientX - pointerDownPosRef.current.x;
-          const dy = e.clientY - pointerDownPosRef.current.y;
-          if (Math.hypot(dx, dy) > 6) return;
-        }
+        // Umbral universal (mouse Y táctil): si el dedo/mouse se movió más de
+        // TAP_THRESHOLD píxeles entre el down y el up, es un paneo, NO un click.
+        // Esto evita abrir proyectos por accidente al paneear desde una imagen.
+        const dx = e.clientX - pointerDownPosRef.current.x;
+        const dy = e.clientY - pointerDownPosRef.current.y;
+        if (Math.hypot(dx, dy) > TAP_THRESHOLD) return;
 
         const currentActiveProject = usePortfolioStore.getState().activeProjectId;
 

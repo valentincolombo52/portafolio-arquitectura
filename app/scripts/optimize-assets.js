@@ -38,6 +38,33 @@ function toKebabCase(str) {
     .replace(/(^-|-$)/g, ''); // trim hyphens
 }
 
+function parseFolder(folderName) {
+  const match = folderName.match(/^(.*?)(?:_(\d{4}|202X))?$/i);
+  if (match && match[1]) {
+    const rawTitle = match[1].trim();
+    const rawYear = match[2];
+    let yearNum = 2024;
+    let yearDisplay = '2024';
+
+    if (rawYear) {
+      yearDisplay = rawYear.toUpperCase();
+      if (yearDisplay === '202X') {
+        yearNum = 2025.5; // Trabajo continuo de la década 2020s posicionado en la parte superior
+      } else {
+        yearNum = parseInt(rawYear, 10);
+      }
+    }
+
+    return {
+      projectTitle: rawTitle,
+      year: yearNum,
+      yearDisplay
+    };
+  }
+
+  return { projectTitle: folderName, year: 2024, yearDisplay: '2024' };
+}
+
 async function optimizeImages() {
   console.log('--- STARTING MULTI-PROJECT ASSET OPTIMIZATION PIPELINE ---');
   console.log(`Source Folder: ${sourceFolder}`);
@@ -61,12 +88,12 @@ async function optimizeImages() {
 
   for (const folder of subfolders) {
     const folderPath = path.join(sourceFolder, folder);
-    const projectId = toKebabCase(folder);
-    const projectTitle = folder;
+    const { projectTitle, year, yearDisplay } = parseFolder(folder);
+    const projectId = toKebabCase(projectTitle);
     const projectColor = GLOW_COLORS[colorIndex % GLOW_COLORS.length];
     colorIndex++;
 
-    console.log(`\nProcessing Group: [${projectTitle}] -> ID: [${projectId}] (Color: ${projectColor})`);
+    console.log(`\nProcessing Group: [${projectTitle}] (Año: ${yearDisplay}) -> ID: [${projectId}]`);
 
     // Ensure output directories exist for this projectId
     const groupThumbDir = path.join(thumbsDir, projectId);
@@ -148,7 +175,8 @@ async function optimizeImages() {
           projectId,
           projectTitle,
           glowColor: projectColor,
-          year: folder.includes('2022') || folder.toLowerCase().includes('m1') || folder.toLowerCase().includes('morfologia') ? 2022 : (folder.includes('2023') ? 2023 : 2024),
+          year,
+          yearDisplay,
           type: filename.toUpperCase().includes('RENDER') ? 'Render' : (filename.toUpperCase().includes('DIAGRAMA') ? 'Diagram' : 'Blueprint'),
           aspectRatio,
           width,

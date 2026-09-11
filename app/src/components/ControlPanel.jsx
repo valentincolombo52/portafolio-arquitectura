@@ -7,43 +7,49 @@ export default function ControlPanel() {
   const setActiveProjectId = usePortfolioStore((state) => state.setActiveProjectId);
   const clearActiveProjectId = usePortfolioStore((state) => state.clearActiveProjectId);
 
-  // Extract unique projects (id and title) dynamically from loaded elements
-  const projects = [];
-  const seenIds = new Set();
-
-  elements.forEach((el) => {
-    if (el.projectId && !seenIds.has(el.projectId)) {
-      seenIds.add(el.projectId);
-      projects.push({
-        id: el.projectId,
-        title: el.projectTitle || el.projectId.toUpperCase(),
-      });
-    }
-  });
+  // Extract unique projects dynamically from loaded elements, memoized for performance
+  const projects = React.useMemo(() => {
+    const projs = [];
+    const seenIds = new Set();
+    elements.forEach((el) => {
+      if (el.projectId && !seenIds.has(el.projectId)) {
+        seenIds.add(el.projectId);
+        projs.push({
+          id: el.projectId,
+          title: el.projectTitle || el.projectId.toUpperCase(),
+        });
+      }
+    });
+    return projs;
+  }, [elements]);
 
   return (
     <div
-      className="brutalist-panel frame-pink scrollbar-hide"
+      className="brutalist-panel frame-pink"
       style={{
         position: 'fixed',
-        bottom: '30px',   // <-- ACÁ LO DESPEGAMOS DEL PISO
+        bottom: 0,
         left: 0,
-        width: '100vw',
-        zIndex: 1000,     // <-- ACÁ LO MANDAMOS AL FRENTE DE TODO
+        right: 0,
+        width: '100%', // antes 100vw: causaba desborde horizontal en móviles
+        zIndex: 1000,
         display: 'flex',
         flexDirection: 'row',
         flexWrap: 'nowrap',
         overflowX: 'auto',
         overflowY: 'hidden',
         whiteSpace: 'nowrap',
-        height: '56px',
+        minHeight: '56px', // antes height fijo: chocaban el contenido
         alignItems: 'center',
         gap: '8px',
         padding: '12px 16px',
+        // Respeta la barra de inicio de iPhone (safe area)
+        paddingBottom: 'calc(12px + env(safe-area-inset-bottom))',
         fontSize: '11px',
         touchAction: 'pan-x',
         backgroundColor: 'rgba(255, 255, 255, 0.90)',
         backdropFilter: 'blur(8px)',
+        WebkitBackdropFilter: 'blur(8px)', // Safari/iOS necesita este prefijo
         borderTop: '2px solid var(--color-border)',
         borderLeft: 'none',
         borderRight: 'none',
