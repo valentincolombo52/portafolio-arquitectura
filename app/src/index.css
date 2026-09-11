@@ -354,6 +354,39 @@ body,
   display: none !important;
 }
 .scrollbar-hide {
-  -ms-overflow-style: none !important;  /* IE and Edge */
-  scrollbar-width: none !important;  /* Firefox */
+  -ms-overflow-style: none !important;
+  scrollbar-width: none !important;
+}
+
+/* ── Mobile: flechas de carrusel siempre visibles en touch ── */
+@media (hover: none) and (pointer: coarse) {
+  /* En dispositivos táctiles, siempre mostrar las flechas */
+  [aria-label="Lámina anterior"],
+  [aria-label="Siguiente lámina"] {
+    opacity: 1 !important;
+  }
+
+  /* Mejor área de toque */
+  button {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Evitar zoom accidental al hacer double-tap en filtros */
+  nav button {
+    touch-action: manipulation;
+  }
+}
+
+/* ── Bento card touch feedback ── */
+@media (hover: none) {
+  .bento-grid > * {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+/* ── Subtítulo del header visible en desktop ── */
+@media (min-width: 600px) {
+  .header-subtitle {
+    display: inline !important;
+  }
 }

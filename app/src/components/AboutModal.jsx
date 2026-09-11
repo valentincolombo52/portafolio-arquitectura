@@ -25,18 +25,21 @@ export default function AboutModal() {
       <div
         onClick={(e) => e.stopPropagation()}
         style={{
-          maxWidth: '560px',
+          maxWidth: '520px',
           width: '100%',
+          maxHeight: '90dvh',
+          overflowY: 'auto',
           backgroundColor: '#0f172a',
           border: '1.5px solid #ff007f',
-          borderRadius: '24px',
-          padding: '32px',
+          borderRadius: 'clamp(16px, 4vw, 24px)',
+          padding: 'clamp(20px, 5vw, 32px)',
           boxShadow: '0 20px 50px rgba(255, 0, 127, 0.25)',
           color: '#f8fafc',
           display: 'flex',
           flexDirection: 'column',
-          gap: '20px',
-          position: 'relative'
+          gap: '18px',
+          position: 'relative',
+          scrollbarWidth: 'none'
         }}
       >
         {/* Botón cerrar */}
